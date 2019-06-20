@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <style>
+        .header {
+            position: relative;
+            height: 120px;
+            width: 100%;
+            background-color: powderblue;
+
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 0px;
+        }
+
+        .heading {
+            position: absolute;
+            top: 30px;
+            left: 45%;
+        }
+
+        .side-bar {}
+
+        #menu-buttons {
+            margin-top: 20px;
+            border-radius: 15px;
+            background: #73AD21;
+            padding: 10px;
+            width: 200px;
+            height: 50px;
+            position: relative;
+        }
+
+        .menu-text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="header">
+            <div class="logo top-left">
+                <img src="logo.jpeg" alt="Ration Balancing" class="logo">
+            </div>
+            <div class="heading">
+                <h2>Cattle Weight</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+                <div id="menu-buttons">
+                    <p class="menu-text text-center">Cattle Weight</p>
+                </div>
+                <div id="menu-buttons">
+                    <p class="menu-text text-center">FeedStuffs</p>
+                </div>
+                <div id="menu-buttons">
+                    <p class="menu-text text-center">Quantities</p>
+                </div>
+                <div id="menu-buttons">
+                    <p class="menu-text text-center">Ration Weight</p>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8 col-xs-8">
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                        <tr></tr>
+                        <th scope="col">Feed Stuff's</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col"></th>
+                        <th scope="col">Total Nutrients</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Alfalfa Fresh</th>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <input type="range" class="form-control-range" id="formControlRange" width="30px;">
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <div class="form-group row">
+                                    <div class="col-xs-1">
+                                        <input class="form-control" id="ex1" type="text" placeholder="0.00 lbs">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>%CP &nbsp &nbsp<button type="button"
+                                    class="btn btn-outline-success btn-sm active">14.99</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="main-content">
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
