@@ -44,14 +44,11 @@
   height: 50px;
   position: relative;
 }
-
 .menu-text{
   font-size:20px;
   font-weight: 600;
 } 
-.text-center :hover {
- background: yellow;
-}
+ /* alphabets list placed at a position */
 .feed-content{
   position: absolute;
   padding: 10px;
@@ -61,9 +58,8 @@
   border: 5px;
   height: 500px;
   overflow: scroll;
- 
 }
-
+  /* alphabets list arranged in with borders and background color */
 .feed-content ul li{
   list-style: none;
   border-radius: 10px;
@@ -73,9 +69,28 @@
   width: 90px;
   text-align: center;
 }
+/* changes color of dropdown link on hover */
 .feed-content ul :hover{
 background-color:  rgb(143, 235, 107);
 }
+/* feedstuff block positioned at sidebar relative to remaining rows */
+.dropdown {
+  margin-top:20px;
+  border-radius: 15px;
+  background: #73AD21;
+  padding: 10px; 
+  width: 200px;
+  height: 50px;
+  position: relative;
+}
+/* dropdown content hidden by default */
+.feed-content{
+  display: none;
+}
+/* dropdown content displayed when hovered on feedstuff block */
+.dropdown:hover .feed-content{
+  display: block;
+ }
 </style>
 </head>
 <body>
@@ -93,7 +108,7 @@ background-color:  rgb(143, 235, 107);
       <div id="menu-buttons">
         <p class="menu-text text-center">Cattle Weight</p>
       </div>
-      <div id="menu-buttons">
+      <div class="dropdown">
         <p class="menu-text text-center">FeedStuffs</p>
       <!-- To display list in alphabetical order -->
         <div class="feed-content">
