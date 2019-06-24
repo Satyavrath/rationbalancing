@@ -112,6 +112,14 @@ background-color:  rgb(143, 235, 107);
 .dropdown:hover .feed-content{
   display: block;
  }
+ /* searchtab position and style */
+ 
+ .searchTab{
+  top: 120px;
+  position: absolute;
+  right:0;
+  padding: 5px;
+ }
 </style>
 </head>
 <body>
@@ -274,6 +282,11 @@ background-color:  rgb(143, 235, 107);
   <div>
     
   </div>
+ 
+</div>
+<div class = "searchTab">
+  <input type="text" id = "search" placeholder="Search">
+  <button onclick="search()">SEARCH</button>
 </div>
 
 </body>
