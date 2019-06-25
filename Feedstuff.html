@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>FeedStuffs</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <link rel="stylesheet" type = "text/css" href="feedstuff.css">
+   </head>
+   <body>
+      <div class="container-fluid">
+      <div class="header">
+         <div class="logo top-left">
+            <img src="logo.jpeg" alt="Ration Balancing" class="logo">
+         </div>
+         <div class="heading">
+            <h2>FeedStuff</h2>
+         </div>
+      </div>
+      <div class="container-fluid">
+          <div class="row">
+            
+              <div class="col">
+                 <div id="menu-buttons">
+                    <p class="menu-text text-center">Cattle Weight</p>
+                 </div>
+                 <div class="dropdown">
+                  <p class="menu-text text-center">FeedStuffs</p>
+                  <div class="col feed-content ">
+                    <ul  >
+                       <li>
+                          A-Z
+                       </li>
+                       <li>
+                          <!-- <button= onclick="display()">A</button>                 -->
+                          A
+                       </li>
+                       <li>
+                          B
+                       </li>
+                       <li>
+                          C
+                       </li>
+                       <li>
+                          D
+                       </li>
+                       <li>
+                          E
+                       </li>
+                       <li>
+                          F
+                       </li>
+                       <li>
+                          G
+                       </li>
+                       <li>
+                          H
+                       </li>
+                       <li>
+                          I
+                       </li>
+                       <li>
+                          J
+                       </li>
+                       <li>
+                          K
+                       </li>
+                       <li>
+                          L
+                       </li>
+                       <li>
+                          M
+                       </li>
+                       <li>
+                          N
+                       </li>
+                       <li>
+                          O
+                       </li>
+                       <li>
+                          P
+                       </li>
+                       <li>
+                          Q
+                       </li>
+                       <li>
+                          R
+                       </li>
+                       <li>
+                          S
+                       </li>
+                       <li>
+                          T
+                       </li>
+                       <li>
+                          U
+                       </li>
+                       <li>
+                          V
+                       </li>
+                       <li>
+                          W
+                       </li>
+                       <li>
+                          X
+                       </li>
+                       <li>
+                          Y
+                       </li>
+                       <li>
+                          Z
+                       </li>
+                    </ul>
+                  </div>
+                  <div class= "col letterA">
+                    <ul class = "col-md-4">
+                       <li>
+                          <input type="checkbox">    Alfalfa Cubes
+                       </li>
+                       <li>
+                          <input type="checkbox">    Alfalfa Dehyclrated
+                       </li>
+                       <li>
+                          <input type="checkbox">    Alfalfa Fresh 
+                       </li>
+                       <li>
+                          <input type="checkbox">     Alfalfa Hay
+                       </li>
+                       <li>
+                          <input type="checkbox">   Alfalfa Silage
+                       </li>
+                       <li>
+                          <input type="checkbox">   Alfalfa Hulls
+                       </li>
+                       <li>
+                          <input type="checkbox">   Alfalfa Stems
+                       </li>
+                       <li>
+                          <input type="checkbox">   Alfalfa Sulfate
+                       </li>
+                       <li>
+                          <input type="checkbox">   Alfalfa Sead Meal
+                       </li>
+                       <li>
+                          <input type="checkbox">  Alfalfa seed screenings
+                       </li>
+                       <li>
+                          <input type="checkbox">  Ammonium chloride
+                       </li>
+                       <li>
+                          <input type="checkbox">   Ammonium sulfate
+                       </li>
+                       <li>
+                          <input type="checkbox">   Apples
+                       </li>
+                    </ul>
+                 
+                  </div>
+               </div>
+                 <div id="menu-buttons">
+                   <p class="menu-text text-center">Quantities</p>
+                </div>
+                <div id="menu-buttons">
+                   <p class="menu-text text-center">Ration Weight</p>
+                </div>
+              
+              </div>   
+                    <!-- To display list in alphabetical order -->
+                  
+
+          </div>
+      </div>
+      
+            </div>
+            
+            <!-- Ingredient-content with the check boxes -->
+            
+        
+         
+         <!--  Search bar tab -->
+         <div class = "searchTab">
+            <input type="text" id = "search" placeholder="Search">
+            <button onclick="search()">SEARCH</button>
+         </div>
+         <!--  To display feedstuff based on selected alphabet -->
+         <div class="col-sm-12 col-md-4 col-lg-4 col-xs-12">
+         </div>
+      </div>
+      
+      <script src = "feedstuff.js"></script>
+   </body>
+</html>
