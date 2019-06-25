@@ -1,0 +1,113 @@
+body{
+    background: rgb(182, 248, 146) !important;
+
+}
+.main-content{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px !important;
+    margin-top: 10px;
+}
+.header {
+    height: 55px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: 50px;
+}
+
+.top-left {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+}
+
+.heading {
+    position: absolute;
+    top: 14px;
+    left: 45%;
+
+}
+
+#menu-buttons {
+    margin-top: 20px;
+    border-radius: 15px;
+    background: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    position: relative;
+}
+#menu-buttons.active {
+    background: rgb(79, 80, 78)!important;
+}
+#menu-buttons.active .menu-text {
+    color: #fff!important;
+    cursor: pointer;
+}
+#menu-buttons  .menu-text {
+    font-size: 20px;
+    font-weight: 600;
+    color:black;
+    cursor: pointer;
+}
+.container-fluid{
+    padding: 0 !important;
+}
+.row{
+    margin:0!important;
+}
+.nutirentsBtn{
+    width: 60px;
+    float: right;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+#page-wrapper {
+    padding: 0 15px;
+    min-height: 568px;
+    background-color: #fff;
+}
+.search-bar {
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback::before {
+position: absolute;
+z-index: 2;
+left:-12px;
+display: block;
+height: 2.375rem;
+line-height: 1.175rem;
+text-align: center;
+pointer-events: none;
+color: #aaa;
+}
+.scrollbox {
+  margin-right: 15px;
+  padding-right: 15px;
+  height: 150px;
+  width: 240px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+.scrollbox-main {
+  margin-right: 15px;
+  padding-right: 15px;
+  height: 300px;
+  width: 340px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}

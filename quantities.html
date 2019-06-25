@@ -3,90 +3,15 @@
 
 <head>
     <title>Ration Balancing</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-        
-        
-    <style>
-        .header {
-            position: relative;
-            height: 65px;
-            width: 100%;
-            background-color: #73AD21;
+    <link rel="stylesheet" type="text/css" href="quantities.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   
 
-        }
-
-        .logo {
-            width: 150px;
-            height: 50px;
-        }
-
-        .top-left {
-            position: absolute;
-            top: 8px;
-            left: 15px;
-        }
-
-        .heading {
-            position: absolute;
-            top: 14px;
-            left: 45%;
-        }
-
-        .side-bar {}
-
-        #menu-buttons {
-            margin-top: 20px;
-            border-radius: 15px;
-            background: #cccccc;
-            padding: 10px;
-            width: 200px;
-            height: 50px;
-            position: relative;
-        }
-        #menu-buttons.active {
-            background: #73AD21!important;
-        }
-        #menu-buttons.active .menu-text {
-            color: #fff!important;
-            cursor: pointer;
-        }
-        #menu-buttons  .menu-text {
-            font-size: 20px;
-            font-weight: 600;
-            color: #777777;
-            cursor: pointer;
-        }
-        .container-fluid{
-            padding: 0 !important;
-        }
-        .row{
-            margin:0!important;
-        }
-        .nutirentsBtn{
-            width: 60px;
-            float: right;
-        }
-        
-        
-    </style>
 </head>
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid main-content">
         <div class="header">
             <div class="logo top-left">
                 <img src="logo.jpeg" alt="Ration Balancing" class="logo">
@@ -96,7 +21,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-2 col-md-2 col-lg-2 col-xs-2">
+            <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
                 <div id="menu-buttons">
                     <p class="menu-text text-center">Cattle Weight</p>
                 </div>
@@ -110,7 +35,7 @@
                     <p class="menu-text text-center">Ration Weight</p>
                 </div>
             </div>
-            <div class="col-sm-8 col-md-8 col-lg-8 col-xs-8">
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xs-12">
                 <br>
                         
                         <table class="table table-striped"  >
