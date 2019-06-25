@@ -73,6 +73,27 @@
 .feed-content ul :hover{
 background-color:  rgb(143, 235, 107);
 }
+ /* alphabets with A list placed at a position */
+.Ingredient-content{
+  position: absolute;
+  padding: 10px;
+  margin: -70px;
+  right:-150px;
+  top:60px;
+  border: 2px;
+  height: 500px;
+  overflow: scroll;
+}
+/* alphabets with A list arranged in with borders and background color */
+.Ingredient-content ul li{
+  list-style: none;
+  border-radius: 10px;
+  background:whitesmoke;
+  border-style: solid;
+  margin: 10px;
+  width: 200px;
+  text-align: left;
+}
 /* feedstuff block positioned at sidebar relative to remaining rows */
 .dropdown {
   margin-top:20px;
@@ -90,6 +111,14 @@ background-color:  rgb(143, 235, 107);
 /* dropdown content displayed when hovered on feedstuff block */
 .dropdown:hover .feed-content{
   display: block;
+ }
+ /* searchtab position and style */
+ 
+ .searchTab{
+  top: 120px;
+  position: absolute;
+  right:0;
+  padding: 5px;
  }
 </style>
 </head>
@@ -253,6 +282,11 @@ background-color:  rgb(143, 235, 107);
   <div>
     
   </div>
+ 
+</div>
+<div class = "searchTab">
+  <input type="text" id = "search" placeholder="Search">
+  <button onclick="search()">SEARCH</button>
 </div>
 
 </body>
