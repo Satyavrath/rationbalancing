@@ -33,7 +33,7 @@
         .top-left {
             position: absolute;
             top: 8px;
-            left: 0px;
+            left: 15px;
         }
 
         .heading {
@@ -47,11 +47,24 @@
         #menu-buttons {
             margin-top: 20px;
             border-radius: 15px;
-            background: #73AD21;
+            background: #cccccc;
             padding: 10px;
             width: 200px;
             height: 50px;
             position: relative;
+        }
+        #menu-buttons.active {
+            background: #73AD21!important;
+        }
+        #menu-buttons.active .menu-text {
+            color: #fff!important;
+            cursor: pointer;
+        }
+        #menu-buttons  .menu-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #777777;
+            cursor: pointer;
         }
         .container-fluid{
             padding: 0 !important;
@@ -63,10 +76,7 @@
             width: 60px;
             float: right;
         }
-        .menu-text {
-            font-size: 20px;
-            font-weight: 600;
-        }
+        
     </style>
 </head>
 
@@ -89,7 +99,7 @@
                 <div id="menu-buttons">
                     <p class="menu-text text-center">FeedStuffs</p>
                 </div>
-                <div id="menu-buttons">
+                <div id="menu-buttons"  class="active">
                     <p class="menu-text text-center">Quantities</p>
                 </div>
                 <div id="menu-buttons">
@@ -98,10 +108,15 @@
             </div>
             <div class="col-sm-8 col-md-8 col-lg-8 col-xs-8">
                 <br>
+<<<<<<< HEAD
                         
                         <table class="table table-striped"  >
                     
                     <thead style="background-color: #93DE48">
+=======
+                <table class="table table-striped table-bordered">
+                    <thead>
+>>>>>>> 53d03572a7a6740e36a7220fc0391da68c6160a7
                         <tr></tr>
                         <th scope="col">FeedStuffs</th>
                         <th scope="col">Quantity</th>
