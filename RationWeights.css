@@ -1,8 +1,6 @@
-body {
-    font-family: "Lato", sans-serif;
-    background:rgb(234, 252, 224);
-  }
-  
+body{
+  background-color: rgb(198, 255, 167);
+}
   .sidenav {
     height: 100%;
     width: 160px;
@@ -31,10 +29,11 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 15px;}
   }
-  .main-content{
+  .Header{
     border-radius: 20px;
     text-align:center;
     color:black;
     font-size: 30px;
   }
+ 
    
