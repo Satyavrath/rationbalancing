@@ -106,3 +106,7 @@
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
+.multiselect {
+  width: 20em;
+  height: 300px !important;
+}
