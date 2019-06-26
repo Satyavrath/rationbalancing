@@ -118,6 +118,21 @@
                 </x-multiselect>
               </div>
             </div>
+            <!-- Next button to navigate to next page -->
+            <div class="next-button">
+              <button type="button" class="btn btn-secondary">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.22/webcomponents.js'></script>
+      <script type="text/javascript">
+        var multiselect = document.querySelector('x-multiselect');
+        multiselect.addEventListener('change', function () {
+          console.log('Selected items:', this.selectedItems());
+        });
+      </script>
+    </div>
 </body>
 
 </html>
