@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Ration Balancing</title>
-    <link rel="stylesheet" type="text/css" href="quantities.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   
-
+    <title>Ration Weights || Ration Balance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <scri    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+pt src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container-fluid main-content">
+    <div class="container-fluid">
         <div class="header">
             <div class="logo top-left">
                 <img src="logo.jpeg" alt="Ration Balancing" class="logo">
@@ -20,186 +22,145 @@
                 <h2>Quantities</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
-                <div id="menu-buttons">
-                    <p class="menu-text text-center">Cattle Weight</p>
+        <div class="main-body">
+            <div class="row">
+                <div class="side-bar">
+                  <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
+                      <div id="menu-buttons" class="active">
+                          <p class="menu-text text-center"><a href="cattleweight.html">Cattle Weight</a></p>
+                      </div>
+                      <div id="menu-buttons">
+                          <p class="menu-text text-center"><a href="feedstuff.html">FeedStuffs</a></p>
+                      </div>
+                      <div id="menu-buttons">
+                          <p class="menu-text text-center"><a href="quantities.html">Quantities</a></p>
+                      </div>
+                      <div id="menu-buttons">
+                          <p class="menu-text text-center"><a href="rationweights.html">Ration Weight</a></p>
+                      </div>
+                  </div>
                 </div>
-                <div id="menu-buttons">
-                    <p class="menu-text text-center">FeedStuffs</p>
-                </div>
-                <div id="menu-buttons"  class="active">
-                    <p class="menu-text text-center">Quantities</p>
-                </div>
-                <div id="menu-buttons">
-                    <p class="menu-text text-center">Ration Weight</p>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-10 col-lg-8 col-xs-12">
-                <br>
-                        
-                        <table class="table table-striped"  >
-                    
-                    <thead style="background-color: #93DE48">
-                        <tr></tr>
-                        <th scope="col">FeedStuffs</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col"></th>
-                        <th scope="col">Total Nutrients</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="background-color: #73AD21">
-                            <th scope="row">Alfalfa Fresh</th>
-                            <td>
-                                <form>
-                                        <div class="range-slider">
-                                            <input type="range" class="form-control-range" value="0.0" min="0" max="100.0" step="0.1" id="formControlRange" width="30px;">
-                                            
-                                        <span class="form-slider_value" id="ex1">0</span>     
-                                        </div>
-                                </form>
-                            </td>
-                            <td>
-                                <div class="form-group row">
-                                    <div class="col-xs-2">
-                                        <input class="form-slider_value" id="ex1" type="text" placeholder="0.00 lbs">
-                                    </div>
-                                </div>
-                            </td>
-                            <a href=""></a>
-                            <td>%CP &nbsp &nbsp<button type="button"
-                                    class="btn btn-outline-success btn-sm active nutirentsBtn">14.99</button></td>
-                        </tr>
-                        <tr style="background-color: #93DE48">
-                            <th scope="row">Alfalfa Hulls</th>
-                            <td>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="range" class="form-control-range" id="formControlRange" width="30px;">
-                                    </div>
-                                </form>
-                            </td>
-                            <td>
-                                <div class="form-group row">
-                                    <div class="col-xs-2">
-                                        <input class="form-control2" id="ex2" type="text" placeholder="0.00 lbs">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>NE M &nbsp &nbsp<button type="button"
-                                    class="btn btn-outline-success btn-sm active nutirentsBtn">0.5</button></td>
-                        </tr>
-                        <tr style="background-color: #73AD21">
-                            <th scope="row">Ground Corn</th>
-                            <td>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="range" class="form-control-range" id="formControlRange" width="30px;">
-                                    </div>
-                                </form>
-                            </td>
-                            <td>
-                                <div class="form-group row">
-                                    <div class="col-xs-2">
-                                        <input class="form-control3" id="ex3" type="text" placeholder="0.00 lbs">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>NE G &nbsp &nbsp<button type="button"
-                                    class="btn btn-outline-success btn-sm active nutirentsBtn">0.59</button></td>
-                        </tr>
-                        <tr style="background-color: #93DE48">
-                            <th scope="row">Soybean Meal</th>
-                            <td>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="range" class="form-control-range" id="formControlRange" width="30px;">
-                                    </div>
-                                </form>
-                            </td>
-                            <td>
-                                <div class="form-group row">
-                                    <div class="col-xs-2">
-                                        <input class="form-control4" id="ex4" type="text" placeholder="0.00 lbs">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>%CA &nbsp &nbsp<button type="button"
-                                    class="btn btn-outline-success btn-sm active nutirentsBtn">0.59</button></td>
-                        </tr>
-                        <tr style="background-color: #73AD21">
-                            <th scope="row">Wet Feed</th>
-                            <td>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="range" class="form-control-range" id="formControlRange" width="30px;">
-                                    </div>
-                                </form>
-                            </td>
-                            <td>
-                                <div class="form-group row">
-                                    <div class="col-xs-2">
-                                        <input class="form-control5" id="ex5" type="text" placeholder="0.00 lbs">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>%P &nbsp &nbsp<button type="button"
-                                    class="btn btn-outline-success btn-sm active nutirentsBtn">0.14</button></td>
-                        </tr>
-                        <tr style="background-color: #93DE48">
-                            <th scope="row">Soybean Meal</th>
-                            <td>
-                                <form>
-                                    <div class="form-group">
-                                        <input type="range" class="form-control-range" id="formControlRange" width="30px;">
-                                    </div>
-                                </form>
-                            </td>
-                            <td>
-                                <div class="form-group row">
-                                    <div class="col-xs-2">
-                                        <input class="form-control6" id="ex6" type="text" placeholder="0.00 lbs">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>%EE &nbsp &nbsp<button type="button"
-                                    class="btn btn-outline-success btn-sm active nutirentsBtn">0.59</button></td>
-                        </tr>
+                <div class="main-content">
+                    <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+                      <div class="main-part">
+                      <div class="total-nutrients">
+                        <h2>Total Nutrients</h2>
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">%CP</th>
+                              <th scope="col">NE M</th>
+                              <th scope="col">NE G</th>
+                              <th scope="col">%Ca</th>
+                              <th scope="col">P</th>
+                              <th scope="col">%EE</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
 
+                                <button onclick="additon(number)" id="plus">+</button>
+                                <span id="number">12.55</span>
+                                <button onclick="subtraction" id="minus">-</button>
+                              </td>
+                              <td>
+                                <button onclick="additon(number-2)" id="plus">+</button>
+                                <span id="number-2">12.55</span>
+                                <button onclick="subtraction" id="minus">-</button>
+                              </td>
+                              <td>
+                                <button onclick="additon(number-3)"id="plus">+</button>
+                                <span id="number-3">12.55</span>
+                                <button onclick="subtraction" id="minus">-</button>
+                              </td>
+                              <td>
+                                <button onclick="additon(number-4)" id="plus">+</button>
+                                <span id="number-4">12.55</span>
+                                <button onclick="subtraction" id="minus">-</button>
+                              </td>
+                              <td>
+                                <button onclick="additon(number-5)" id="plus">+</button>
+                                <span id="number-5">12.55</span>
+                                <button id="minus">-</button>
+                              </td>
+                              <td>
+                                <button onclick="additon(number-6)" id="plus">+</button>
+                                <span id="number-6">12.55</span>
+                                <button onclick="subtraction" id="minus">-</button>
+                              </td>
 
-                    </tbody>
-                </table>
+                            </tr>
+
+                          </tbody>
+                      </table>
+
+                      </div>
+                      <div class="feedstuff-Quantity">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">FeedStuff</th>
+                              <th scope="col">Quantity</th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">Alfalfa Fresh</th>
+                              <td>11.72</td>
+
+                            </tr>
+                            <tr>
+                              <th scope="row">Alfalfa Hulls</th>
+                                <td>5.06</td>
+
+                            </tr>
+                            <tr>
+                              <th scope="row">Ground Corn</th>
+                              <td>12.03</td>
+
+                            </tr>
+                            <tr>
+                              <th scope="row">Soybean</th>
+                              <td>10.00</td>
+
+                            </tr>
+                            <tr>
+                              <th scope="row">Wet Feed</th>
+                              <td>17.03</td>
+
+                            </tr>
+                          </tbody>
+                      </table>
+
+                      </div>
+                      </div>
+                    </div>
+                    <div class="next-button">
+                      <button type="button" class="btn btn-secondary">Next</button>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="main-content">
-        </div>
+        <script>
+          function additon(id) {
+            // alert("hai");
 
-    </div>
-    <script>
-            var rangeSlider = function(){
-  var slider = $('.range-slider'),
-      range = $('.form-control-range'),
-      value = $('.form-slider_value');
-      
-    
-  slider.each(function(){
+            alert(document.getElementById(id).value)
+            // alert(document.getElementById(id))
+            //  x = document.getElementById(id)
+            //  y= x + 1;
+            //  document.getElementById(id).innerHTML = y;
+            // $(#+id).html(parseInt($('#number').html(), 10)+1);
+    }
+    function subtraction() {
 
-    value.each(function(){
-      var value = $(this).prev().attr('value');
-      $(this).html(value);
-      
-    });
+       $("#number").html(parseInt($('#number').html(), 10)-1)
+    }
 
-    range.on('input', function(){
-      $(this).next(value).html(this.value);
-    });
-  });
-};
-
-rangeSlider();
-            </script>
-
+        </script>
 </body>
 
 </html>
