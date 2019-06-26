@@ -1,50 +1,36 @@
+body{
+  background: rgb(182, 248, 146) !important;
+}
 .header {
-    position: relative;
-    height: 120px;
-    width: 100%;
-    background-color: powderblue;
+  position: relative;
+  height: 55px;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding-top: 10px;
+  margin-top: 10px;
 }
-
+.main-content{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px !important;
+  margin-top: 10px;
+}
 .logo {
-    width: 100px;
-    height: 100px;
+  width: 150px;
+  height: 50px;
+  padding-left: 15px;
 }
-
+.heading {
+  position: absolute;
+  top: 7px;
+  left: 45%;
+}
 .top-left {
     position: absolute;
-    top: 8px;
+    top: 3.7px;
     left: 0px;
 }
-
-.heading {
-    position: absolute;
-    top: 30px;
-    left: 45%;
-}
-
-#menu-buttons {
-    margin-top: 20px;
-    border-radius: 15px;
-    background: #cccccc;
-    padding: 10px;
-    width: 200px;
-    height: 50px;
-    position: relative;
-}
-#menu-buttons.active {
-    background: #73AD21!important;
-}
-#menu-buttons.active .menu-text {
-    color: #fff!important;
-    cursor: pointer;
-}
-#menu-buttons  .menu-text {
-    font-size: 20px;
-    font-weight: 600;
-    color: #777777;
-    cursor: pointer;
-}
-
 .menu-text {
     font-size: 20px;
     font-weight: 600;
@@ -55,9 +41,6 @@
 }
 .cattle-weights .weight-gain{
   padding-left: 10px;
-}
-#nutrition-table {
-  padding-top: 20px;
 }
 .quantities {
   min-width: 800px;
@@ -71,42 +54,44 @@
 .next-button {
   margin-left: 80%;
 }
-.side-bar #menu-buttons a {
+/* .side-bar #menu-buttons a {
   text-decoration: none;
   color: #777777;
+} */
+.main-content {
+  border: 5px solid white;
+  background-color: #fff;
+  border-radius: 12px;
 }
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
+.table {
+  background-color: rgb(141, 139, 137);
 }
 
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+#nutrition-table {
+  padding-top: 20px;
 }
-
-#myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 12px;
+#menu-buttons.active {
+  background: rgb(141, 139, 137)!important;
+}
+#menu-buttons.active .menu-text {
+color:white !important;
+cursor: pointer;
+}
+#menu-buttons  .menu-text {
+font-size: 20px;
+font-weight: 600;
+color:black;
+cursor: pointer;
+}
+#menu-buttons {
+  margin-top: 20px;
+  border-radius: 15px;
+  background: white;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+  position: relative;
+}
+.side-bar a {
   text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block
-}
-
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-.multiselect {
-  width: 20em;
-  height: 300px !important;
 }
