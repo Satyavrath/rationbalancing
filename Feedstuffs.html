@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FeedStuff || Ration Balance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="import" href="https://rawgit.com/sitepoint-editors/multiselect-web-component/master/src/multiselect.html">
+    <style>
+      .multiselect {
+        width: 20em;
+        height: 300px !important;
+      }
+    </style>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <div class="header">
+            <div class="logo top-left">
+                <img src="logo.jpeg" alt="Ration Balancing" class="logo">
+            </div>
+            <div class="heading">
+                <h2>FeedStuff</h2>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="row">
+                <div class="side-bar">
+                  
+                </div>
+                <div class="main-content">
+                    <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+                      <div class="feed-categories">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                          <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-secondary">Most Selected FeedStuff</button>
+                            <button type="button" class="btn btn-secondary">A-Z</button>
+                            <button type="button" class="btn btn-secondary">A</button>
+                            <button type="button" class="btn btn-secondary">B</button>
+                            <button type="button" class="btn btn-secondary">C</button>
+                            <button type="button" class="btn btn-secondary">D</button>
+                            <button type="button" class="btn btn-secondary">E - G</button>
+                            <button type="button" class="btn btn-secondary">H - L</button>
+                            <button type="button" class="btn btn-secondary">M - O</button>
+                            <button type="button" class="btn btn-secondary">P - R</button>
+                            <button type="button" class="btn btn-secondary">S</button>
+                            <button type="button" class="btn btn-secondary">T - Z</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="feedstuff">
+
+                        <!-- <div class="col-sm-6 col-lg-6 col-md-6">
+                          <ul class="nav nav-second-level scrollbox-main">
+
+                            <li><a href> Alfalfa cubes</a></li>
+                            <li><a href><span class=""></span>Alfalfa dehydrated 17% CP</a></li>
+                            <li><a href><span class=""></span> Alfalfa fresh</a></li>
+                            <li><a href><span class=""></span> Alfalfa hay early bloom</a></li>
+                            <li><a href><span class=""></span> Alfalfa hay midbloom</a></li>
+                            <li><a href><span class=""></span> Alfalfa hay full bloom</a></li>
+                            <li><a href><span class=""></span> Alfalfa hay mature</a></li>
+                            <li><a href><span class=""></span> Alfalfa seed screenings</a></li>
+                            <li><a href><span class=""></span> Alfalfa silage</a></li>
+                            <li><a href><span class=""></span> Alfalfa silage wilted</a></li>
+                            <li><a href><span class=""></span> Alfalfa leaf meal</a></li>
+                            <li><a href><span class=""></span> Alfalfa stems</a></li>
+                            <li><a href><span class=""></span> Almond hulls</a></li>
+                            <li><a href><span class=""></span> Ammonium chloride</a></li>
+                            <li><a href><span class=""></span> Ammonium sulfate</a></li>
+                            <li><a href><span class=""></span> Apples</a></li>
+                            <li><a href><span class=""></span> Apple pomace wet</a></li>
+                          </ul>
+
+
+                        </div> -->
+                        <div id="container">
+    <x-multiselect placeholder="Select Value">
+      <li value="1" selected>Alfalfa dehydrated</li>
+      <li value="2">Alfalfa fresh</li>
+      <li value="3">Alfalfa hay early bloom</li>
+      <li value="4">Alfalfa hay midbloom</li>
+      <li value="5" selected>Alfalfa hay full bloom</li>
+      <li value="6">Alfalfa hay mature</li>
+      <li value="7">Alfalfa seed screenings</li>
+      <li value="8" selected>Alfalfa silage</li>
+      <li value="9">Alfalfa silage wilted</li>
+      <li value="10">Alfalfa leaf meal</li>
+      <li value="11" selected>Alfalfa stems</li>
+    </x-multiselect>
+  </div>
+    </body>
