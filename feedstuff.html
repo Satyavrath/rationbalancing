@@ -100,29 +100,57 @@
 
 
                         </div> -->
-              <div id="container">
-                <x-multiselect placeholder="Select Value">
-                  <li value="1" selected>Alfalfa dehydrated</li>
-                  <li value="2">Alfalfa fresh</li>
+                        </br>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+<x-multiselect>
+
+<li value="">Alfalfa dehydrated</li>
+                  <li value="">Alfalfa fresh</li>
                   <li value="3">Alfalfa hay early bloom</li>
                   <li value="4">Alfalfa hay midbloom</li>
-                  <li value="5" selected>Alfalfa hay full bloom</li>
+                  <li value="5" >Alfalfa hay full bloom</li>
                   <li value="6">Alfalfa hay mature</li>
                   <li value="7">Alfalfa seed screenings</li>
-                  <li value="8" selected>Alfalfa silage</li>
+                  <li value="8" >Alfalfa silage</li>
                   <li value="9">Alfalfa silage wilted</li>
                   <li value="10">Alfalfa leaf meal</li>
-                  <li value="11" selected>Alfalfa stems</li>
-                </x-multiselect>
-              </div>
+                  <li value="12">Almond hulls</li>
+                  <li value="13">Apples</li>
+                  <li value="14">Ammonium chloride</li>
+                  <li value="15">Apple pomace wet</li>
+</x-multiselect>
+</ul>
+ </div>
+                    </div>
+                    <div class="next-button">
+                      <button type="button" class="btn btn-secondary">Next</button>
+                    </div>
+                </div>
             </div>
-            <!-- Next button to navigate to next page -->
-            <div class="next-button">
-              <button type="button" class="btn btn-secondary">Next</button>
-            </div>
-          </div>
         </div>
-      </div>
+        <script>
+            function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+                  
+
+            
       <script src='https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.22/webcomponents.js'></script>
       <script type="text/javascript">
         var multiselect = document.querySelector('x-multiselect');
