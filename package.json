@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Satyavrath/rationbalancing#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "slim-select": "^1.22.0"
   }
 }
