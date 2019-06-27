@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>FeedStuff || Ration Balance</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="import" href="https://rawgit.com/sitepoint-editors/multiselect-web-component/master/src/multiselect.html">
+    <title>FeedStuff || Ration Balance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="import" href="https://rawgit.com/sitepoint-editors/multiselect-web-component/master/src/multiselect.html">
+    <style>
+      .multiselect {
+        width: 20em;
+        height: 300px !important;
+      }
+    </style>
 </head>
 
 <body>
+
   <div class="container-fluid">
     <div class="header">
       <div class="logo top-left">
@@ -76,7 +75,7 @@
             </div>
             <div class="feedstuff">
 
-              <!-- <div class="col-sm-6 col-lg-6 col-md-6">
+                        <!-- <div class="col-sm-6 col-lg-6 col-md-6">
                           <ul class="nav nav-second-level scrollbox-main">
 
                             <li><a href> Alfalfa cubes</a></li>
@@ -97,30 +96,43 @@
                             <li><a href><span class=""></span> Apples</a></li>
                             <li><a href><span class=""></span> Apple pomace wet</a></li>
                           </ul>
+
+
                         </div> -->
-                        </br>
+                        <!-- <div id="container">
+    <x-multiselect placeholder="Select Value">
+      <li value="1" selected>Argentina</li>
+      <li value="2">Australia</li>
+      <li value="3">Brazil</li>
+      <li value="4">Canada</li>
+      <li value="5" selected>China</li>
+      <li value="6">France</li>
+      <li value="7">Germany</li>
+      <li value="8" selected>India</li>
+      <li value="9">Mexico</li>
+      <li value="10">Russia</li>
+      <li value="11" selected>United States</li>
+    </x-multiselect>
+  </div> -->
+</br>
   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
 <ul id="myUL">
 <x-multiselect>
+<li><a href="#">Alfalfa dehydrated 17% CP</a></li>
+<li><a href="#">Alfalfa fresh</a></li>
 
-<li value="">Alfalfa dehydrated</li>
-                  <li value="">Alfalfa fresh</li>
-                  <li value="3">Alfalfa hay early bloom</li>
-                  <li value="4">Alfalfa hay midbloom</li>
-                  <li value="5" >Alfalfa hay full bloom</li>
-                  <li value="6">Alfalfa hay mature</li>
-                  <li value="7">Alfalfa seed screenings</li>
-                  <li value="8" >Alfalfa silage</li>
-                  <li value="9">Alfalfa silage wilted</li>
-                  <li value="10">Alfalfa leaf meal</li>
-                  <li value="12">Almond hulls</li>
-                  <li value="13">Apples</li>
-                  <li value="14">Ammonium chloride</li>
-                  <li value="15">Apple pomace wet</li>
+<li><a href="#">Alfalfa hay early bloom</a></li>
+<li><a href="#">Alfalfa hay midbloom</a></li>
+
+<li><a href="#">Calvin</a></li>
+<li><a href="#">Christina</a></li>
+<li><a href="#">Cindy</a></li>
 </x-multiselect>
 </ul>
- </div>
+
+
+                      </div>
                     </div>
                     <div class="next-button">
                       <button type="button" class="btn btn-secondary">Next</button>
@@ -129,7 +141,7 @@
             </div>
         </div>
         <script>
-            function myFunction() {
+function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
@@ -146,17 +158,14 @@
     }
 }
 </script>
-                  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.22/webcomponents.js'></script>
+  <script type="text/javascript">
+    var multiselect = document.querySelector('x-multiselect');
+  multiselect.addEventListener('change', function() {
+    console.log('Selected items:', this.selectedItems());
+  });
+  </script>
 
-            
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.22/webcomponents.js'></script>
-      <script type="text/javascript">
-        var multiselect = document.querySelector('x-multiselect');
-        multiselect.addEventListener('change', function () {
-          console.log('Selected items:', this.selectedItems());
-        });
-      </script>
-    </div>
 </body>
 
 </html>
