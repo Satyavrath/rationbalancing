@@ -1,0 +1,113 @@
+body{
+    background: rgb(182, 248, 146) !important;
+  }
+  .header {
+    position: relative;
+    height: 55px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  .main-content{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px !important;
+    margin-top: 10px;
+  }
+  .logo {
+    width: 150px;
+    height: 50px;
+    padding-left: 15px;
+  }
+  .heading {
+    position: absolute;
+    top: 7px;
+    left: 45%;
+  }
+  .top-left {
+      position: absolute;
+      top: 3.7px;
+      left: 0px;
+  }
+  .menu-text {
+      font-size: 20px;
+      font-weight: 600;
+  }
+  .main-content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .cattle-weights .weight-gain{
+    padding-left: 10px;
+  }
+  .quantities {
+    min-width: 800px;
+  }
+  .weights {
+    min-width: 800px;
+  }
+  .main-part {
+      min-width: 800px;
+  }
+  .next-button {
+    margin-left: 80%;
+  }
+  
+  .main-content {
+    border: 5px solid white;
+    background-color: #fff;
+    border-radius: 12px;
+  }
+  
+  #nutrition-table {
+    padding-top: 20px;
+  }
+  #menu-buttons.active {
+    background: rgb(190, 187, 187)!important;
+  }
+  #menu-buttons.active .menu-text {
+  color:white !important;
+  cursor: pointer;
+  }
+  #menu-buttons  .menu-text {
+  font-size: 20px;
+  font-weight: 600;
+  color:black;
+  cursor: pointer;
+  }
+  #menu-buttons {
+    margin-top: 20px;
+    border-radius: 15px;
+    background: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    position: relative;
+  }
+  .side-bar a {
+    text-decoration: none;
+  }
+  #thead{
+    text-decoration-color: white;
+  }
+  #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(190, 187, 187);
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(182, 248, 146);
+    color:black;
+  }
