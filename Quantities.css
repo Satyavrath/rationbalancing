@@ -22,18 +22,28 @@ body{
     padding-left: 15px;
   }
   .heading {
-    top: 9px;
+    position: absolute;
+    top: 7px;
     left: 45%;
-    text-align: center;
   }
   .top-left {
       position: absolute;
-      top: 2px;
+      top: 3.7px;
       left: 0px;
+  }
+  .menu-text {
+      font-size: 20px;
+      font-weight: 600;
   }
   .main-content {
     padding-top: 15px;
     padding-bottom: 15px;
+  }
+  .cattle-weights .weight-gain{
+    padding-left: 10px;
+  }
+  .quantities {
+    min-width: 800px;
   }
   .weights {
     min-width: 800px;
@@ -41,10 +51,18 @@ body{
   .main-part {
       min-width: 800px;
   }
+  .next-button {
+    margin-left: 80%;
+  }
+  
   .main-content {
     border: 5px solid white;
     background-color: #fff;
     border-radius: 12px;
+  }
+  
+  #nutrition-table {
+    padding-top: 20px;
   }
   #menu-buttons.active {
     background: rgb(190, 187, 187)!important;
@@ -71,6 +89,9 @@ body{
   .side-bar a {
     text-decoration: none;
   }
+  #thead{
+    text-decoration-color: white;
+  }
   #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -89,4 +110,36 @@ body{
     text-align: left;
     background-color: rgb(182, 248, 146);
     color:black;
+  }
+  
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  
+  #myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+  }
+  
+  #myUL li a:hover:not(.header) {
+    background-color: #eee;
   }
