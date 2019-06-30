@@ -1,7 +1,7 @@
 [
     {
         "_id"         : 1,
-        "cattleWeight": 450,
+        "cattleWeight": 440,
         "gainPerDay"  :[{"gain":1.0,"nutrients":[{"NEg":1.27},{"Mp":154},{"Ca":14},{"p":6}]},
                          {"gain":2.0,"nutrients":[{"NEg":2.72},{"Mp":299},{"Ca":27},{"p":11}]},
                          {"gain":3.0,"nutrients":[{"NEg":4.24},{"Mp":441},{"Ca":39},{"p":16}]},
