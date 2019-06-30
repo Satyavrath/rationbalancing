@@ -23,4 +23,4 @@ const cattleWeightSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('cattleWeight',cattleWeightSchema);
+module.exports = mongoose.model('cattleWeight',cattleWeightSchema); 
