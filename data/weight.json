@@ -1,0 +1,62 @@
+[
+    {
+        "_id"         : 1,
+        "cattleWeight": 450,
+        "gainPerDay"  :[{"gain":1.0,"nutrients":[{"NEg":1.27},{"Mp":154},{"Ca":14},{"p":6}]},
+                         {"gain":2.0,"nutrients":[{"NEg":2.72},{"Mp":299},{"Ca":27},{"p":11}]},
+                         {"gain":3.0,"nutrients":[{"NEg":4.24},{"Mp":441},{"Ca":39},{"p":16}]},
+                         {"gain":4.0,"nutrients":[{"NEg":5.81},{"Mp":580},{"Ca":52},{"p":21}]},
+                         {"gain":5.0,"nutrients":[{"NEg":7.42},{"Mp":718},{"Ca":64},{"p":26}]}
+                        ]
+    },
+    {
+        "_id"         : 2,
+        "cattleWeight": 550,
+        "gainPerDay"  :[{"gain":1.0,"nutrients":[{"NEg":1.50},{"Mp":155},{"Ca":13},{"p":5}]},
+                         {"gain":2.0,"nutrients":[{"NEg":3.21},{"Mp":300},{"Ca":25},{"p":10}]},
+                         {"gain":3.0,"nutrients":[{"NEg":5.01},{"Mp":440},{"Ca":37},{"p":15}]},
+                         {"gain":4.0,"nutrients":[{"NEg":6.87},{"Mp":577},{"Ca":46},{"p":19}]},
+                         {"gain":5.0,"nutrients":[{"NEg":8.78},{"Mp":721},{"Ca":59},{"p":24}]}
+                        ]
+    },
+    {
+        "_id"         : 3,
+        "cattleWeight": 660,
+        "gainPerDay"  :[{"gain":1.0,"nutrients":[{"NEg":1.72},{"Mp":158},{"Ca":12},{"p":5}]},
+                         {"gain":2.0,"nutrients":[{"NEg":3.68},{"Mp":303},{"Ca":23},{"p":9}]},
+                         {"gain":3.0,"nutrients":[{"NEg":5.74},{"Mp":442},{"Ca":33},{"p":13}]},
+                         {"gain":4.0,"nutrients":[{"NEg":7.88},{"Mp":577},{"Ca":43},{"p":18}]},
+                         {"gain":5.0,"nutrients":[{"NEg":10.06},{"Mp":710},{"Ca":53},{"p":22}]}
+                        ]
+    },
+    {
+        "_id"         : 4,
+        "cattleWeight": 770,
+        "gainPerDay"  :[{"gain":1.0,"nutrients":[{"NEg":1.93},{"Mp":157},{"Ca":11},{"p":4}]},
+                         {"gain":2.0,"nutrients":[{"NEg":4.13},{"Mp":298},{"Ca":21},{"p":8}]},
+                         {"gain":3.0,"nutrients":[{"NEg":6.45},{"Mp":432},{"Ca":30},{"p":12}]},
+                         {"gain":4.0,"nutrients":[{"NEg":8.84},{"Mp":561},{"Ca":39},{"p":16}]},
+                         {"gain":5.0,"nutrients":[{"NEg":11.29},{"Mp":687},{"Ca":48},{"p":19}]}
+                        ]
+    },
+    {
+        "_id"         : 5,
+        "cattleWeight": 880,
+        "gainPerDay"  :[{"gain":1.0,"nutrients":[{"NEg":2.14},{"Mp":145},{"Ca":10},{"p":4}]},
+                         {"gain":2.0,"nutrients":[{"NEg":4.57},{"Mp":272},{"Ca":19},{"p":8}]},
+                         {"gain":3.0,"nutrients":[{"NEg":7.13},{"Mp":391},{"Ca":27},{"p":11}]},
+                         {"gain":4.0,"nutrients":[{"NEg":9.77},{"Mp":505},{"Ca":35},{"p":14}]},
+                         {"gain":5.0,"nutrients":[{"NEg":12.48},{"Mp":616},{"Ca":43},{"p":17}]}
+                        ]
+    },
+    {
+        "_id"         : 6,
+        "cattleWeight": 990,
+        "gainPerDay"  :[{"gain":1.0,"nutrients":[{"NEg":2.33},{"Mp":133},{"Ca":9},{"p":4}]},
+                         {"gain":2.0,"nutrients":[{"NEg":4.99},{"Mp":246},{"Ca":17},{"p":7}]},
+                         {"gain":3.0,"nutrients":[{"NEg":7.99},{"Mp":352},{"Ca":25},{"p":10}]},
+                         {"gain":4.0,"nutrients":[{"NEg":10.68},{"Mp":451},{"Ca":32},{"p":13}]},
+                         {"gain":5.0,"nutrients":[{"NEg":13.64},{"Mp":547},{"Ca":38},{"p":15}]}
+                        ]
+    }
+]
