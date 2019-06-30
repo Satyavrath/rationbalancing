@@ -21,6 +21,6 @@ const cattleWeightSchema = new mongoose.Schema({
     cattleWeight: Number,
     gainPerDay:[weightGain]
 
-})
+});
 
 module.exports = mongoose.model('cattleWeight',cattleWeightSchema);
