@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>FeedStuff || Ration Balance</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../stylesheets/FeedStuffs.css">
+  <link rel="import" href="https://rawgit.com/sitepoint-editors/multiselect-web-component/master/src/multiselect.html">
+  <style>
+    .multiselect {
+      width: 20em;
+      height: 300px !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="header">
+      <div class="logo top-left">
+        <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+      </div>
+      <div class="heading">
+        <h2>FeedStuff</h2>
+      </div>
+    </div>
+    <div class="main-body">
+      <div class="row">
+        <!-- Side bar column for navigation -->
+        <div class="side-bar">
+          <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
+            <a href="/cattleweight">
+              <div id="menu-buttons">
+                <p class="menu-text text-center">Cattle Weight</p>
+              </div>
+            </a>
+            <a href="/feedstuff">
+              <div id="menu-buttons" class="active">
+                <p class="menu-text text-center">FeedStuffs</p>
+              </div>
+            </a>
+            <a href="/quantities">
+              <div id="menu-buttons">
+                <p class="menu-text text-center">Quantities</p>
+              </div>
+            </a>
+            <a href="/rationweights">
+              <div id="menu-buttons">
+                <p class="menu-text text-center">Ration Weight</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Navigation bar to select ingredients in alphabetical order -->
+        <div class="main-content">
+          <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+            <div class="feed-categories">
+              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" class="btn btn-secondary">Most Selected FeedStuff</button>
+                  <button type="button" class="btn btn-secondary">A-Z</button>
+                  <button type="button" class="btn btn-secondary">A</button>
+                  <button type="button" class="btn btn-secondary">B</button>
+                  <button type="button" class="btn btn-secondary">C</button>
+                  <button type="button" class="btn btn-secondary">D</button>
+                  <button type="button" class="btn btn-secondary">E - G</button>
+                  <button type="button" class="btn btn-secondary">H - L</button>
+                  <button type="button" class="btn btn-secondary">M - O</button>
+                  <button type="button" class="btn btn-secondary">P - R</button>
+                  <button type="button" class="btn btn-secondary">S</button>
+                  <button type="button" class="btn btn-secondary">T - Z</button>
+                </div>
+              </div>
+            </div>
+            <div class="feedstuff">
+
+              <!-- <div class="col-sm-6 col-lg-6 col-md-6">
+                          <ul class="nav nav-second-level scrollbox-main">
+
+                            <li><a href> Alfalfa cubes</a></li>
+                            <li><a href><span class=""></span>Alfalfa dehydrated 17% CP</a></li>
+                            <li><a href><span class=""></span> Alfalfa fresh</a></li>
+                            <li><a href><span class=""></span> Alfalfa hay early bloom</a></li>
+                            <li><a href><span class=""></span> Alfalfa hay midbloom</a></li>
+                            <li><a href><span class=""></span> Alfalfa hay full bloom</a></li>
+                            <li><a href><span class=""></span> Alfalfa hay mature</a></li>
+                            <li><a href><span class=""></span> Alfalfa seed screenings</a></li>
+                            <li><a href><span class=""></span> Alfalfa silage</a></li>
+                            <li><a href><span class=""></span> Alfalfa silage wilted</a></li>
+                            <li><a href><span class=""></span> Alfalfa leaf meal</a></li>
+                            <li><a href><span class=""></span> Alfalfa stems</a></li>
+                            <li><a href><span class=""></span> Almond hulls</a></li>
+                            <li><a href><span class=""></span> Ammonium chloride</a></li>
+                            <li><a href><span class=""></span> Ammonium sulfate</a></li>
+                            <li><a href><span class=""></span> Apples</a></li>
+                            <li><a href><span class=""></span> Apple pomace wet</a></li>
+                          </ul>
+
+
+                        </div> -->
+              <!-- <div id="container">
+    <x-multiselect placeholder="Select Value">
+      <li value="1" selected>Argentina</li>
+      <li value="2">Australia</li>
+      <li value="3">Brazil</li>
+      <li value="4">Canada</li>
+      <li value="5" selected>China</li>
+      <li value="6">France</li>
+      <li value="7">Germany</li>
+      <li value="8" selected>India</li>
+      <li value="9">Mexico</li>
+      <li value="10">Russia</li>
+      <li value="11" selected>United States</li>
+    </x-multiselect>
+  </div> -->
+              </br>
+              <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+                title="Type in a name">
+
+              <ul id="myUL">
+                <x-multiselect>
+                  <li><a href="#">Alfalfa dehydrated 17% CP</a></li>
+                  <li><a href="#">Alfalfa fresh</a></li>
+                  <li><a href="#">Alfalfa hay early bloom</a></li>
+                  <li><a href="#">Alfalfa hay midbloom</a></li>
+                  <li><a href="#">Alfalfa hulls</a></li>
+
+                  <li><a href="#">Beans navy cull</a></li>
+                  <li><a href="#">Beet pulp wet</a></li>
+                  <li><a href="#">Beet pulp dried</a></li>
+
+                  <li><a href="#">Calcium carbonate</a></li>
+                  <li><a href="#">Canarygrass hay</a></li>
+                  <li><a href="#">Carrot root fresh</a></li>
+
+                  <li><a href="#">Distillers dried solubles</a></li>
+                  <li><a href="#">Distillers grain, sorghum with solubles</a></li>
+                  <li><a href="#">Distillers grain, sorghum,wet</a></li>
+
+
+                  <li><a href="#">Ground Corn</a></li>
+                  <li><a href="#">Grass silage</a></li>
+                  <li><a href="#">Ground Corn</a></li>
+
+
+                  <li><a href="#">Soybean</a></li>
+                  <li><a href="#">Spelt grain</a></li>
+                  <li><a href="#">Sudangrass silage</a></li>
+
+                  <li><a href="#">Wet Feed</a></li>
+                  <li><a href="#">Wheat straw</a></li>
+                  <li><a href="#">Wheat mill run</a></li>
+
+                  <li><a href="#">Wet Feed</a></li>
+                  <li><a href="#">Wheat straw</a></li>
+                  <li><a href="#">Wheat mill run</a></li>
+
+                  <li><a href="#">Kelp dried</a></li>
+                  <li><a href="#">Kenaf hay</a></li>
+                  <li><a href="#">Kochia fresh</a></li>
+
+
+
+                  <li><a href="#">Mint slug silage</a></li>
+                  <li><a href="#">Molasses beet</a></li>
+                  <li><a href="#">Molasses citrus</a></li>
+
+                  <li><a href="#">Oat hay</a></li>
+                  <li><a href="#">Oat silage</a></li>
+                  <li><a href="#">Oat straw</a></li>
+
+                  <li><a href="#">Pea vine hay</a></li>
+                  <li><a href="#">Peas cull</a></li>
+                  <li><a href="#">Peanut skins</a></li>
+
+
+
+
+                </x-multiselect>
+              </ul>
+
+
+            </div>
+          </div>
+          <!-- Next button for navigating to quantities page -->
+          <div class="next-button">
+            <a href="/quantities"><button quantities.html type="button" class="btn btn-secondary">Next</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.22/webcomponents.js'></script>
+    <script type="text/javascript">
+      var multiselect = document.querySelector('x-multiselect');
+      multiselect.addEventListener('change', function () {
+        console.log('Selected items:', this.selectedItems());
+      });
+    </script>
+
+</body>
+
+</html>

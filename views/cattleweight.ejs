@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cattle Weights || Ration Balance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../stylesheets/style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="header">
+            <div class="logo top-left">
+                <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+            </div>
+            <div class="heading">
+                <h2>Cattle Weight</h2>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="row">
+              <!-- side bar menu for navigation -->
+              <div class="side-bar">
+                <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
+                    <a href="/cattleweight">
+                    <div id="menu-buttons" class="active" >
+                        <p class="menu-text text-center">Cattle Weight</p>
+                    </div></a>
+                    <a href="/feedstuff">
+                    <div id="menu-buttons">
+                        <p class="menu-text text-center">FeedStuffs</p>
+                    </div></a>
+                    <a href="/quantities">
+                    <div id="menu-buttons">
+                        <p class="menu-text text-center">Quantities</p>
+                    </div></a>
+                    <a href="/rationweights">
+                    <div id="menu-buttons">
+                        <p class="menu-text text-center">Ration Weight</p>
+                    </div></a>
+                </div>
+              </div>
+                <div class="main-content">
+                    <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+                      <!-- cattle weight selections -->
+                      <div class="cattle-weights">
+                        <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
+                          <button type="button" class="btn btn-secondary">450 Pounds</button>
+                          <button type="button" class="btn btn-secondary">550 Pounds</button>
+                          <button type="button" class="btn btn-secondary">650 Pounds</button>
+                          <button type="button" class="btn btn-secondary">750 Pounds</button>
+                          <button type="button" class="btn btn-secondary">950 Pounds</button>
+                          <!-- cattle weight gain selection per day -->
+                          <div class="dropdown weight-gain">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Cattle Weight Gain
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#">2 Pounds</a>
+                              <a class="dropdown-item" href="#">3 Pounds</a>
+                              <a class="dropdown-item" href="#">5 Pounds</a>
+                              <a class="dropdown-item" href="#">8 Pounds</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="nutrition-table">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col"><u>Nutrition</u></th>
+                              <th scope="col"><u>Min</u></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">%CP</th>
+                              <td>14.5</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">NE M</th>
+                              <td>0.8</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">NE G</th>
+                              <td>0.5</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">%CA</th>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">%P</th>
+                              <td>0</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">%EE</th>
+                              <td>0</td>
+                            
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="next-button">
+                      <a href="/feedstuff"><button feedstuff.html type="button" class="btn btn-secondary">Next</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</body>
+
+</html>
