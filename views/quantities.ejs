@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Ration Weights || Ration Balance</title>
+  <title>Quantities</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -30,7 +30,7 @@
         <h2>Quantities</h2>
       </div>
     </div>
-      <!-- This main body which contains the side-bar and main content -->
+    <!-- This main body which contains the side-bar and main content -->
     <div class="main-body">
       <div class="row">
         <!-- This side bar is used for menu navigation -->
@@ -65,7 +65,7 @@
               <!-- This is the total nutrients table which conatins nutrients and buttons to change the nutrients -->
               <div class="total-nutrients">
                 <h2>Total Nutrients</h2>
-                <table class="table">
+                <table id="customers">
                   <thead>
                     <tr>
                       <th scope="col">%CP</th>
@@ -79,11 +79,9 @@
                   <tbody>
                     <tr>
                       <td>
-
                         <button onclick="subtraction" id="minus">-</button>
                         <span id="number">12.55</span>
                         <button onclick="additon(number)" id="plus">+</button>
-
                       </td>
                       <td>
                         <button onclick="subtraction" id="minus">-</button>
@@ -94,7 +92,6 @@
                         <button onclick="subtraction" id="minus">-</button>
                         <span id="number-3">12.55</span>
                         <button onclick="additon(number)" id="plus">+</button>
-
                       </td>
                       <td>
                         <button onclick="subtraction" id="minus">-</button>
@@ -111,53 +108,48 @@
                         <span id="number-6">12.55</span>
                         <button onclick="additon(number)" id="plus">+</button>
                       </td>
-
                     </tr>
-
                   </tbody>
                 </table>
               </div>
+              <br>
               <!-- This is the feedstuff Quantity -->
               <div class="feedstuff-Quantity">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col"><u>FeedStuffs</u></th>
-                      <th scope="col"><u>Quantity</u></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Alfalfa Fresh</th>
-                      <td>11.72</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Alfalfa Hulls</th>
-                      <td>5.06</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Ground Corn</th>
-                      <td>12.03</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Soybean</th>
-                      <td>10.00</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Wet Feed</th>
-                      <td>17.03</td>
-                    </tr>
-                  </tbody>
+                <table id="customers">
+                  <tr>
+                    <th>FeedStuffs</th>
+                    <th>Quantity</th>
+                  </tr>
+                  <tr>
+                    <td>Alfalfa Fresh</td>
+                    <td>11.72</td>
+                  </tr>
+                  <tr>
+                    <td>Alfalfa Hulls</td>
+                    <td>5.06</td>
+                  </tr>
+                  <tr>
+                    <td>Ground Corn</td>
+                    <td>12.03</td>
+                  </tr>
+                  <tr>
+                    <td>Soybean</td>
+                    <td>10.00</td>
+                  </tr>
+                  <tr>
+                    <td>Wet Feed</td>
+                    <td>17.03</td>
+                  </tr>
                 </table>
               </div>
             </div>
           </div>
           <!-- next button for navigating to rationweight page -->
+          <br>
           <div class="next-button">
             <a href="/rationweights"><button feedstuff.html type="button" class="btn btn-secondary">Next</button></a>
           </div>
         </div>
-
       </div>
     </div>
     <script>
