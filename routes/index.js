@@ -22,5 +22,11 @@ router.get('/rationweights', function(req, res, next) {
   res.render("rationweights.ejs");
 });
 
+
+
+// router.use("/cattleweight", require("../controllers/cattleweight.js"));
+router.use("/feedstuff", require("../controllers/feedstuff.js"));
+
+
 // exports router componets outside the folder for access
 module.exports = router;
