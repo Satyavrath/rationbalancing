@@ -58,11 +58,13 @@
             <!-- cattle weight selections -->
             <div class="cattle-weights">
               <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
-                <button type="button" class="btn btn-secondary">450 Pounds</button>
-                <button type="button" class="btn btn-secondary">550 Pounds</button>
-                <button type="button" class="btn btn-secondary">650 Pounds</button>
-                <button type="button" class="btn btn-secondary">750 Pounds</button>
-                <button type="button" class="btn btn-secondary">950 Pounds</button>
+                <!-- <span class="badge badge-light">Light</span> -->
+                <h4 class="weights-label">Weights:</h4>
+                <button type="button" class="btn btn-secondary">450 </button>
+                <button type="button" class="btn btn-secondary">550 </button>
+                <button type="button" class="btn btn-secondary">650 </button>
+                <button type="button" class="btn btn-secondary">750 </button>
+                <button type="button" class="btn btn-secondary">950 </button>
                 <!-- cattle weight gain selection per day -->
                 <div class="dropdown weight-gain">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -76,25 +78,7 @@
                     <a class="dropdown-item" id="4" href="#">4.4 Pounds</a>
                     <a class="dropdown-item" id="5" href="#">5.5 Pounds</a>
                   </div>
-                  <script type="text/javascript">
-                    $(function () {
-                      $("#1").click(function () {
-                        $("#opt").text($(this).text());
-                      });
-                      $("#2").click(function () {
-                        $("#opt").text($(this).text());
-                      });
-                      $("#3").click(function () {
-                        $("#opt").text($(this).text());
-                      });
-                      $("#4").click(function () {
-                        $("#opt").text($(this).text());
-                      });
-                      $("#5").click(function () {
-                        $("#opt").text($(this).text());
-                      });
-                    });
-                  </script>
+
                 </div>
               </div>
             </div>
@@ -105,32 +89,34 @@
                     <tr>
                       <th scope="col"><u>Nutrition</u></th>
                       <th scope="col"><u>Min</u></th>
+                      <th scope="col"><u>Max</u></th>
                     </tr>
                     <tr>
                       <td scope="row">%CP</td>
                       <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                      <td><input type="text" class="form-control text-field-button" id="usr" value="17"></td>
                     </tr>
                     <tr>
                       <td scope="row">NE M</td>
                       <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
+                      <td><input type="text" class="form-control text-field-button" id="usr" value="1.1"></td>
                     </tr>
                     <tr>
                       <td scope="row">NE G</td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="11.5"></td>
+                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.5"></td>
+                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
                     </tr>
                     <tr>
                       <td scope="row">%CA</td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.9"></td>
+                      <td><input type="text" class="form-control text-field-button" id="usr" value="0"></td>
+                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
                     </tr>
                     <tr>
                       <td scope="row">%P</td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="12.5"></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">%EE</td>
+                      <td><input type="text" class="form-control text-field-button" id="usr" value="0"></td>
                       <td><input type="text" class="form-control text-field-button" id="usr" value="0.5"></td>
                     </tr>
-                
+
                 </table>
               </div>
             </div>
@@ -148,7 +134,25 @@
     </div>
   </div>
 </body>
-
+<script type="text/javascript">
+  $(function () {
+    $("#1").click(function () {
+      $("#opt").text($(this).text());
+    });
+    $("#2").click(function () {
+      $("#opt").text($(this).text());
+    });
+    $("#3").click(function () {
+      $("#opt").text($(this).text());
+    });
+    $("#4").click(function () {
+      $("#opt").text($(this).text());
+    });
+    $("#5").click(function () {
+      $("#opt").text($(this).text());
+    });
+  });
+</script>
 <script type="text/javascript">
   $(".poundBtn").click(function () {
     $(".poundBtn").removeClass("active")
