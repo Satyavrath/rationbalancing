@@ -60,6 +60,10 @@ body{
     background-color: #fff;
     border-radius: 12px;
   }
+  .search-ingredients{
+    border-radius: 15px;
+    background-color:  rgba(191, 252, 159, 0.589);
+  }
 
   #nutrition-table {
     padding-top: 20px;
@@ -118,7 +122,7 @@ body{
     background-repeat: no-repeat;
     width: 100%;
     font-size: 16px;
-    padding: 12px 20px 12px 40px;
+    padding: 8px 20px 8px 40px;
     border: 1px solid #ddd;
     margin-bottom: 12px;
   }
