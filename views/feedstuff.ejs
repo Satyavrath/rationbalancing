@@ -18,15 +18,7 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../../stylesheets/FeedStuffs.css">
   <link rel="import" href="https://rawgit.com/sitepoint-editors/multiselect-web-component/master/src/multiselect.html">
-  <style>
-    .multiselect {
-      width: 20em;
-      height: 300px !important;
-    }
-    /* .search-ingredients {
-      width: 100px;
-    } */
-  </style>
+
 </head>
 
 <body>
@@ -40,10 +32,10 @@
         <h2>FeedStuff</h2>
       </div>
     </div>
-      <!-- This main body which contains the side-bar and main content -->
+    <!-- This main body which contains the side-bar and main content -->
     <div class="main-body">
       <div class="row">
-      <!-- This side bar is used for menu navigation -->
+        <!-- This side bar is used for menu navigation -->
         <div class="side-bar">
           <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
             <a href="/cattleweight">
@@ -85,105 +77,105 @@
               </div>
             </div>
             <div class="selected-items">
-            <!-- <div class="row">
+              <!-- <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12"> -->
-            <div class="feedstuff">
-              <br>
-              <input class="search-ingredients" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
-                title="Type in a name">
+              <div class="feedstuff">
+                <br>
+                <input class="search-ingredients" type="text" id="myInput" onkeyup="myFunction()"
+                placeholder="Search for names.." title="Type in a name">
 
-              <ul id="myUL">
-                <x-multiselect>
-                  <li><a href="#">Alfalfa dehydrated 17% CP</a></li>
-                  <li><a href="#">Alfalfa fresh</a></li>
-                  <li><a href="#">Alfalfa hay early bloom</a></li>
-                  <li><a href="#">Alfalfa hay midbloom</a></li>
-                  <li><a href="#">Alfalfa hulls</a></li>
+                <ul id="myUL">
+                  <x-multiselect>
+                    <li><a href="#">Alfalfa dehydrated 17% CP</a></li>
+                    <li><a href="#">Alfalfa fresh</a></li>
+                    <li><a href="#">Alfalfa hay early bloom</a></li>
+                    <li><a href="#">Alfalfa hay midbloom</a></li>
+                    <li><a href="#">Alfalfa hulls</a></li>
 
-                  <li><a href="#">Beans navy cull</a></li>
-                  <li><a href="#">Beet pulp wet</a></li>
-                  <li><a href="#">Beet pulp dried</a></li>
+                    <li><a href="#">Beans navy cull</a></li>
+                    <li><a href="#">Beet pulp wet</a></li>
+                    <li><a href="#">Beet pulp dried</a></li>
 
-                  <li><a href="#">Calcium carbonate</a></li>
-                  <li><a href="#">Canarygrass hay</a></li>
-                  <li><a href="#">Carrot root fresh</a></li>
+                    <li><a href="#">Calcium carbonate</a></li>
+                    <li><a href="#">Canarygrass hay</a></li>
+                    <li><a href="#">Carrot root fresh</a></li>
 
-                  <li><a href="#">Distillers dried solubles</a></li>
-                  <li><a href="#">Distillers grain, sorghum with solubles</a></li>
-                  <li><a href="#">Distillers grain, sorghum,wet</a></li>
-
-
-                  <li><a href="#">Ground Corn</a></li>
-                  <li><a href="#">Grass silage</a></li>
-                  <li><a href="#">Ground Corn</a></li>
+                    <li><a href="#">Distillers dried solubles</a></li>
+                    <li><a href="#">Distillers grain, sorghum with solubles</a></li>
+                    <li><a href="#">Distillers grain, sorghum,wet</a></li>
 
 
-                  <li><a href="#">Soybean</a></li>
-                  <li><a href="#">Spelt grain</a></li>
-                  <li><a href="#">Sudangrass silage</a></li>
+                    <li><a href="#">Ground Corn</a></li>
+                    <li><a href="#">Grass silage</a></li>
+                    <li><a href="#">Ground Corn</a></li>
 
-                  <li><a href="#">Wet Feed</a></li>
-                  <li><a href="#">Wheat straw</a></li>
-                  <li><a href="#">Wheat mill run</a></li>
 
-                  <li><a href="#">Wet Feed</a></li>
-                  <li><a href="#">Wheat straw</a></li>
-                  <li><a href="#">Wheat mill run</a></li>
+                    <li><a href="#">Soybean</a></li>
+                    <li><a href="#">Spelt grain</a></li>
+                    <li><a href="#">Sudangrass silage</a></li>
 
-                  <li><a href="#">Kelp dried</a></li>
-                  <li><a href="#">Kenaf hay</a></li>
-                  <li><a href="#">Kochia fresh</a></li>
-                  <li><a href="#">Mint slug silage</a></li>
-                  <li><a href="#">Molasses beet</a></li>
-                  <li><a href="#">Molasses citrus</a></li>
-                  <li><a href="#">Oat hay</a></li>
-                  <li><a href="#">Oat silage</a></li>
-                  <li><a href="#">Oat straw</a></li>
-                  <li><a href="#">Pea vine hay</a></li>
-                  <li><a href="#">Peas cull</a></li>
-                  <li><a href="#">Peanut skins</a></li>
-                </x-multiselect>
-              </ul>
+                    <li><a href="#">Wet Feed</a></li>
+                    <li><a href="#">Wheat straw</a></li>
+                    <li><a href="#">Wheat mill run</a></li>
+
+                    <li><a href="#">Wet Feed</a></li>
+                    <li><a href="#">Wheat straw</a></li>
+                    <li><a href="#">Wheat mill run</a></li>
+
+                    <li><a href="#">Kelp dried</a></li>
+                    <li><a href="#">Kenaf hay</a></li>
+                    <li><a href="#">Kochia fresh</a></li>
+                    <li><a href="#">Mint slug silage</a></li>
+                    <li><a href="#">Molasses beet</a></li>
+                    <li><a href="#">Molasses citrus</a></li>
+                    <li><a href="#">Oat hay</a></li>
+                    <li><a href="#">Oat silage</a></li>
+                    <li><a href="#">Oat straw</a></li>
+                    <li><a href="#">Pea vine hay</a></li>
+                    <li><a href="#">Peas cull</a></li>
+                    <li><a href="#">Peanut skins</a></li>
+                  </x-multiselect>
+                </ul>
+              </div>
+
             </div>
-
-        </div>
-      </div>
-      <br>
-      <div class="cost-quantity">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-          <table id="table-style">
-            <tr>
-              <th>Ingredient</th>
-              <th>Total Quantity</th>
-              <th>Cost</th>
-            </tr>
-            <tr>
-              <td>Alfalfa Fresh</td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-            </tr>
-            <tr>
-              <td>Alfalfa Hulls</td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-            </tr>
-            <tr>
-              <td>Ground Corn</td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-            </tr>
-            <tr>
-              <td>Soybean</td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-            </tr>
-            <tr>
-              <td>Wet Feed</td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-            </tr>
-          </table>
-        </div>
+          </div>
+          <br>
+          <div class="cost-quantity">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+              <table id="table-style">
+                <tr>
+                  <th>Ingredient</th>
+                  <th>Total Quantity</th>
+                  <th>Cost</th>
+                </tr>
+                <tr>
+                  <td>Alfalfa Fresh</td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                </tr>
+                <tr>
+                  <td>Alfalfa Hulls</td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                </tr>
+                <tr>
+                  <td>Ground Corn</td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                </tr>
+                <tr>
+                  <td>Soybean</td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                </tr>
+                <tr>
+                  <td>Wet Feed</td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                  <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                </tr>
+              </table>
+            </div>
           </div>
           <br>
           <!-- Next button for navigating to quantities page -->

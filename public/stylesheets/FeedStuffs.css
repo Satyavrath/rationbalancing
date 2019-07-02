@@ -54,7 +54,10 @@ body{
   .next-button {
     margin-left: 80%;
   }
-
+  .multiselect {
+    width: 20em;
+    height: 300px !important;
+  }
   .main-content {
     border: 5px solid white;
     background-color: #fff;
@@ -62,7 +65,12 @@ body{
   }
   .search-ingredients{
     border-radius: 15px;
-    background-color:  rgba(191, 252, 159, 0.589);
+    background-color:  rgb(190, 187, 187);
+  }
+  .btn-secondary{
+    background-color: rgb(190, 187, 187);
+    border-color: white;
+    color:black;
   }
 
   #nutrition-table {
