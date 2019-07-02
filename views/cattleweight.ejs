@@ -84,29 +84,35 @@
                           <tbody>
                             <tr>
                               <th scope="row">%CP</th>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                              <td class="textLabel">14.5</td>
+                              <td class="textInputField" style="display: none"><input type="text" value="14.5"><button class="btn btn-secondary" style="margin-left: 5px;">Done</button></td>
                             </tr>
                             <tr>
                               <th scope="row">NE M</th>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
+                              <td class="textLabel">0.8</td>
+                              <td class="textInputField" style="display: none"><input type="text" value="0.8"><button class="btn btn-secondary" style="margin-left: 5px;">Done</button></td>
 
                             </tr>
                             <tr>
                               <th scope="row">NE G</th>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="11.5"></td>
+                              <td class="textLabel">0.5</td>
+                              <td class="textInputField" style="display: none"><input type="text" value="0.5"><button class="btn btn-secondary" style="margin-left: 5px;">Done</button></td>
 
                             </tr>
                             <tr>
                               <th scope="row">%CA</th>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="0.9"></td>
+                              <td class="textLabel">0</td>
+                              <td class="textInputField" style="display: none"><input type="text" value="0"><button class="btn btn-secondary" style="margin-left: 5px;">Done</button></td>
                             </tr>
                             <tr>
                               <th scope="row">%P</th>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="12.5"></td>
+                              <td class="textLabel">0</td>
+                              <td class="textInputField" style="display: none"><input type="text" value="0"><button class="btn btn-secondary" style="margin-left: 5px;">Done</button></td>
                             </tr>
                             <tr>
                               <th scope="row">%EE</th>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="0.5"></td>
+                              <td class="textLabel">0</td>
+                              <td class="textInputField" style="display: none"><input type="text" value="0"><button class="btn btn-secondary" style="margin-left: 5px;">Done</button></td>
                             </tr>
                           </tbody>
                         </table>
@@ -130,5 +136,21 @@
 
 
 </body>
+<script type="text/javascript">
+  $(".poundBtn").click(function(){
+    $(".poundBtn").removeClass("active")
+    $(this).addClass("active")
+  });
+  $(".textLabel").click(function(){
+    $(this).hide()
+    $(this).parent().find(".textInputField").show()
+  });
+  $(".textInputField .btn").click(function(){
+    $(this).parent().hide()
+    var textvalue = $(this).parent().find("input").val()
+    $(".textLabel").show()
+    $(this).parent().parent().find(".textLabel").html(textvalue)
+  });
+</script>
 
 </html>
