@@ -23,6 +23,9 @@
       width: 20em;
       height: 300px !important;
     }
+    /* .search-ingredients {
+      width: 100px;
+    } */
   </style>
 </head>
 
@@ -86,6 +89,9 @@
                 </div>
               </div>
             </div>
+            <div class="selected-items">
+            <!-- <div class="row">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12"> -->
             <div class="feedstuff">
               <!-- <div class="col-sm-6 col-lg-6 col-md-6">
                           <ul class="nav nav-second-level scrollbox-main">
@@ -124,7 +130,7 @@
     </x-multiselect>
   </div> -->
               </br>
-              <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+              <input class="search-ingredients" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
                 title="Type in a name">
 
               <ul id="myUL">
@@ -168,29 +174,59 @@
                   <li><a href="#">Kelp dried</a></li>
                   <li><a href="#">Kenaf hay</a></li>
                   <li><a href="#">Kochia fresh</a></li>
-
-
-
                   <li><a href="#">Mint slug silage</a></li>
                   <li><a href="#">Molasses beet</a></li>
                   <li><a href="#">Molasses citrus</a></li>
-
                   <li><a href="#">Oat hay</a></li>
                   <li><a href="#">Oat silage</a></li>
                   <li><a href="#">Oat straw</a></li>
-
                   <li><a href="#">Pea vine hay</a></li>
                   <li><a href="#">Peas cull</a></li>
                   <li><a href="#">Peanut skins</a></li>
-
-
-
-
                 </x-multiselect>
               </ul>
-
-
             </div>
+
+        </div>
+      </div>
+      <div class="cost-quantity">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+          <table id="table-style">
+            <tr>
+              <th>Ingredient</th>
+              <th>Total Quantity</th>
+              <th>Cost</th>
+            </tr>
+            <tr>
+              <td>Alfalfa Fresh</td>
+              <td>11.72</td>
+              <td>$ 40</td>
+            </tr>
+            <tr>
+              <td>Alfalfa Hulls</td>
+              <td>5.06</td>
+              <td>$ 10</td>
+            </tr>
+            <tr>
+              <td>Ground Corn</td>
+              <td>12.03</td>
+              <td>$ 80</td>
+            </tr>
+            <tr>
+              <td>Soybean</td>
+              <td>10.00</td>
+              <td>$ 111</td>
+            </tr>
+            <tr>
+              <td>Wet Feed</td>
+              <td>17.03</td>
+              <td>$ 102</td>
+            </tr>
+          </table>
+        </div>
+
+
+      </div>
           </div>
           <!-- Next button for navigating to quantities page -->
           <div class="next-button">

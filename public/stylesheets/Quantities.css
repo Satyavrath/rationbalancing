@@ -54,13 +54,13 @@ body{
   .next-button {
     margin-left: 80%;
   }
-  
+
   .main-content {
     border: 5px solid white;
     background-color: #fff;
     border-radius: 12px;
   }
-  
+
   #nutrition-table {
     padding-top: 20px;
   }
@@ -89,25 +89,23 @@ body{
   .side-bar a {
     text-decoration: none;
   }
- 
-  #customers {
+
+  #table-style {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
     background-color: rgb(190, 187, 187);
   }
-  
-  #customers td, #customers th {
+
+  #table-style td, #table-style th {
     border: 1px solid #ddd;
     padding: 8px;
   }
-  
-  #customers th {
+
+  #table-style th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: rgb(182, 248, 146);
     color:black;
   }
-  
-  
