@@ -1,173 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Cattle Weight</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../../stylesheets/cattleWeight.css">
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="header">
-      <div class="logo top-left">
-        <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
-      </div>
-      <div class="heading">
-        <h2>Cattle Weight</h2>
-      </div>
-    </div>
-    <!-- This main body which contains the side-bar and main content -->
-    <div class="main-body">
-      <div class="row">
-        <!-- This side bar is used for menu navigation -->
-        <div class="side-bar">
-          <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
-            <a href="/cattleweight">
-              <div id="menu-buttons" class="active">
-                <p class="menu-text text-center">Cattle Weight</p>
-              </div>
-            </a>
-            <a href="/feedstuff">
-              <div id="menu-buttons">
-                <p class="menu-text text-center">FeedStuffs</p>
-              </div>
-            </a>
-            <a href="/rationweights">
-              <div id="menu-buttons">
-                <p class="menu-text text-center">Ration Weight</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- In this class which contians the cattle weight selection, cattle weight gain selection and nutrition table -->
-        <div class="main-content">
-          <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
-            <!-- cattle weight selections -->
-            <div class="cattle-weights">
-              <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
-                <!-- <span class="badge badge-light">Light</span> -->
-                <h4 class="weights-label">Weights:</h4>
-                <button type="button" class="btn btn-secondary">450 </button>
-                <button type="button" class="btn btn-secondary">550 </button>
-                <button type="button" class="btn btn-secondary">650 </button>
-                <button type="button" class="btn btn-secondary">750 </button>
-                <button type="button" class="btn btn-secondary">950 </button>
-                <!-- cattle weight gain selection per day -->
-                <div class="dropdown weight-gain">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" id="options"> <span id="opt">Cattle Weight Gain</span> <span
-                      class="caret"></span>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" id="1" href="#">1.1 Pounds</a>
-                    <a class="dropdown-item" id="2" href="#">2.2 Pounds</a>
-                    <a class="dropdown-item" id="3" href="#">3.3 Pounds</a>
-                    <a class="dropdown-item" id="4" href="#">4.4 Pounds</a>
-                    <a class="dropdown-item" id="5" href="#">5.5 Pounds</a>
+   <head>
+      <title>Cattle Weight</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+         crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+         crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+         crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="../../stylesheets/cattleWeight.css">
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="header">
+            <div class="logo top-left">
+               <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+            </div>
+            <div class="heading">
+               <h2>Cattle Weight</h2>
+            </div>
+         </div>
+         <!-- This main body which contains the side-bar and main content -->
+         <div class="main-body">
+            <div class="row">
+               <!-- This side bar is used for menu navigation -->
+               <div class="side-bar">
+                  <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
+                     <a href="/cattleweight">
+                        <div id="menu-buttons" class="active">
+                           <p class="menu-text text-center">Cattle Weight</p>
+                        </div>
+                     </a>
+                     <a href="/feedstuff">
+                        <div id="menu-buttons">
+                           <p class="menu-text text-center">FeedStuffs</p>
+                        </div>
+                     </a>
+                     <a href="/rationweights">
+                        <div id="menu-buttons">
+                           <p class="menu-text text-center">Ration Weight</p>
+                        </div>
+                     </a>
                   </div>
-
-                </div>
-              </div>
+               </div>
+               <!-- In this class which contians the cattle weight selection, cattle weight gain selection and nutrition table -->
+               <div class="main-content">
+                  <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+                     <!-- cattle weight selections -->
+                     <div class="cattle-weights">
+                        <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
+                           <!-- <span class="badge badge-light">Light</span> -->
+                           <h4 class="weights-label">Weights:</h4>
+                           <button type="button" class="btn btn-secondary">450 </button>
+                           <button type="button" class="btn btn-secondary">550 </button>
+                           <button type="button" class="btn btn-secondary">650 </button>
+                           <button type="button" class="btn btn-secondary">750 </button>
+                           <button type="button" class="btn btn-secondary">950 </button>
+                           <!-- cattle weight gain selection per day -->
+                           <div class="dropdown weight-gain">
+                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                 data-toggle="dropdown" id="options"> <span id="opt">Cattle Weight Gain</span> <span
+                                 class="caret"></span>
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                 <a class="dropdown-item" id="1" href="#">1.1 Pounds</a>
+                                 <a class="dropdown-item" id="2" href="#">2.2 Pounds</a>
+                                 <a class="dropdown-item" id="3" href="#">3.3 Pounds</a>
+                                 <a class="dropdown-item" id="4" href="#">4.4 Pounds</a>
+                                 <a class="dropdown-item" id="5" href="#">5.5 Pounds</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P, %EE -->
+                     <div id="nutrition-table">
+                        <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12">
+                           <table id ="table-style">
+                              <tr>
+                                 <th scope="col"><u>Nutrition</u></th>
+                                 <th scope="col"><u>Min</u></th>
+                                 <th scope="col"><u>Max</u></th>
+                              </tr>
+                              <tr>
+                                 <td scope="row">%CP</td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="17"></td>
+                              </tr>
+                              <tr>
+                                 <td scope="row">NE M</td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="1.1"></td>
+                              </tr>
+                              <tr>
+                                 <td scope="row">NE G</td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="0.5"></td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
+                              </tr>
+                              <tr>
+                                 <td scope="row">%CA</td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="0"></td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
+                              </tr>
+                              <tr>
+                                 <td scope="row">%P</td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="0"></td>
+                                 <td><input type="text" class="form-control text-field-button" id="usr" value="0.5"></td>
+                              </tr>
+                           </table>
+                        </div>
+                     </div>
+                     <div class="cost-quantity">
+                        <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
+                        </div>
+                     </div>
+                  </div>
+                  <!-- This is the Next BUttons which navigates to the next page -->
+                  <div class="next-button">
+                     <a href="/feedstuff"><button feedstuff.html type="button" class="btn btn-secondary">Next</button></a>
+                  </div>
+               </div>
             </div>
-            <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P, %EE -->
-            <div id="nutrition-table">
-              <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12">
-                <table id ="table-style">
-                    <tr>
-                      <th scope="col"><u>Nutrition</u></th>
-                      <th scope="col"><u>Min</u></th>
-                      <th scope="col"><u>Max</u></th>
-                    </tr>
-                    <tr>
-                      <td scope="row">%CP</td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="14.5"></td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="17"></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">NE M</td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="1.1"></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">NE G</td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.5"></td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">%CA</td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="0"></td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.8"></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">%P</td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="0"></td>
-                      <td><input type="text" class="form-control text-field-button" id="usr" value="0.5"></td>
-                    </tr>
-
-                </table>
-              </div>
-            </div>
-            <div class="cost-quantity">
-              <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
-              </div>
-            </div>
-          </div>
-          <!-- This is the Next BUttons which navigates to the next page -->
-          <div class="next-button">
-            <a href="/feedstuff"><button feedstuff.html type="button" class="btn btn-secondary">Next</button></a>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-  </div>
-</body>
-<script type="text/javascript">
-  $(function () {
-    $("#1").click(function () {
-      $("#opt").text($(this).text());
-    });
-    $("#2").click(function () {
-      $("#opt").text($(this).text());
-    });
-    $("#3").click(function () {
-      $("#opt").text($(this).text());
-    });
-    $("#4").click(function () {
-      $("#opt").text($(this).text());
-    });
-    $("#5").click(function () {
-      $("#opt").text($(this).text());
-    });
-  });
-</script>
-<script type="text/javascript">
-  $(".poundBtn").click(function () {
-    $(".poundBtn").removeClass("active")
-    $(this).addClass("active")
-  });
-  $(".textLabel").click(function () {
-    $(this).hide()
-    $(this).parent().find(".textInputField").show()
-  });
-  $(".textInputField .btn").click(function () {
-    $(this).parent().hide()
-    var textvalue = $(this).parent().find("input").val()
-    $(".textLabel").show()
-    $(this).parent().parent().find(".textLabel").html(textvalue)
-  });
-</script>
-
+   </body>
+   <script type="text/javascript">
+      $(function () {
+        $("#1").click(function () {
+          $("#opt").text($(this).text());
+        });
+        $("#2").click(function () {
+          $("#opt").text($(this).text());
+        });
+        $("#3").click(function () {
+          $("#opt").text($(this).text());
+        });
+        $("#4").click(function () {
+          $("#opt").text($(this).text());
+        });
+        $("#5").click(function () {
+          $("#opt").text($(this).text());
+        });
+      });
+   </script>
+   <script type="text/javascript">
+      $(".poundBtn").click(function () {
+        $(".poundBtn").removeClass("active")
+        $(this).addClass("active")
+      });
+      $(".textLabel").click(function () {
+        $(this).hide()
+        $(this).parent().find(".textInputField").show()
+      });
+      $(".textInputField .btn").click(function () {
+        $(this).parent().hide()
+        var textvalue = $(this).parent().find("input").val()
+        $(".textLabel").show()
+        $(this).parent().parent().find(".textLabel").html(textvalue)
+      });
+   </script>
 </html>
