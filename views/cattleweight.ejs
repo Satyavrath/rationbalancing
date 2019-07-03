@@ -14,6 +14,7 @@
 
 <body>
     <div class="container-fluid">
+      <!-- This contains the logo and Heading  -->
         <div class="header">
             <div class="logo top-left">
                 <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
@@ -33,16 +34,17 @@
                                 <p class="menu-text text-center">Cattle Weight</p>
                             </div>
                         </a>
-                        <a href="/feedstuff">
-                        <div id="menu-buttons" class="active">
+                      <a href="/feedstuff">
+                        <div id="menu-buttons">
                             <p class="menu-text text-center">FeedStuffs</p>
                         </div>
-                        </a>
-                        <a href="/rationweights">
-                        <div id="menu-buttons" class="active">
+                      </a>
+                      <a href="/rationweights">
+                        <div id="menu-buttons">
                             <p class="menu-text text-center">Ration Weights</p>
                         </div>
-                        </a>
+                      </a>
+
                     </div>
                 </div>
                 <!-- In this class which contians the cattle weight selection, cattle weight gain selection and nutrition table -->
@@ -121,13 +123,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</body>
-<script type="text/javascript">
-    $(function() {
-        $("#1").click(function() {
-            $("#opt").text($(this).text());
+         </div>
+      </div>
+   </body>
+   <!-- This function is used to select the cattle weight gain weights  -->
+   <script type="text/javascript">
+      $(function () {
+        $("#1").click(function () {
+          $("#opt").text($(this).text());
         });
         $("#2").click(function() {
             $("#opt").text($(this).text());
@@ -141,23 +144,6 @@
         $("#5").click(function() {
             $("#opt").text($(this).text());
         });
-    });
-</script>
-<script type="text/javascript">
-    $(".poundBtn").click(function() {
-        $(".poundBtn").removeClass("active")
-        $(this).addClass("active")
-    });
-    $(".textLabel").click(function() {
-        $(this).hide()
-        $(this).parent().find(".textInputField").show()
-    });
-    $(".textInputField .btn").click(function() {
-        $(this).parent().hide()
-        var textvalue = $(this).parent().find("input").val()
-        $(".textLabel").show()
-        $(this).parent().parent().find(".textLabel").html(textvalue)
-    });
-</script>
-
+      });
+   </script>
 </html>

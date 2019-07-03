@@ -1,113 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>RATION WEIGHTS</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../stylesheets/Rationweights.css">
-</head>
-
-<body>
-    <div class="container-fluid">
-        <div class="header">
-            <div class="logo-header">
-                <div class="logo top-left">
-                    <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
-                </div>
+   <head>
+      <title>RATION WEIGHTS</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+         crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+         crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+         crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="../../stylesheets/Rationweights.css">
+   </head>
+   <body>
+      <div class="container-fluid">
+      <!-- This contains the logo and Heading  -->
+      <div class="header">
+      <div class="logo-header">
+         <div class="logo top-left">
+            <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+         </div>
+         <div class="heading">
+            <h2>RATION WEIGHTS</h2>
+         </div>
+      </div>
+      <!-- This main body which contains the side-bar and main content -->
+      <div class="main-body">
+         <div class="row">
+            <!-- This side bar is used for menu navigation -->
+            <div class="side-bar">
+               <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
+                  <a href="/cattleweight">
+                     <div id="menu-buttons">
+                        <p class="menu-text text-center">Cattle Weight</p>
+                     </div>
+                  </a>
+                  <a href="/feedstuff">
+                     <div id="menu-buttons">
+                        <p class="menu-text text-center">FeedStuffs</p>
+                     </div>
+                  </a>
+                  <a href="/rationweights">
+                     <div id="menu-buttons" class="active">
+                        <p class="menu-text text-center">Ration Weights</p>
+                     </div>
+                  </a>
+               </div>
             </div>
-            <div class="heading">
-                <h2>RATION WEIGHTS</h2>
-            </div>
-        </div>
-        <!-- This main body which contains the side-bar and main content -->
-        <div class="main-body">
-            <div class="row">
-                <!-- This side bar is used for menu navigation -->
-                <div class="side-bar">
-                    <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
-                        <a href="/cattleweight">
-                            <div id="menu-buttons">
-                                <p class="menu-text text-center">Cattle Weight</p>
-                            </div>
-                        </a>
-                        <a href="/feedstuff">
-                            <div id="menu-buttons">
-                                <p class="menu-text text-center">FeedStuffs</p>
-                            </div>
-                        </a>
-                        <a href="/rationweights">
-                            <div id="menu-buttons" class="active">
-                                <p class="menu-text text-center">Ration Weights</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- This is main content code which contains calculated nutrients, total weight of each ingredients and total ration -->
-                <div class="main-content">
-                    <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
-                        <div class="weights">
-                            <!-- This class contains the calculated nutrients -->
-                            <div class="total-nutrients">
-                                <h2>Total Nutrients</h2>
-                                <table id="table-style">
-                                    <tr>
-                                        <th>%CP</th>
-                                        <th>N EM</th>
-                                        <th>N EG</th>
-                                        <th>%CA</th>
-                                        <th>P</th>
-                                    </tr>
-                                    <tr>
-                                        <td style="background-color:#6BADEC">13.5</td>
-                                        <td style="background-color:#F1676E">0.9</td>
-                                        <td>0.59</td>
-                                        <td>0.14</td>
-                                        <td>0.24</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <br>
-                        <!-- This table contains the calculated weight of each ingredients and the total ration  -->
+            <!-- This is main content code which contains calculated nutrients, total weight of each ingredients and total ration -->
+            <div class="main-content">
+               <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+                  <div class="weights">
+                     <!-- This class contains the calculated nutrients -->
+                     <div class="total-nutrients">
+                        <h2>Total Nutrients</h2>
                         <table id="table-style">
-                            <tr>
-                                <th>FeedStuffs</th>
-                                <th>Quantity</th>
-                            </tr>
-                            <tr>
-                                <td>Alfalfa Fresh</td>
-                                <td>940.2</td>
-                            </tr>
-                            <tr>
-                                <td>Alfalfa Hulls</td>
-                                <td>250.6</td>
-                            </tr>
-                            <tr>
-                                <td>Ground Corn</td>
-                                <td>1000.8</td>
-                            </tr>
-                            <tr>
-                                <td>Soybean</td>
-                                <td>140.1</td>
-                            </tr>
-                            <tr>
-                                <td>Wet Feed</td>
-                                <td>1150.5</td>
-                            </tr>
-                            <tr>
-                                <td>Total Ration</td>
-                                <td>3482.2</td>
-                            </tr>
+                           <tr>
+                              <th>%CP</th>
+                              <th>N EM</th>
+                              <th>N EG</th>
+                              <th>%CA</th>
+                              <th>P</th>
+                           </tr>
+                           <tr>
+                              <td style="background-color:#6BADEC">13.5</td>
+                              <td style="background-color:#F1676E">0.9</td>
+                              <td>0.59</td>
+                              <td>0.14</td>
+                              <td>0.24</td>
+                           </tr>
                         </table>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+                  <br>
+                  <!-- This table contains the calculated weight of each ingredients and the total ration  -->
+                  <table id="table-style">
+                     <tr>
+                        <th>FeedStuffs</th>
+                        <th>Quantity (lbs.)</th>
+                     </tr>
+                     <tr>
+                        <td>Alfalfa Fresh</td>
+                        <td>940.2</td>
+                     </tr>
+                     <tr>
+                        <td>Alfalfa Hulls</td>
+                        <td>250.6</td>
+                     </tr>
+                     <tr>
+                        <td>Ground Corn</td>
+                        <td>1000.8</td>
+                     </tr>
+                     <tr>
+                        <td>Soybean</td>
+                        <td>140.1</td>
+                     </tr>
+                     <tr>
+                        <td>Wet Feed</td>
+                        <td>1150.5</td>
+                     </tr>
+                     <tr>
+                        <td><h3>Total Ration</h3></td>
+                        <td><h3>3482.2</h3></td>
+                     </tr>
+                  </table>
+               </div>
+               <!-- This is the info table which indicatesmaximum and minimum nutrient range -->
+               <div class="info">
+                  <p><span class="dot red-info"></span> Red indicates above the maximum total nutrient range</p>
+                  <p><span class="dot blue-info"></span> Blue indicates below the minimum total nutrient range</p>
+               </div>
             </div>
-        </div>
-</body>
-
+         </div>
+      </div>
+   </body>
 </html>

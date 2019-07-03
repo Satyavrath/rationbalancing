@@ -100,3 +100,22 @@ body {
     background-color: rgb(182, 248, 146);
     color: black;
 }
+
+.info {
+  padding: 20px;
+  position: relative;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.red-info{
+
+  background-color: #F1676E;
+}
+.blue-info {
+  background-color: #6BADEC;
+}
