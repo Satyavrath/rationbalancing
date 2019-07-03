@@ -31,15 +31,22 @@ body {
 }
 
 .main-content {
-    margin-bottom: 10px;
-    margin-left: 90px;
-    margin-right: 10px !important;
-    margin-top: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
     border: 5px solid white;
     background-color: #fff;
     border-radius: 12px;
+    margin-bottom: 10px;
+    margin-left: 90px;
+    margin-right: 10px !important;
+    margin-top: 10px;
+    width: 650px;
+}
+
+.btn-secondary {
+    background-color: rgb(190, 187, 187);
+    border-color: white;
+    color: black;
 }
 
 .menu-text {
@@ -49,6 +56,7 @@ body {
 
 .cattle-weights .weight-gain {
     padding-left: 10px;
+    padding-top: 2px;
 }
 
 .quantities {
@@ -63,28 +71,22 @@ body {
     min-width: 800px;
 }
 
-.next-button {
-    margin-left: 85%;
-}
-
-.multiselect {
-    width: 20em;
-    height: 300px !important;
-}
-
-.search-ingredients {
-    border-radius: 15px;
-    background-color: rgb(190, 187, 187);
-}
-
-.btn-secondary {
-    background-color: rgb(190, 187, 187);
-    border-color: white;
-    color: black;
-}
-
 .side-bar a {
     text-decoration: none;
+}
+
+.next-button {
+    margin-left: 85%;
+    margin-top: 15px;
+}
+
+.text-field-button {
+    width: 100px;
+}
+
+.weights-label {
+    padding-top: 5px;
+    padding-right: 10px;
 }
 
 #nutrition-table {
@@ -124,7 +126,7 @@ body {
 #table-style {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 520px;
     background-color: rgb(190, 187, 187);
 }
 
@@ -142,13 +144,17 @@ body {
     color: black;
 }
 
+#table-style th u {
+    text-decoration: none;
+}
+
 #myInput {
     background-image: url('/css/searchicon.png');
     background-position: 10px 12px;
     background-repeat: no-repeat;
     width: 100%;
     font-size: 16px;
-    padding: 8px 20px 8px 40px;
+    padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
     margin-bottom: 12px;
 }
