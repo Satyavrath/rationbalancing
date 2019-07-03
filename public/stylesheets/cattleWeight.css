@@ -1,163 +1,182 @@
-body{
-  background: rgb(182, 248, 146) !important;
+body {
+    background: rgb(182, 248, 146) !important;
 }
+
 .header {
-  position: relative;
-  height: 55px;
-  width: 100%;
-  background-color: white;
-  border-radius: 20px;
-  padding-top: 10px;
-  margin-top: 10px;
+    position: relative;
+    height: 55px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    padding-top: 10px;
+    margin-top: 10px;
 }
-.main-content{
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px !important;
-  margin-top: 10px;
-}
-.btn-secondary{
-  background-color:rgb(190, 187, 187);
-  border-color: white;
-  color:black;
-}
-.logo {
-  width: 150px;
-  height: 50px;
-  padding-left: 15px;
-}
+
 .heading {
-  position: absolute;
-  top: 7px;
-  left: 45%;
+    text-align: center;
+    top: 7px;
+    left: 45%;
 }
+
 .top-left {
     position: absolute;
-    top: 3.7px;
+    top: 2.7px;
     left: 0px;
 }
+
+.logo {
+    width: 150px;
+    height: 50px;
+    padding-left: 15px;
+}
+
+.main-content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 5px solid white;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin-left: 90px;
+    margin-right: 10px !important;
+    margin-top: 10px;
+    width: 650px;
+}
+
+.btn-secondary {
+    background-color: rgb(190, 187, 187);
+    border-color: white;
+    color: black;
+}
+
 .menu-text {
     font-size: 20px;
     font-weight: 600;
 }
-.main-content {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.cattle-weights .weight-gain{
-  padding-left: 10px;
-  padding-top: 2px;
 
+.cattle-weights .weight-gain {
+    padding-left: 10px;
+    padding-top: 2px;
 }
+
 .quantities {
-  min-width: 800px;
+    min-width: 800px;
 }
+
 .weights {
-  min-width: 800px;
+    min-width: 800px;
 }
+
 .main-part {
     min-width: 800px;
 }
-.next-button {
-  margin-left: 85%;
-  margin-top: 15px;
+
+.side-bar a {
+    text-decoration: none;
 }
 
-.main-content {
-  border: 5px solid white;
-  background-color: #fff;
-  border-radius: 12px;
+.next-button {
+    margin-left: 85%;
+    margin-top: 15px;
+}
+
+.text-field-button {
+    width: 100px;
+}
+
+.weights-label {
+    padding-top: 5px;
+    padding-right: 10px;
 }
 
 #nutrition-table {
-  padding-top: 20px;
-}
-#menu-buttons.active {
-  background: rgb(190, 187, 187)!important;
-}
-#menu-buttons.active .menu-text {
-color:white !important;
-cursor: pointer;
-}
-#menu-buttons  .menu-text {
-font-size: 20px;
-font-weight: 600;
-color:black;
-cursor: pointer;
-}
-#menu-buttons {
-  margin-top: 20px;
-  border-radius: 15px;
-  background: white;
-  padding: 10px;
-  width: 200px;
-  height: 50px;
-  position: relative;
-}
-.side-bar a {
-  text-decoration: none;
-}
-#thead{
-  text-decoration-color: white;
-}
-#table-style {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 520px;
-  background-color: rgb(190, 187, 187);
+    padding-top: 20px;
 }
 
-#table-style td, #table-style th {
-  border: 1px solid #ddd;
-  padding: 8px;
+#menu-buttons.active {
+    background: rgb(190, 187, 187)!important;
+}
+
+#menu-buttons.active .menu-text {
+    color: white !important;
+    cursor: pointer;
+}
+
+#menu-buttons .menu-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+}
+
+#menu-buttons {
+    margin-top: 20px;
+    border-radius: 15px;
+    background: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    position: relative;
+}
+
+#thead {
+    text-decoration-color: white;
+}
+
+#table-style {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 520px;
+    background-color: rgb(190, 187, 187);
+}
+
+#table-style td,
+#table-style th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
 #table-style th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: rgb(182, 248, 146);
-  color:black;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(182, 248, 146);
+    color: black;
 }
-#table-style th u{
-  text-decoration: none;
+
+#table-style th u {
+    text-decoration: none;
 }
 
 #myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
 }
 
 #myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 #myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
 }
 
 #myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-.text-field-button {
-  width: 100px;
-}
-.weights-label {
-  padding-top: 5px;
-  padding-right: 10px;
+    background-color: #eee;
 }
