@@ -87,6 +87,15 @@ body {
     text-decoration: none;
 }
 
+.multiselect {
+    width: 20em;
+    height: 300px !important;
+    }
+    
+.cost-quantity #table-style td .text-field-button{
+    max-width: 100px;
+    }
+
 #nutrition-table {
     padding-top: 20px;
 }
