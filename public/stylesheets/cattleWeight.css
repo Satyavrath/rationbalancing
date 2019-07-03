@@ -1,6 +1,12 @@
 body{
   background: rgb(182, 248, 146) !important;
 }
+/* body{
+  background: rgb(182, 248, 146) !important;
+} */
+
+
+/*Th */
 .header {
   position: relative;
   height: 55px;
@@ -142,7 +148,7 @@ cursor: pointer;
 
 #myUL li a {
   border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
+  margin-top: -1px; 
   background-color: #f6f6f6;
   padding: 12px;
   text-decoration: none;

@@ -20,6 +20,7 @@
    </head>
    <body>
       <div class="container-fluid">
+      <!-- This contains the logo and Heading  -->
       <div class="header">
          <div class="logo top-left">
             <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
@@ -72,9 +73,8 @@
                         </div>
                      </div>
                   </div>
+                  <!-- This selected-items contains the search option to search the ingredients and multiselect option to select the multiple ingredients-->
                   <div class="selected-items">
-                     <!-- <div class="row">
-                        <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12"> -->
                      <div class="feedstuff">
                         <br>
                         <input class="search-ingredients" type="text" id="myInput" onkeyup="myFunction()"
@@ -124,12 +124,13 @@
                   </div>
                </div>
                <br>
+               <!-- cost-quantity contains the selected ingredients,Fixed Quantity and Cost of the each ingredient -->
                <div class="cost-quantity">
                   <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
                      <table id="table-style">
                         <tr>
                            <th>Ingredient</th>
-                           <th>Total Quantity</th>
+                           <th>Fixed Quantity</th>
                            <th>Cost</th>
                         </tr>
                         <tr>
@@ -168,6 +169,7 @@
             </div>
          </div>
       </div>
+      <!-- This function is used to search the ingredient -->
       <script>
          function myFunction() {
            var input, filter, ul, li, a, i, txtValue;
@@ -186,13 +188,15 @@
            }
          }
       </script>
+      <!-- This is the webcomponents CDN which is used for the ingredient selection -->
       <script src='https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.22/webcomponents.js'></script>
+      <!-- This function is used to select the multiple components -->
       <script>
          var multiselect = document.querySelector('x-multiselect');
          multiselect.addEventListener('change', function () {
            console.log('Selected items:', this.selectedItems());
          });
       </script>
-      <script src="../../JavaScript/feedStuff.js"></script>
+
    </body>
 </html>
