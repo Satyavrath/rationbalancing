@@ -47,6 +47,8 @@ body {
     background-color: rgb(190, 187, 187);
     border-color: white;
     color: black;
+    border-radius: 10px;
+    padding-right: 10px;
 }
 
 .menu-text {
@@ -83,6 +85,11 @@ body {
 .text-field-button {
     width: 100px;
 }
+
+.selectweight{
+    border-radius: 10px;  
+}
+
 
 .weights-label {
     padding-top: 5px;

@@ -1,7 +1,85 @@
 [
-{"_id":"1","name":"Alfalfa dehydrated 17% CP"},
-{"_id":"2","name":"Alfalfa fresh"},
-{"_id":"3","name":"Alfalfa hay early bloom"},
-{"_id":"4","name":"Alfalfa hay midbloom"},
-{"_id":"5","name":"Alfalfa hulls"}                    
+{"_id":"1","name":"Alfalfa cubes","DM%":91,"TDM%":57,"NEm":57,"NEg":25,"NEi":57,"CP%":18,"UIP%":30,"CF%":29,"ADF%":36,"NDF%":46,"eNDF%":40,"EE%":2.0,"Ash%":11,"Ca%":1.30,"P%":0.23,"K%":1.9,"CI%":0.37,"S%":0.33,"Zn ppm":20},
+{"_id":"2","name":"Alfalfa dehydrated 17% CP","DM%":92,"TDM%":61,"NEm":62,"NEg":31,"NEi":61,"CP%":19,"UIP%":60,"CF%":26,"ADF%":34,"NDF%":45,"eNDF%":6,"EE%":3.0,"Ash%":11,"Ca%":1.42,"P%":0.25,"K%":2.5,"CI%":0.45,"S%":0.28,"Zn ppm":21},
+{"_id":"3","name":"Alfalfa fresh","DM%":24,"TDM%":61,"NEm":62,"NEg":31,"NEi":61,"CP%":19,"UIP%":18,"CF%":27,"ADF%":34,"NDF%":46,"eNDF%":41,"EE%":3.0,"Ash%":9,"Ca%":1.35,"P%":0.27,"K%":2.6,"CI%":0.40,"S%":0.29,"Zn ppm":18},
+{"_id":"4","name":"Alfalfa hay early bloom","DM%":90,"TDM%":59,"NEm":59,"NEg":28,"NEi":59,"CP%":19,"UIP%":20,"CF%":28,"ADF%":35,"NDF%":45,"eNDF%":92,"EE%":2.5,"Ash%":8,"Ca%":1.41,"P%":0.26,"K%":2.5,"CI%":0.38,"S%":0.28,"Zn ppm":22},
+{"_id":"5","name":"Alfalfa hay midbloom","DM%":89,"TDM%":58,"NEm":58,"NEg":26,"NEi":58,"CP%":17,"UIP%":23,"CF%":30,"ADF%":36,"NDF%":47,"eNDF%":92,"EE%":2.3,"Ash%":9,"Ca%":1.40,"P%":0.24,"K%":2.0,"CI%":0.38,"S%":0.27,"Zn ppm":24},
+{"_id":"6","name":"Alfalfa hay full bloom","DM%":88,"TDM%":54,"NEm":54,"NEg":20,"NEi":54,"CP%":16,"UIP%":25,"CF%":34,"ADF%":40,"NDF%":52,"eNDF%":92,"EE%":2.0,"Ash%":8,"Ca%":1.20,"P%":0.23,"K%":1.7,"CI%":0.37,"S%":0.25,"Zn ppm":23},
+{"_id":"7","name":"Alfalfa hay mature","DM%":88,"TDM%":50,"NEm":50,"NEg":12,"NEi":49,"CP%":13,"UIP%":30,"CF%":38,"ADF%":45,"NDF%":59,"eNDF%":92,"EE%":1.3,"Ash%":8,"Ca%":1.18,"P%":0.19,"K%":1.5,"CI%":0.35,"S%":0.21,"Zn ppm":23},
+{"_id":"8","name":"Alfalfa seed screenings","DM%":91,"TDM%":84,"NEm":92,"NEg":61,"NEi":87,"CP%":34,"UIP%":0,"CF%":13,"ADF%":15,"NDF%":0,"eNDF%":0,"EE%":10.7,"Ash%":6,"Ca%":0.30,"P%":0.67,"K%":0,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"9","name":"Alfalfa silage","DM%":30,"TDM%":55,"NEm":55,"NEg":21,"NEi":55,"CP%":18,"UIP%":19,"CF%":28,"ADF%":37,"NDF%":49,"eNDF%":82,"EE%":3.0,"Ash%":9,"Ca%":1.40,"P%":0.29,"K%":2.6,"CI%":0.41,"S%":0.29,"Zn ppm":26},
+{"_id":"10","name":"Alfalfa silage wilted","DM%":39,"TDM%":58,"NEm":58,"NEg":26,"NEi":58,"CP%":18,"UIP%":22,"CF%":28,"ADF%":37,"NDF%":49,"eNDF%":82,"EE%":3.0,"Ash%":9,"Ca%":1.40,"P%":0.29,"K%":2.6,"CI%":0.41,"S%":0.29,"Zn ppm":26},
+{"_id":"11","name":"Alfalfa leaf meal","DM%":89,"TDM%":60,"NEm":60,"NEg":30,"NEi":60,"CP%":26,"UIP%":15,"CF%":16,"ADF%":24,"NDF%":34,"eNDF%":35,"EE%":3.0,"Ash%":10,"Ca%":2.88,"P%":0.34,"K%":2.2,"CI%":0,"S%":0.32,"Zn ppm":39},
+{"_id":"12","name":"Alfalfa stems","DM%":89,"TDM%":47,"NEm":47,"NEg":7,"NEi":46,"CP%":11,"UIP%":44,"CF%":44,"ADF%":51,"NDF%":68,"eNDF%":100,"EE%":1.3,"Ash%":6,"Ca%":0.90,"P%":0.18,"K%":2.5,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"13","name":"Alfalfa hulls","DM%":89,"TDM%":56,"NEm":56,"NEg":23,"NEi":56,"CP%":3,"UIP%":60,"CF%":16,"ADF%":29,"NDF%":36,"eNDF%":100,"EE%":3.1,"Ash%":7,"Ca%":0.24,"P%":0.10,"K%":2.0,"CI%":0.03,"S%":0.07,"Zn ppm":20},
+{"_id":"14","name":"Ammonium chloride","DM%":99,"TDM%":0,"NEm":0,"NEg":0,"NEi":0,"CP%":163,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.0,"Ash%":0,"Ca%":0.00,"P%":0.00,"K%":0.0,"CI%":66.00,"S%":0.00,"Zn ppm":0},
+{"_id":"15","name":"Alfalfa sulfate","DM%":99,"TDM%":0,"NEm":0,"NEg":0,"NEi":0,"CP%":132,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.0,"Ash%":0,"Ca%":0,"P%":0,"K%":0,"CI%":0,"S%":24.15,"Zn ppm":0},
+{"_id":"16","name":"Apples","DM%":17,"TDM%":70,"NEm":73,"NEg":44,"NEi":71,"CP%":3,"UIP%":10,"CF%":7,"ADF%":9,"NDF%":25,"eNDF%":10,"EE%":2.2,"Ash%":2,"Ca%":0.06,"P%":0.60,"K%":0.8,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"17","name":"Apple pomace wet","DM%":20,"TDM%":68,"NEm":70,"NEg":41,"NEi":69,"CP%":5,"UIP%":10,"CF%":18,"ADF%":27,"NDF%":36,"eNDF%":27,"EE%":5.2,"Ash%":3,"Ca%":0.13,"P%":0.12,"K%":0.5,"CI%":0,"S%":0.04,"Zn ppm":11},
+{"_id":"18","name":"Apple pomace dried","DM%":89,"TDM%":67,"NEm":69,"NEg":40,"NEi":68,"CP%":5,"UIP%":15,"CF%":18,"ADF%":28,"NDF%":38,"eNDF%":29,"EE%":5.2,"Ash%":3,"Ca%":0.13,"P%":0.12,"K%":0.5,"CI%":0,"S%":0.04,"Zn ppm":11},
+{"_id":"19","name":"Artichoke tops(jerusalem)","DM%":27,"TDM%":61,"NEm":62,"NEg":31,"NEi":61,"CP%":6,"UIP%":0,"CF%":18,"ADF%":30,"NDF%":41,"eNDF%":40,"EE%":1.1,"Ash%":10,"Ca%":1.62,"P%":0.11,"K%":1.4,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"20","name":"Avacado seed meal","DM%":91,"TDM%":52,"NEm":52,"NEg":16,"NEi":51,"CP%":20,"UIP%":0,"CF%":19,"ADF%":24,"NDF%":0,"eNDF%":0,"EE%":1.2,"Ash%":16,"Ca%":0,"P%":0,"K%":0,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"21","name":"Bahiagrass hay","DM%":90,"TDM%":53,"NEm":53,"NEg":18,"NEi":53,"CP%":6,"UIP%":37,"CF%":32,"ADF%":41,"NDF%":72,"eNDF%":98,"EE%":1.8,"Ash%":7,"Ca%":0.47,"P%":0.20,"K%":1.4,"CI%":0,"S%":0.21,"Zn ppm":0},
+{"_id":"22","name":"Bakery product dried","DM%":90,"TDM%":90,"NEm":100,"NEg":68,"NEi":94,"CP%":11,"UIP%":30,"CF%":3,"ADF%":9,"NDF%":30,"eNDF%":0,"EE%":11.5,"Ash%":4,"Ca%":0.16,"P%":0.27,"K%":0.4,"CI%":2.25,"S%":0.15,"Zn ppm":33},
+{"_id":"23","name":"Bananas","DM%":24,"TDM%":84,"NEm":92,"NEg":61,"NEi":87,"CP%":4,"UIP%":0,"CF%":4,"ADF%":5,"NDF%":0,"eNDF%":0,"EE%":0.8,"Ash%":3,"Ca%":0.03,"P%":0.11,"K%":1.5,"CI%":0,"S%":0,"Zn ppm":8},
+{"_id":"24","name":"Barley hay","DM%":90,"TDM%":57,"NEm":57,"NEg":25,"NEi":57,"CP%":9,"UIP%":0,"CF%":28,"ADF%":37,"NDF%":65,"eNDF%":98,"EE%":2.1,"Ash%":8,"Ca%":0.30,"P%":0.28,"K%":1.6,"CI%":0,"S%":0.19,"Zn ppm":25},
+{"_id":"25","name":"Barley silage","DM%":35,"TDM%":59,"NEm":58,"NEg":26,"NEi":58,"CP%":12,"UIP%":22,"CF%":34,"ADF%":37,"NDF%":58,"eNDF%":61,"EE%":3.0,"Ash%":9,"Ca%":0.46,"P%":0.30,"K%":2.4,"CI%":0,"S%":0.22,"Zn ppm":28},
+{"_id":"26","name":"Barley silage mature","DM%":35,"TDM%":58,"NEm":58,"NEg":26,"NEi":58,"CP%":12,"UIP%":25,"CF%":30,"ADF%":34,"NDF%":50,"eNDF%":61,"EE%":3.5,"Ash%":9,"Ca%":0.30,"P%":0.20,"K%":1.5,"CI%":0,"S%":0.15,"Zn ppm":25},
+{"_id":"27","name":"Barley straw","DM%":90,"TDM%":44,"NEm":44,"NEg":1,"NEi":43,"CP%":4,"UIP%":70,"CF%":42,"ADF%":55,"NDF%":78,"eNDF%":100,"EE%":1.9,"Ash%":7,"Ca%":0.32,"P%":0.08,"K%":2.2,"CI%":0.67,"S%":0.16,"Zn ppm":7},
+{"_id":"28","name":"Barley grain","DM%":89,"TDM%":84,"NEm":92,"NEg":61,"NEi":87,"CP%":12,"UIP%":28,"CF%":5,"ADF%":7,"NDF%":20,"eNDF%":34,"EE%":2.1,"Ash%":3,"Ca%":0.06,"P%":0.38,"K%":0.6,"CI%":0.18,"S%":0.16,"Zn ppm":23},
+{"_id":"29","name":"Barley grain, steam flaked","DM%":85,"TDM%":90,"NEm":100,"NEg":70,"NEi":100,"CP%":12,"UIP%":39,"CF%":5,"ADF%":7,"NDF%":20,"eNDF%":30,"EE%":2.1,"Ash%":3,"Ca%":0.06,"P%":0.35,"K%":0.6,"CI%":0.18,"S%":0.16,"Zn ppm":23},
+{"_id":"30","name":"Barley grain, steam rolled","DM%":86,"TDM%":84,"NEm":92,"NEg":61,"NEi":87,"CP%":12,"UIP%":38,"CF%":5,"ADF%":7,"NDF%":20,"eNDF%":27,"EE%":2.1,"Ash%":3,"Ca%":0.06,"P%":0.41,"K%":0.6,"CI%":0.18,"S%":0.17,"Zn ppm":30},
+{"_id":"31","name":"Barley grain 2-row","DM%":88,"TDM%":84,"NEm":92,"NEg":61,"NEi":87,"CP%":12,"UIP%":0,"CF%":5,"ADF%":8,"NDF%":20,"eNDF%":34,"EE%":2.2,"Ash%":3,"Ca%":0.06,"P%":0.34,"K%":0.5,"CI%":0.18,"S%":0.17,"Zn ppm":16},
+{"_id":"32","name":"Barley grain 6-row","DM%":87,"TDM%":84,"NEm":92,"NEg":61,"NEi":87,"CP%":11,"UIP%":0,"CF%":6,"ADF%":8,"NDF%":20,"eNDF%":34,"EE%":2.2,"Ash%":3,"Ca%":0.05,"P%":0.36,"K%":0.5,"CI%":0.18,"S%":0.15,"Zn ppm":14},
+{"_id":"33","name":"Barley grain it.wt.(42-44 lb./bu.)","DM%":88,"TDM%":78,"NEm":83,"NEg":54,"NEi":80,"CP%":13,"UIP%":30,"CF%":9,"ADF%":12,"NDF%":30,"eNDF%":34,"EE%":2.3,"Ash%":4,"Ca%":0,"P%":0,"K%":0,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"34","name":"Barley feed pearl byproduct","DM%":90,"TDM%":74,"NEm":78,"NEg":49,"NEi":76,"CP%":15,"UIP%":25,"CF%":12,"ADF%":15,"NDF%":0,"eNDF%":0,"EE%":3.9,"Ash%":5,"Ca%":0.05,"P%":0.45,"K%":0.7,"CI%":0,"S%":0.06,"Zn ppm":0},
+{"_id":"35","name":"Barley bran","DM%":91,"TDM%":59,"NEm":59,"NEg":28,"NEi":59,"CP%":12,"UIP%":28,"CF%":21,"ADF%":27,"NDF%":36,"eNDF%":6,"EE%":4.3,"Ash%":7,"Ca%":0,"P%":0,"K%":0,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"36","name":"Barley grain screenings","DM%":89,"TDM%":71,"NEm":74,"NEg":46,"NEi":73,"CP%":12,"UIP%":0,"CF%":9,"ADF%":11,"NDF%":0,"eNDF%":0,"EE%":2.6,"Ash%":4,"Ca%":0.35,"P%":0.33,"K%":0.9,"CI%":0,"S%":0.15,"Zn ppm":0},
+{"_id":"37","name":"Beans navy cull","DM%":90,"TDM%":84,"NEm":92,"NEg":61,"NEi":87,"CP%":24,"UIP%":25,"CF%":5,"ADF%":8,"NDF%":20,"eNDF%":0,"EE%":1.4,"Ash%":5,"Ca%":0.15,"P%":0.60,"K%":1.4,"CI%":0.06,"S%":0.26,"Zn ppm":45},
+{"_id":"38","name":"Beans pinto","DM%":90,"TDM%":75,"NEm":90,"NEg":60,"NEi":86,"CP%":25,"UIP%":25,"CF%":5,"ADF%":6,"NDF%":7,"eNDF%":0,"EE%":1.5,"Ash%":5,"Ca%":0.14,"P%":0.43,"K%":1.1,"CI%":0.06,"S%":0.22,"Zn ppm":25},
+{"_id":"39","name":"Beet pulp wet","DM%":17,"TDM%":77,"NEm":82,"NEg":53,"NEi":79,"CP%":9,"UIP%":35,"CF%":20,"ADF%":25,"NDF%":45,"eNDF%":30,"EE%":0.7,"Ash%":5,"Ca%":0.65,"P%":0.08,"K%":0.9,"CI%":0.40,"S%":0.22,"Zn ppm":21},
+{"_id":"40","name":"Beet pulp dried","DM%":91,"TDM%":76,"NEm":81,"NEg":52,"NEi":78,"CP%":9,"UIP%":44,"CF%":21,"ADF%":26,"NDF%":46,"eNDF%":33,"EE%":0.7,"Ash%":5,"Ca%":0.65,"P%":0.08,"K%":0.9,"CI%":0.40,"S%":0.22,"Zn ppm":21},
+{"_id":"41","name":"Beet pulp wet with molasses","DM%":24,"TDM%":77,"NEm":82,"NEg":53,"NEi":79,"CP%":11,"UIP%":25,"CF%":16,"ADF%":21,"NDF%":39,"eNDF%":33,"EE%":0.6,"Ash%":6,"Ca%":0.60,"P%":0.10,"K%":1.8,"CI%":0,"S%":0.42,"Zn ppm":11},
+{"_id":"42","name":"Beet root(sugar)","DM%":23,"TDM%":80,"NEm":86,"NEg":56,"NEi":83,"CP%":4,"UIP%":0,"CF%":5,"ADF%":7,"NDF%":16,"eNDF%":0,"EE%":0.4,"Ash%":3,"Ca%":0,"P%":0,"K%":0,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"43","name":"Beet tops(sugar)","DM%":19,"TDM%":58,"NEm":58,"NEg":26,"NEi":58,"CP%":14,"UIP%":0,"CF%":11,"ADF%":14,"NDF%":25,"eNDF%":41,"EE%":1.3,"Ash%":24,"Ca%":1.10,"P%":0.22,"K%":5.2,"CI%":0.20,"S%":0.45,"Zn ppm":20},
+{"_id":"44","name":"Beet top silage","DM%":25,"TDM%":52,"NEm":52,"NEg":16,"NEi":51,"CP%":12,"UIP%":0,"CF%":12,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":2.0,"Ash%":32,"Ca%":1.38,"P%":0.22,"K%":5.7,"CI%":0,"S%":0.57,"Zn ppm":20},
+{"_id":"45","name":"Bermudagrass coastal dehydrated","DM%":90,"TDM%":62,"NEm":63,"NEg":33,"NEi":63,"CP%":16,"UIP%":40,"CF%":26,"ADF%":29,"NDF%":40,"eNDF%":10,"EE%":3.8,"Ash%":7,"Ca%":0.40,"P%":0.25,"K%":1.8,"CI%":0.72,"S%":0.23,"Zn ppm":18},
+{"_id":"46","name":"Bermudagrass coastal hay","DM%":89,"TDM%":56,"NEm":56,"NEg":23,"NEi":56,"CP%":10,"UIP%":15,"CF%":30,"ADF%":36,"NDF%":73,"eNDF%":98,"EE%":2.1,"Ash%":6,"Ca%":0.47,"P%":0.21,"K%":1.5,"CI%":0.70,"S%":0.22,"Zn ppm":16},
+{"_id":"47","name":"Bermudagrass hay","DM%":89,"TDM%":53,"NEm":53,"NEg":18,"NEi":53,"CP%":10,"UIP%":15,"CF%":29,"ADF%":37,"NDF%":72,"eNDF%":98,"EE%":1.9,"Ash%":8,"Ca%":0.46,"P%":0.20,"K%":1.5,"CI%":0.70,"S%":0.25,"Zn ppm":31},
+{"_id":"48","name":"Bermudagrass silage","DM%":26,"TDM%":50,"NEm":50,"NEg":12,"NEi":49,"CP%":10,"UIP%":14,"CF%":28,"ADF%":35,"NDF%":71,"eNDF%":48,"EE%":1.9,"Ash%":8,"Ca%":0.46,"P%":0.20,"K%":1.5,"CI%":0.72,"S%":0.25,"Zn ppm":31},
+{"_id":"49","name":"Birdsfoot trefoil fresh","DM%":22,"TDM%":66,"NEm":68,"NEg":38,"NEi":67,"CP%":21,"UIP%":20,"CF%":21,"ADF%":31,"NDF%":47,"eNDF%":41,"EE%":4.4,"Ash%":9,"Ca%":1.78,"P%":0.25,"K%":2.6,"CI%":0,"S%":0.25,"Zn ppm":31},
+{"_id":"50","name":"Birdsfoot trefoil hay","DM%":89,"TDM%":57,"NEm":57,"NEg":25,"NEi":57,"CP%":16,"UIP%":22,"CF%":31,"ADF%":38,"NDF%":50,"eNDF%":92,"EE%":2.2,"Ash%":8,"Ca%":1.73,"P%":0.24,"K%":1.8,"CI%":0,"S%":0.25,"Zn ppm":28},
+{"_id":"51","name":"Biuret","DM%":99,"TDM%":0,"NEm":0,"NEg":0,"NEi":0,"CP%":248,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.0,"Ash%":0,"Ca%":0.00,"P%":0.00,"K%":0.0,"CI%":0.00,"S%":0.00,"Zn ppm":0},
+{"_id":"52","name":"Blood meal, swine/poultry","DM%":91,"TDM%":66,"NEm":68,"NEg":38,"NEi":67,"CP%":92,"UIP%":82,"CF%":1,"ADF%":2,"NDF%":10,"eNDF%":0,"EE%":1.4,"Ash%":3,"Ca%":0.32,"P%":0.28,"K%":0.2,"CI%":0.30,"S%":0.70,"Zn ppm":22},
+{"_id":"53","name":"Bluegrass KY fresh early bloom","DM%":36,"TDM%":69,"NEm":71,"NEg":43,"NEi":70,"CP%":15,"UIP%":20,"CF%":27,"ADF%":32,"NDF%":60,"eNDF%":41,"EE%":3.9,"Ash%":7,"Ca%":0.37,"P%":0.30,"K%":1.9,"CI%":0.42,"S%":0.19,"Zn ppm":25},
+{"_id":"54","name":"Bluegrass straw","DM%":93,"TDM%":45,"NEm":3,"NEg":44,"NEi":6,"CP%":0,"UIP%":40,"CF%":50,"ADF%":78,"NDF%":90,"eNDF%":1.1,"EE%":6,"Ash%":0.20,"Ca%":0.10,"P%":0,"K%":0,"CI%":0,"S%":0,"Zn ppm":0},
+{"_id":"55","name":"Bluestem fresh mature","DM%":61,"TDM%":50,"NEm":50,"NEg":12,"NEi":49,"CP%":6,"UIP%":0,"CF%":34,"ADF%":0,"NDF%":0,"eNDF%":2.5,"EE%":5,"Ash%":0.40,"Ca%":0.12,"P%":0.8,"K%":0,"CI%":0,"S%":0.05,"Zn ppm":28}
+{"_id":"56","name":"Bluestem fresh mature","DM%":61,"TDM%":50,"NEm":50,"NEg":12,"NEi":49,"CP%":6,"UIP%":0,"CF%":34,"ADF%":0,"NDF%":0,"eNDF%":2.5,"EE%":5,"Ash%":0.40,"Ca%":0.12,"P%":0.8,"K%":0,"CI%":0,"S%":0.05,"Zn ppm":28}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ]
