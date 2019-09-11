@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CATTLE WEIGHT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../stylesheets/cattleWeight.css">
+    <style>
+    body {
+        background: rgb(182, 248, 146) !important;
+    }
+
+    .header {
+        position: relative;
+        height: 55px;
+        width: 100%;
+        background-color: white;
+        border-radius: 20px;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
+    .heading {
+        text-align: center;
+        top: 7px;
+        left: 45%;
+    }
+
+    .top-left {
+        position: absolute;
+        top: 2.7px;
+        left: 0px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 50px;
+        padding-left: 15px;
+    }
+
+    .main-content {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 5px solid white;
+        background-color: #fff;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        margin-left: 90px;
+        margin-right: 10px !important;
+        margin-top: 10px;
+        width: 650px;
+    }
+
+    .btn-secondary {
+        background-color: rgb(190, 187, 187);
+        border-color: white;
+        color: black;
+    }
+
+    .menu-text {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .cattle-weights .weight-gain {
+        padding-left: 10px;
+        padding-top: 2px;
+    }
+
+    .quantities {
+        min-width: 800px;
+    }
+
+    .weights {
+        min-width: 800px;
+    }
+
+    .main-part {
+        min-width: 800px;
+    }
+
+    .side-bar a {
+        text-decoration: none;
+    }
+
+    .next-button {
+        margin-left: 85%;
+        margin-top: 15px;
+    }
+
+    .text-field-button {
+        width: 100px;
+    }
+
+    .weights-label {
+        padding-top: 5px;
+        padding-right: 10px;
+    }
+
+    #nutrition-table {
+        padding-top: 20px;
+    }
+
+    #menu-buttons.active {
+        background: rgb(190, 187, 187)!important;
+    }
+
+    #menu-buttons.active .menu-text {
+        color: white !important;
+        cursor: pointer;
+    }
+
+    #menu-buttons .menu-text {
+        font-size: 20px;
+        font-weight: 600;
+        color: black;
+        cursor: pointer;
+    }
+
+    #menu-buttons {
+        margin-top: 20px;
+        border-radius: 15px;
+        background: white;
+        padding: 10px;
+        width: 200px;
+        height: 50px;
+        position: relative;
+    }
+
+    #thead {
+        text-decoration-color: white;
+    }
+
+    #table-style {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 520px;
+        background-color: rgb(190, 187, 187);
+    }
+
+    #table-style td,
+    #table-style th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #table-style th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: rgb(182, 248, 146);
+        color: black;
+    }
+
+    #table-style th u {
+        text-decoration: none;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 12px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myUL {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #myUL li a {
+      border: 1px solid #ddd;
+      margin-top: -1px;
+      background-color: #f6f6f6;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: block
+    }
+
+    #myUL li a:hover:not(.header) {
+        background-color: #eee;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+      <!-- This contains the logo and Heading  -->
+        <div class="header">
+            <div class="logo top-left">
+                <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+            </div>
+            <div class="heading">
+                <h2>CATTLE WEIGHT</h2>
+            </div>
+        </div>
+        <!-- This main body which contains the side-bar and main content -->
+        <div class="main-body">
+            <div class="row">
+                <!-- This side bar is used for menu navigation -->
+                <div class="side-bar">
+                    <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
+                        <a href="/cattleweight">
+                            <div id="menu-buttons" class="active">
+                                <p class="menu-text text-center">Cattle Weight</p>
+                            </div>
+                        </a>
+                      <a href="/feedstuff">
+                        <div id="menu-buttons">
+                            <p class="menu-text text-center">FeedStuffs</p>
+                        </div>
+                      </a>
+                      <a href="/rationweights">
+                        <div id="menu-buttons">
+                            <p class="menu-text text-center">Ration Weights</p>
+                        </div>
+                      </a>
+
+                    </div>
+                </div>
+                <!-- In this class which contians the cattle weight selection, cattle weight gain selection and nutrition table -->
+                <div class="main-content">
+                    <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+                        <!-- cattle weight selections -->
+                        <div class="cattle-weights">
+                            <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
+                                <!-- <span class="badge badge-light">Light</span> -->
+                                <h4 class="weights-label">Weights:</h4>
+                                <button type="button" class="btn btn-secondary" onclick="Function450()" >450 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function550()" >550 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function650()" >650 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function750()" >750 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function950()" >950 </button>
+                                <!-- cattle weight gain selection per day -->
+                                <div class="dropdown weight-gain">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" id="options"> <span id="opt">Cattle Weight Gain</span> <span
+                                 class="caret"></span>
+                              </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" id="1" href="#">1.1 Pounds</a>
+                                        <a class="dropdown-item" id="2" href="#">2.2 Pounds</a>
+                                        <a class="dropdown-item" id="3" href="#">3.3 Pounds</a>
+                                        <a class="dropdown-item" id="4" href="#">4.4 Pounds</a>
+                                        <a class="dropdown-item" id="5" href="#">5.5 Pounds</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P, %EE -->
+                        <div id="nutrition-table">
+                            <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12">
+                                <table id="table-style">
+                                    <tr>
+                                        <th scope="col"><u>Nutrition</u></th>
+                                        <th scope="col"><u>Min</u></th>
+                                        <th scope="col"><u>Max</u></th>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%CP</td>
+                                        <td><input type="text" id="CP-Min" class="form-control text-field-button" id="usr" value="14.5"></td>
+                                        <td><input type="text" id="CP-Max" class="form-control text-field-button" id="usr" value="17"></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">NE M</td>
+                                        <td><input type="text" id="NEM-Min" class="form-control text-field-button" id="usr" value="0.8"></td>
+                                        <td><input type="text" id="NEM-Max" class="form-control text-field-button" id="usr" value="1.1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">NE G</td>
+                                        <td><input type="text" id="NEG-Min" class="form-control text-field-button" id="usr" value="0.5"></td>
+                                        <td><input type="text" id="NEG-Max" class="form-control text-field-button" id="usr" value="0.8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%CA</td>
+                                        <td><input type="text" id="CA-Min" class="form-control text-field-button" id="usr" value="0"></td>
+                                        <td><input type="text" id="CA-Max" class="form-control text-field-button" id="usr" value="0.8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%P</td>
+                                        <td><input type="text" id="P-Min" class="form-control text-field-button" id="usr" value="0"></td>
+                                        <td><input type="text" id="P-Max" class="form-control text-field-button" id="usr" value="0.5"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="cost-quantity">
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- This is the Next BUttons which navigates to the next page -->
+                    <div class="next-button">
+                        <a href="/feedstuff"><button feedstuff.html type="button" class="btn btn-secondary">Next</button></a>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <!-- This function is used to select the cattle weight gain weights  -->
+   <script type="text/javascript">
+   function Function450() {
+     alert("450 button is clicked")
+     document.getElementById("CP-Min").value = "1";
+     document.getElementById("CP-Max").value = "1";
+     document.getElementById("NEM-Min").value = "1";
+     document.getElementById("NEM-Max").value = "1";
+     document.getElementById("NEG-Min").value = "1";
+     document.getElementById("NEG-Max").value = "1";
+     document.getElementById("CA-Min").value = "1";
+     document.getElementById("CA-Max").value = "1";
+     document.getElementById("P-Min").value = "1";
+     document.getElementById("P-Max").value = "1";
+   }
+   function Function550() {
+     alert("550 button is clicked")
+     document.getElementById("CP-Min").value = "1";
+     document.getElementById("CP-Max").value = "1";
+     document.getElementById("NEM-Min").value = "1";
+     document.getElementById("NEM-Max").value = "1";
+     document.getElementById("NEG-Min").value = "1";
+     document.getElementById("NEG-Max").value = "1";
+     document.getElementById("CA-Min").value = "1";
+     document.getElementById("CA-Max").value = "1";
+     document.getElementById("P-Min").value = "1";
+     document.getElementById("P-Max").value = "1";
+   }
+   function Function650() {
+     alert("650 button is clicked")
+     document.getElementById("CP-Min").value = "1";
+     document.getElementById("CP-Max").value = "1";
+     document.getElementById("NEM-Min").value = "1";
+     document.getElementById("NEM-Max").value = "1";
+     document.getElementById("NEG-Min").value = "1";
+     document.getElementById("NEG-Max").value = "1";
+     document.getElementById("CA-Min").value = "1";
+     document.getElementById("CA-Max").value = "1";
+     document.getElementById("P-Min").value = "1";
+     document.getElementById("P-Max").value = "1";
+   }
+   function Function750() {
+     alert("750 button is clicked")
+     document.getElementById("CP-Min").value = "1";
+     document.getElementById("CP-Max").value = "1";
+     document.getElementById("NEM-Min").value = "1";
+     document.getElementById("NEM-Max").value = "1";
+     document.getElementById("NEG-Min").value = "1";
+     document.getElementById("NEG-Max").value = "1";
+     document.getElementById("CA-Min").value = "1";
+     document.getElementById("CA-Max").value = "1";
+     document.getElementById("P-Min").value = "1";
+     document.getElementById("P-Max").value = "1";
+   }
+   function Function950() {
+     alert("950 button is clicked")
+     document.getElementById("CP-Min").value = "1";
+     document.getElementById("CP-Max").value = "1";
+     document.getElementById("NEM-Min").value = "1";
+     document.getElementById("NEM-Max").value = "1";
+     document.getElementById("NEG-Min").value = "1";
+     document.getElementById("NEG-Max").value = "1";
+     document.getElementById("CA-Min").value = "1";
+     document.getElementById("CA-Max").value = "1";
+     document.getElementById("P-Min").value = "1";
+     document.getElementById("P-Max").value = "1";
+   }
+
+   </script>
+
+</html>
