@@ -1,0 +1,47 @@
+{"_id":"56","name":"Elephant (Napier) grass hay,chopped","DM%":92,"TDN%":55,"NEm":55,"NEg":21,"NEi":54,"CP%":9,"CF%":24,"ADF%":46,"NDF%":63,"eNDF%":85,"EE%":2.0,"Ash%":10,"Ca%":0.35,"P%":0.30,"K%":1.3,"S%":0.10}
+{"_id":"56","name":"Fat, animal, poultry,vegetable","DM%":99,"TDN%":195,"NEm":285,"NEg":230,"NEi":285,"CP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":99.0,"Ash%":0,"Ca%":00.0,"P%":0.00,"K%":0.0}
+{"_id":"56","name":"Feather meal hydrolyzed,","DM%":93,"TDN%":67,"NEm":69,"NEg":40,"NEi":68,"CP%":87,"UIP%":68,"CF%":1,"ADF%":14,"NDF%":42,"eNDF%":23,"EE%":7.0,"Ash%":3,"Ca%":0.48,"P%":0.45,"K%":0.1,"CI%":0.20,"S%":1.82,"Zn ppm":90 }
+{"_id":"56","name":"Fescue KY 31 fresh,","DM%":29,"TDN%":64,"NEm":65,"NEg":36,"NEi":65,"CP%":15,"UIP%":20,"CF%":25,"ADF%":32,"NDF%":64,"eNDF%":40,"EE%":5.5,"Ash%":9,"Ca%":0.48,"P%":0.37,"K%":2.5,"S%":0.18,"Zn ppm":22 }
+{"_id":"56","name":"Fescue KY 31 hay early bloom","DM%":88,"TDN%":60,"NEm":60,"NEg":30,"NEi":60,"CP%":18,"UIP%":22,"CF%":25,"ADF%":31,"NDF%":64,"eNDF%":98,"EE%":6.6,"Ash%":8,"Ca%":0.48,"P%":0.36,"K%":2.6,"S%":0.27,"Zn ppm":24 }
+{"_id":"56","name":"Fescue KY 31 hay mature","DM%":88,"TDN%":52,"NEm":52,"NEg":16,"NEi":51,"CP%":11,"UIP%":26,"CF%":30,"ADF%":42,"NDF%":73,"eNDF%":98,"EE%":5.0,"Ash%":6,"Ca%":0.45,"P%":0.26,"K%":1.7,"S%":0.14,"Zn ppm":22 }
+{"_id":"56","name":"Fescue (red) straw","DM%":94,"TDN%":43,"NEm":44,"NEg":0,"NEi":41,"CP%":4,"CF%":41,"EE%":1.1,"Ash%":6,"Ca%":0.00,"P%":0.06}
+{"_id":"56","name":"Fish meal","DM%":90,"TDN%":74,"NEm":78,"NEg":49,"NEi":76,"CP%":66,"UIP%":60,"CF%":1,"ADF%":2,"NDF%":12,"eNDF%":10,"EE%":9.0,"Ash%":20,"Ca%":5.55,"P%":3.15,"K%":0.7,"CI%":0.76,"S%":0.80,"Zn ppm":130}
+{"_id":"56","name":"Flax seed hulls","DM%":91,"TDN%":38,"NEm":40,"NEg":0,"NEi":36,"CP%":9,"CF%":32,"ADF%":39,"NDF%":50,"eNDF%":98,"EE%":1.5}
+{"_id":"56","name":"Garbage municipal cooked","DM%":23,"TDN%":80,"NEm":86,"NEg":56,"NEi":83,"CP%":16,"CF%":9,"ADF%":50,"NDF%":59,"eNDF%":30,"EE%":20.0,"Ash%":10,"Ca%":1.20,"P%":0.43,"K%":0.6,"CI%":0.67}
+{"_id":"56","name":"Glycerol (glycerin)","DM%":88,"TDN%":90,"NEm":100,"NEg":68,"NEi":94,"CP%":0,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.0,"Ash%":6,"CI%":4.00}
+{"_id":"56","name":"Grain screenings","DM%":90,"TDN%":65,"NEm":66,"NEg":37,"NEi":66,"CP%":14,"CF%":14,"EE%":5.5,"Ash%":9,"Ca%":0.25,"P%":0.34,"Zn ppm":30}
+{"_id":"56","name":"Grain dust","DM%":92,"TDN%":73,"NEm":77,"NEg":48,"NEi":75,"CP%":10,"CF%":11,"EE%":2.2,"Ash%":10,"Ca%":0.30,"P%":0.18,"Zn ppm":42}
+{"_id":"56","name":"Grape pomace stemless","DM%":91,"TDN%":40,"NEm":42,"NEg":0,"NEi":38,"CP%":12,"UIP%":45,"CF%":32,"ADF%":46,"NDF%":54,"eNDF%":34,"EE%":7.6,"Ash%":9,"Ca%":0.55,"P%":0.07,"K%":0.6,"CI%":0.01,"Zn ppm":24}
+{"_id":"56","name":"Grass hay","DM%":88,"TDN%":58,"NEm":58,"NEg":26,"NEi":58,"CP%":10,"UIP%":30,"CF%":33,"ADF%":41,"NDF%":63,"eNDF%":98,"EE%":3.0,"Ash%":6,"Ca%":0.60,"P%":0.21,"K%":2.0,"S%":0.20,"Zn ppm":28}
+{"_id":"56","name":"Grass silage","DM%":30,"TDN%":61,"NEm":62,"NEg":31,"NEi":61,"CP%":11,"UIP%":24,"CF%":32,"ADF%":39,"NDF%":60,"eNDF%":61,"EE%":3.4,"Ash%":8,"Ca%":0.70,"P%":0.24,"K%":2.1,,"S%":0.22,"Zn ppm":29}
+{"_id":"56","name":"Guar meal","DM%":90,"TDN%":72,"NEm":75,"NEg":47,"NEi":74,"CP%":39,"UIP%":34,"CF%":16,"EE%":3.9,"Ash%":5}
+{"_id":"56","name":"Hominy feed","DM%":89,"TDN%":89,"NEm":99,"NEg":67,"NEi":93,"CP%":11,"UIP%":48,"CF%":6,"ADF%":7,"NDF%":19,"eNDF%":9,"EE%":5.8,"Ash%":2,"Ca%":0.03,"P%":0.48,"K%":0.5,"CI%":0.06,"S%":0.12,"Zn ppm":27}
+{"_id":"56","name":"Hop leaves","DM%":37,"TDN%":49,"NEm":49,"NEg":11,"NEi":48,"CP%":15,"CF%":15,"EE%":3.6,"Ash%":35,"Ca%":2.80,"P%":0.64}
+{"_id":"56","name":"Hop vine silage","DM%":30,"TDN%":53,"NEm":53,"NEg":18,"NEi":53,"CP%":15,"CF%":21,"ADF%":24,"EE%":3.1,"Ash%":20,"Ca%":3.30,"P%":0.37,"K%":1.8,"S%":0.22,"Zn ppm":44}
+{"_id":"56","name":"Hops spent","DM%":89,"TDN%":35,"NEm":39,"NEg":0,"NEi":33,"CP%":23,"CF%":26,"ADF%":30,"EE%":4.6,"Ash%":7,"Ca%":1.60,"P%":0.60}
+{"_id":"56","name":"Kelp dried","DM%":91,"TDN%":32,"NEm":38,"NEg":0,"NEi":29,"CP%":7,"CF%":7,"ADF%":10,"EE%":0.5,"Ash%":39,"Ca%":2.72,"P%":0.31}
+{"_id":"56","name":"Kenaf hay","DM%":92,"TDN%":48,"NEm":48,"NEg":9,"NEi":47,"CP%":10,"CF%":31,"ADF%":44,"NDF%":56,"eNDF%":98,"EE%":2.9,"Ash%":12}
+{"_id":"56","name":"Kochia fresh","DM%":29,"TDN%":55,"NEm":55,"NEg":21,"NEi":55,"CP%":16,"CF%":23,"EE%":1.2,"Ash%":18,"Ca%":1.10,"P%":0.30}
+{"_id":"56","name":"Kochia hay","DM%":90,"TDN%":53,"NEm":53,"NEg":18,"NEi":53,"CP%":14,"CF%":27,"EE%":1.7,"Ash%":14,"Ca%":1.00,"P%":0.20}
+{"_id":"56","name":"Lespedeza fresh early bloom","DM%":25,"TDN%":60,"NEm":60,"NEg":30,"NEi":60,"CP%":16,"UIP%":50,"CF%":32,"EE%":2.0,"Ash%":10,"Ca%":1.20,"P%":0.24,"K%":1.1,"S%":0.21}
+{"_id":"56","name":"Lespedeza hay","DM%":92,"TDN%":54,"NEm":54,"NEg":20,"NEi":54,"CP%":14,"UIP%":60,"CF%":30,"EE%":3.0,"Ash%":7,"Ca%":1.10,"P%":0.22,"K%":1.0,"S%":0.19,"Zn ppm":29}
+{"_id":"56","name":"Limestone ground","DM%":98,"TDN%":0,"NEm":0,"NEg":0,"NEi":0,"CP%":0,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.0,"Ash%":98,"Ca%":34.00,"P%":0.02,"S%":0.03}
+{"_id":"56","name":"Limestone dolomitic ground","DM%":99,"TDN%":0,"NEm":0,"NEg":0,"NEi":0,"CP%":0,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.0,"Ash%":98,"Ca%":34.00,"P%":0.02,"S%":0.03}
+{"_id":"56","name":"Linseed meal, solv. ext","DM%":91,"TDN%":77,"NEm":82,"NEg":53,"NEi":79,"CP%":39,"UIP%":36,"CF%":10,"ADF%":17,"NDF%":26,"eNDF%":23,"EE%":1.9,"Ash%":7,"Ca%":0.43,"P%":0.91,"K%":1.5,"CI%":0.04,"S%":0.52,"Zn ppm":65}
+{"_id":"56","name":"Linseed meal, mech. ext","DM%":91,"TDN%":82,"NEm":89,"NEg":59,"NEi":85,"CP%":37,"UIP%":40,"CF%":10,"ADF%":17,"NDF%":24,"eNDF%":23,"EE%":6.0,"Ash%":6,"Ca%":0.42,"P%":0.90,"K%":1.4,"CI%":0.04,"S%":0.46,"Zn ppm":59}
+{"_id":"56","name":"Meadow hay","DM%":90,"TDN%":50,"NEm":50,"NEg":12,"NEi":49,"CP%":7,"UIP%":23,"CF%":33,"ADF%":44,"NDF%":70,"eNDF%":98,"EE%":2.5,"Ash%":9,"Ca%":0.61,"P%":0.18,"K%":1.6,"S%":0.17,"Zn ppm":24}
+{"_id":"56","name":"Meat meal, swine/poultry","DM%":93,"TDN%":71,"NEm":74,"NEg":46,"NEi":73,"CP%":56,"UIP%":64,"CF%":2,"ADF%":7,"NDF%":48,"eNDF%":0,"EE%":10.5,"Ash%":24,"Ca%":9.00,"P%":4.42,"K%":0.5,"CI%":1.27,"S%":0.48,"Zn ppm":190}
+{"_id":"56","name":"Meat and bone meal, swine/poultry","DM%":93,"TDN%":72,"NEm":75,"NEg":47,"NEi":74,"CP%":56,"UIP%":24,"CF%":1,"ADF%":5,"NDF%":34,"eNDF%":0,"EE%":10.0,"Ash%":29,"Ca%":13.50,"P%":6.50}
+{"_id":"56","name":"Milk, dry, skim","DM%":94,"TDN%":87,"NEm":96,"NEg":64,"NEi":90,"CP%":36,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.9,"Ash%":8,"Ca%":1.36,"P%":1.09,"K%":1.7,"CI%":0.96,"S%":0.34,"Zn ppm":41}
+{"_id":"56","name":"Mint slug silage","DM%":27,"TDN%":55,"NEm":55,"NEg":21,"NEi":55,"CP%":14,"CF%":24,"EE%":1.8,"Ash%":16,"Ca%":1.10,"P%":0.57}
+{"_id":"56","name":"Molasses beet","DM%":77,"TDN%":75,"NEm":79,"NEg":50,"NEi":77,"CP%":8,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.2,"Ash%":12,"Ca%":0.14,"P%":0.03,"K%":6.0,"CI%":1.64,"S%":0.60,"Zn ppm":18}
+{"_id":"56","name":"Molasses cane","DM%":77,"TDN%":74,"NEm":78,"NEg":49,"NEi":76,"CP%":6,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.5,"Ash%":14,"Ca%":0.95,"P%":0.09,"K%":4.2,"CI%":2.30,"S%":0.68,"Zn ppm":15}
+{"_id":"56","name":"Molasses cane dried","DM%":94,"TDN%":74,"NEm":78,"NEg":49,"NEi":76,"CP%":9,"UIP%":0,"CF%":2,"ADF%":3,"NDF%":7,"eNDF%":0,"EE%":0.3,"Ash%":14,"Ca%":1.10,"P%":0.15,"K%":3.6,"CI%":3.00,"Zn ppm":30}
+{"_id":"56","name":"Molasses, cond. fermentation solubles","DM%":43,"TDN%":69,"NEm":71,"NEg":43,"NEi":70,"CP%":16,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":1.0,"Ash%":26,"Ca%":2.12,"P%":0.14,"K%":7.5,"CI%":2.73,"S%":0.93,"Zn ppm":30}
+{"_id":"56","name":"Molasses citrus","DM%":65,"TDN%":75,"NEm":79,"NEg":50,"NEi":77,"CP%":9,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.3,"Ash%":8,"Ca%":1.84,"P%":0.15,"K%":0.2,"CI%":0.11,"S%":0.23,"Zn ppm":137}
+{"_id":"56","name":"Molasses wood, hemicellulose","DM%":61,"TDN%":70,"NEm":73,"NEg":44,"NEi":71,"CP%":1,"UIP%":0,"CF%":1,"ADF%":2,"NDF%":4,"eNDF%":0,"EE%":0.6,"Ash%":7,"Ca%":1.10,"P%":0.10,"K%":0.1,"S%":0.55}
+{"_id":"56","name":"Monoammonium phosphate","DM%":98,"TDN%":0,"NEm":0,"NEg":0,"NEi":0,"CP%":70,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.0,"Ash%":24,"Ca%":0.30,"P%":24.7,"K%":0.0,"S%":0.42,"Zn ppm":81}
+{"_id":"56","name":"Mono-Dicalcium phosphate","DM%":97,"TDN%":0,"NEm":0,"NEg":0,"NEi":0,"CP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.0,"Ash%":94,"Ca%":16.70,"P%":21.10,"K%":0.1,"S%":1.20,"Zn ppm":70}
+
+
+
