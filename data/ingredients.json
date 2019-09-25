@@ -256,57 +256,26 @@
 {"_id":"254","name":"Triticale silage","DM%":34,"TDN%":58,"NEm":58,"NEg":26,"NEi":58,"CP%":14,"CF%":30,"ADF%":39,"NDF%":56,"eNDF%":61,"EE%":3.6,"Ca%":0.58,"P%":0.34,"K%":2.7,"S%":0.28,"Zn ppm":36},
 {"_id":"255","name":"Triticale grain","DM%":89,"TDN%":85,"NEm":93,"NEg":62,"NEi":88,"CP%":14,"UIP%":25,"CF%":4,"ADF%":5,"NDF%":22,"eNDF%":34,"EE%":2.4,"Ash%":2,"Ca%":0.07,"P%":0.39,"K%":0.5,"S%":0.17,"Zn ppm":37},
 {"_id":"256","name":"Turnip tops (purple)","DM%":18,"TDN%":68,"NEm":70,"NEg":41,"NEi":69,"CP%":18,"CF%":10,"ADF%":13,"EE%":2.6,"Ash%":14,"Ca%":3.10,"P%":0.40,"K%":3.0,"CI%":1.80,"S%":0.27},
-{"_id":"257","name":"Turnip roots","DM%":9,"TDN%":86,"NEm":95,"NEg":63,"NEi":89,"CP%":12,"UIP%":0,"CF%":11,"ADF%":34,"NDF%":44,"eNDF%":40,"EE%":1.6,"Ash%":9,"Ca%":0.65,"P%":0.31,"K%":3.1,"CI%":0.65,"S%":0.43,"Zn ppm":40}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{"_id":"257","name":"Turnip roots","DM%":9,"TDN%":86,"NEm":95,"NEg":63,"NEi":89,"CP%":12,"UIP%":0,"CF%":11,"ADF%":34,"NDF%":44,"eNDF%":40,"EE%":1.6,"Ash%":9,"Ca%":0.65,"P%":0.31,"K%":3.1,"CI%":0.65,"S%":0.43,"Zn ppm":40},
+{"_id":"258","name":"Urea 46%N","DM%":99,"TDM%":0,"NEm":0,"NEg":0,"NEi":0,"CP%":288,"UIP%":0,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0,"Ash%":0,"Ca%":0.0,"P%":0.0,"K%":0.0,"CI%":0.0,"S%":0.0,"Zn ppm":0},
+{"_id":"259","name":"Vetch gay","DM%":89,"TDM%":58,"NEm":58,"NEg":26,"NEi":58,"CP%":18,"UIP%":14,"CF%":30,"ADF%":33,"NDF%":48,"eNDF%":92,"EE%":1.8,"Ash%":8,"Ca%":1.25,"P%":0.34,"K%":2.4,"CI%":0.0,"S%":0.13,"Zn ppm":0},
+{"_id":"260","name":"Wheat hay","DM%":90,"TDM%":57,"NEm":57,"NEg":25,"NEi":57,"CP%":9,"UIP%":25,"CF%":29,"ADF%":38,"NDF%":66,"eNDF%":98,"EE%":2.0,"Ash%":8,"Ca%":0.21,"P%":0.22,"K%":1.4,"CI%":0.50,"S%":0.19,"Zn ppm":23},
+{"_id":"261","name":"Wheat silage","DM%":33,"TDM%":59,"NEm":59,"NEg":28,"NEi":59,"CP%":12,"UIP%":21,"CF%":28,"ADF%":37,"NDF%":62,"eNDF%":61,"EE%":3.2,"Ash%":8,"Ca%":0.40,"P%":0.28,"K%":2.1,"CI%":0.50,"S%":0.21,"Zn ppm":27},
+{"_id":"262","name":"Wheat straw","DM%":91,"TDM%":43,"NEm":44,"NEg":0,"NEi":41,"CP%":3,"UIP%":60,"CF%":43,"ADF%":57,"NDF%":81,"eNDF%":98,"EE%":1.8,"Ash%":8,"Ca%":0.17,"P%":0.06,"K%":1.3,"CI%":0.32,"S%":0.17,"Zn ppm":6},
+{"_id":"263","name":"Wheat straw ammoniated","DM%":85,"TDM%":50,"NEm":50,"NEg":12,"NEi":49,"CP%":9,"UIP%":25,"CF%":40,"ADF%":55,"NDF%":76,"eNDF%":98,"EE%":1.5,"Ash%":9,"Ca%":0.15,"P%":0.05,"K%":1.3,"CI%":0.30,"S%":0.16,"Zn ppm":6},
+{"_id":"264","name":"Wheat grain","DM%":89,"TDM%":88,"NEm":98,"NEg":65,"NEi":91,"CP%":15,"UIP%":23,"CF%":3,"ADF%":4,"NDF%":14,"eNDF%":0,"EE%":2.8,"Ash%":2,"Ca%":0.06,"P%":0.48,"K%":0.5,"CI%":0.09,"S%":0.18,"Zn ppm":48},
+{"_id":"265","name":"Wheat grain hard","DM%":89,"TDM%":88,"NEm":98,"NEg":65,"NEi":91,"CP%":14,"UIP%":28,"CF%":3,"ADF%":6,"NDF%":14,"eNDF%":0,"EE%":2.0,"Ash%":2,"Ca%":0.05,"P%":0.43,"K%":0.5,"CI%":0.0,"S%":0.16,"Zn ppm":45},
+{"_id":"266","name":"Wheat grain soft","DM%":89,"TDM%":88,"NEm":98,"NEg":65,"NEi":91,"CP%":12,"UIP%":23,"CF%":3,"ADF%":6,"NDF%":12,"eNDF%":0,"EE%":2.0,"Ash%":2,"Ca%":0.05,"P%":0.41,"K%":0.4,"CI%":0.0,"S%":0.16,"Zn ppm":40},
+{"_id":"267","name":"Wheat grain, steam flaked","DM%":85,"TDM%":91,"NEm":102,"NEg":69,"NEi":95,"CP%":14,"UIP%":28,"CF%":3,"ADF%":4,"NDF%":12,"eNDF%":0,"EE%":2.3,"Ash%":2,"Ca%":0.05,"P%":0.39,"K%":0.4,"CI%":0.0,"S%":0.15,"Zn ppm":40},
+{"_id":"268","name":"Wheat grain sprouted","DM%":86,"TDM%":88,"NEm":98,"NEg":65,"NEi":91,"CP%":12,"UIP%":18,"CF%":3,"ADF%":4,"NDF%":13,"eNDF%":0,"EE%":2.0,"Ash%":2,"Ca%":0.04,"P%":0.36,"K%":0.4,"CI%":0.0,"S%":0.17,"Zn ppm":45},
+{"_id":"269","name":"Wheat bran","DM%":89,"TDM%":70,"NEm":73,"NEg":44,"NEi":71,"CP%":17,"UIP%":28,"CF%":11,"ADF%":14,"NDF%":46,"eNDF%":4,"EE%":4.4,"Ash%":7,"Ca%":0.13,"P%":1.32,"K%":1.4,"CI%":0.05,"S%":0.24,"Zn ppm":96},
+{"_id":"270","name":"Wheat middlings","DM%":89,"TDM%":75,"NEm":79,"NEg":50,"NEi":77,"CP%":17,"UIP%":22,"CF%":9,"ADF%":11,"NDF%":38,"eNDF%":2,"EE%":4.7,"Ash%":5,"Ca%":0.14,"P%":1.02,"K%":1.2,"CI%":0.05,"S%":0.20,"Zn ppm":100},
+{"_id":"271","name":"Wheat mill run","DM%":90,"TDM%":76,"NEm":81,"NEg":52,"NEi":78,"CP%":17,"UIP%":28,"CF%":9,"ADF%":12,"NDF%":37,"eNDF%":0,"EE%":4.5,"Ash%":6,"Ca%":0.11,"P%":1.10,"K%":1.2,"CI%":0.07,"S%":0.22,"Zn ppm":90},
+{"_id":"272","name":"Wheat shorts","DM%":89,"TDM%":78,"NEm":83,"NEg":54,"NEi":80,"CP%":19,"UIP%":25,"CF%":8,"ADF%":10,"NDF%":30,"eNDF%":0,"EE%":5.3,"Ash%":5,"Ca%":0.10,"P%":0.93,"K%":1.1,"CI%":0.08,"S%":0.20,"Zn ppm":118},
+{"_id":"273","name":"Wheatgrass crested fresh early bloom","DM%":37,"TDM%":60,"NEm":60,"NEg":30,"NEi":60,"CP%":11,"UIP%":22,"CF%":26,"ADF%":28,"NDF%":50,"eNDF%":41,"EE%":1.6,"Ash%":7,"Ca%":0.46,"P%":0.32,"K%":2.4,"CI%":0.0,"S%":0,"Zn ppm":0},
+{"_id":"274","name":"Wheatgrass crested fresh full bloom","DM%":50,"TDM%":55,"NEm":55,"NEg":21,"NEi":55,"CP%":10,"UIP%":25,"CF%":33,"ADF%":36,"NDF%":65,"eNDF%":41,"EE%":1.6,"Ash%":7,"Ca%":0.39,"P%":0.28,"K%":2.1,"CI%":0.0,"S%":0.0,"Zn ppm":0},
+{"_id":"275","name":"Wheatgrass crested hay","DM%":92,"TDM%":54,"NEm":54,"NEg":20,"NEi":54,"CP%":10,"UIP%":28,"CF%":33,"ADF%":36,"NDF%":65,"eNDF%":98,"EE%":2.4,"Ash%":7,"Ca%":0.33,"P%":0.20,"K%":2.0,"CI%":0.0,"S%":0.0,"Zn ppm":32},
+{"_id":"276","name":"Whey dried","DM%":94,"TDM%":82,"NEm":89,"NEg":59,"NEi":85,"CP%":14,"UIP%":15,"CF%":0,"ADF%":0,"NDF%":0,"eNDF%":0,"EE%":0.9,"Ash%":10,"Ca%":0.98,"P%":0.88,"K%":1.3,"CI%":1.20,"S%":0.92,"Zn ppm":10},
+{"_id":"277","name":"Yeast, brewer's","DM%":92,"TDM%":79,"NEm":85,"NEg":55,"NEi":81,"CP%":47,"UIP%":30,"CF%":3,"ADF%":4,"NDF%":0,"eNDF%":0.0,"EE%":0.0,"Ash%":7,"Ca%":0.13,"P%":1.49,"K%":1.8,"CI%":0.0,"S%":0.0,"Zn ppm":0}
 
 ]
