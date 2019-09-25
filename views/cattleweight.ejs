@@ -11,8 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../stylesheets/cattleWeight.css">
 </head>
-
-<body>
+<body onLoad="onLoadFunction()">
     <div class="container-fluid">
       <!-- This contains the logo and Heading  -->
         <div class="header">
@@ -34,7 +33,7 @@
                                 <p class="menu-text text-center">Cattle Weight</p>
                             </div>
                         </a>
-                      <a href="/feedstuff">
+                      <a onclick="checkWeightsAreSelectedOrNot()">
                         <div id="menu-buttons">
                             <p class="menu-text text-center">FeedStuffs</p>
                         </div>
@@ -55,6 +54,343 @@
                             <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
                                 <!-- <span class="badge badge-light">Light</span> -->
                                 <h4 class="weights-label">Weights:</h4>
+                                <button type="button" class="btn btn-secondary" onclick="Function450()" >450 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function550()" >550 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function650()" >650 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function750()" >750 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function950()" >950 </button>
+                                <!-- cattle weight gain selection per day -->
+                                <!-- <div id="Gain" class="dropdown weight-gain">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" id="options"> <span id="opt">Cattle Weight Gain</span> <span
+                                 class="caret"></span>
+                              </button>
+                                    <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" id="1" onclick="weightGain1()" href="#">1.1 Pounds</a>
+                                        <a class="dropdown-item" id="2" onclick="weightGain2()" href="#">2.2 Pounds</a>
+                                        <a class="dropdown-item" id="3" onclick="weightGain3()" href="#">3.3 Pounds</a>
+                                        <a class="dropdown-item" id="4" onclick="weightGain4()" href="#">4.4 Pounds</a>
+                                        <a class="dropdown-item" id="5" onclick="weightGain5()" href="#">5.5 Pounds</a>
+                                    </div>
+                                    </div> -->
+                                    <select id="Gain" class="weightGain">
+                                      <option id="1" value="6" >Select Weight Gain</option>
+                                      <option id="1" value="7" >1.1 Pounds</option>
+                                      <option id="2" value="8" >2.2 Pounds</option>
+                                      <option id="3" value="9" >3.3 Pounds</option>
+                                      <option id="4" value="10">4.4 Pounds</option>
+                                      <option id="5" value="11">5.5 Pounds</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P, %EE -->
+                        <div id="nutrition-table">
+                            <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12">
+                                <table id="table-style">
+                                    <tr>
+                                        <th scope="col"><u>Nutrition</u></th>
+                                        <th scope="col"><u>Min</u></th>
+                                        <th scope="col"><u>Max</u></th>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%CP</td>
+                                        <td><input type="text" id="CP-Min" class="form-control text-field-button" id="usr" value="14.5"></td>
+                                        <td><input type="text" id="CP-Max" class="form-control text-field-button" id="usr" value="17"></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">NE M</td>
+                                        <td><input type="text" id="NEM-Min" class="form-control text-field-button" id="usr" value="0.8"></td>
+                                        <td><input type="text" id="NEM-Max" class="form-control text-field-button" id="usr" value="1.1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">NE G</td>
+                                        <td><input type="text" id="NEG-Min" class="form-control text-field-button" id="usr" value="0.5"></td>
+                                        <td><input type="text" id="NEG-Max" class="form-control text-field-button" id="usr" value="0.8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%CA</td>
+                                        <td><input type="text" id="CA-Min" class="form-control text-field-button" id="usr" value="0"></td>
+                                        <td><input type="text" id="CA-Max" class="form-control text-field-button" id="usr" value="0.8"></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%P</td>
+                                        <td><input type="text" id="P-Min" class="form-control text-field-button" id="usr" value="0"></td>
+                                        <td><input type="text" id="P-Max" class="form-control text-field-button" id="usr" value="0.5"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="cost-quantity">
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- This is the Next BUttons which navigates to the next page -->
+                    <div class="next-button">
+                        <a onclick="checkWeightsAreSelectedOrNot()"><button feedstuff.html type="button" class="btn btn-secondary">Next</button></a>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <!-- This function is used to select the cattle weight gain weights  -->
+   <script type="text/javascript">
+   // function disable() {
+   //   alert("This function is working");
+   //   document.getElementById("mySelect").disabled=true;
+   //
+   // }
+   function onLoadFunction(){
+      // alert("This function is working")
+      document.getElementById("Gain").disabled=true;
+   }
+   function enable(){
+     document.getElementById("Gain").disabled=false;
+   }
+   var x=0;
+   function Function450() {
+     enable();
+     x = 1;
+     document.getElementById("CP-Min").value = "1";
+     document.getElementById("CP-Max").value = "1";
+     document.getElementById("NEM-Min").value = "1";
+     document.getElementById("NEM-Max").value = "1";
+     document.getElementById("NEG-Min").value = "1";
+     document.getElementById("NEG-Max").value = "1";
+     document.getElementById("CA-Min").value = "1";
+     document.getElementById("CA-Max").value = "1";
+     document.getElementById("P-Min").value = "1";
+     document.getElementById("P-Max").value = "1";
+   }
+   function Function550() {
+     enable();
+     x = 2;
+     document.getElementById("CP-Min").value = "2";
+     document.getElementById("CP-Max").value = "2";
+     document.getElementById("NEM-Min").value = "2";
+     document.getElementById("NEM-Max").value = "2";
+     document.getElementById("NEG-Min").value = "2";
+     document.getElementById("NEG-Max").value = "2";
+     document.getElementById("CA-Min").value = "2";
+     document.getElementById("CA-Max").value = "2";
+     document.getElementById("P-Min").value = "2";
+     document.getElementById("P-Max").value = "2";
+   }
+   function Function650() {
+     enable();
+     x = 3;
+     document.getElementById("CP-Min").value = "3";
+     document.getElementById("CP-Max").value = "3";
+     document.getElementById("NEM-Min").value = "3";
+     document.getElementById("NEM-Max").value = "3";
+     document.getElementById("NEG-Min").value = "3";
+     document.getElementById("NEG-Max").value = "3";
+     document.getElementById("CA-Min").value = "3";
+     document.getElementById("CA-Max").value = "3";
+     document.getElementById("P-Min").value = "3";
+     document.getElementById("P-Max").value = "3";
+   }
+   function Function750() {
+     enable();
+     x = 4;
+     document.getElementById("CP-Min").value = "4";
+     document.getElementById("CP-Max").value = "4";
+     document.getElementById("NEM-Min").value = "4";
+     document.getElementById("NEM-Max").value = "4";
+     document.getElementById("NEG-Min").value = "4";
+     document.getElementById("NEG-Max").value = "4";
+     document.getElementById("CA-Min").value = "4";
+     document.getElementById("CA-Max").value = "4";
+     document.getElementById("P-Min").value = "4";
+     document.getElementById("P-Max").value = "4";
+   }
+   function Function950() {
+     enable();
+     x = 5;
+     document.getElementById("CP-Min").value = "5";
+     document.getElementById("CP-Max").value = "5";
+     document.getElementById("NEM-Min").value = "5";
+     document.getElementById("NEM-Max").value = "5";
+     document.getElementById("NEG-Min").value = "5";
+     document.getElementById("NEG-Max").value = "5";
+     document.getElementById("CA-Min").value = "5";
+     document.getElementById("CA-Max").value = "5";
+     document.getElementById("P-Min").value = "5";
+     document.getElementById("P-Max").value = "5";
+   }
+   $(document).ready(function(){
+       $("select.weightGain").change(function(){
+           var selectedWeightGain = $(this).children("option:selected").val();
+           // alert(selectedWeightGain);
+           switch(x) {
+                case 1:
+                  // alert("This is case "+x)
+                  alert("450 button is clicked");
+                  break;
+                case 2:
+                  // alert("This is case "+x)
+                  alert("550 button is clicked")
+                  break;
+                case 3:
+                  // alert("This is case "+x)
+                  alert("650 button is clicked")
+                  break;
+                case 4:
+                  // alert("This is case "+x)
+                  alert("750 button is clicked")
+                  break;
+                case 5:
+                  // alert("This is case "+x)
+                  alert("950 button is clicked")
+                  break;
+                default:
+                  alert("Please select Weights first");
+                }
+          switch(selectedWeightGain) {
+            case 7:
+              weightGain1()
+              // alert("This is case "+selectedWeightGain)
+              break;
+            case 8:
+              weightGain2()
+              // alert("This is case "+selectedWeightGain)
+              break;
+            case 9:
+              weightGain3()
+              // alert("This is case "+selectedWeightGain)
+              break;
+            case 10:
+              weightGain4()
+              // alert("This is case "+selectedWeightGain)
+              break;
+            default:
+              weightGain5()
+              // alert("This is case "+selectedWeightGain)
+              break;
+          }
+       });
+   });
+
+     function weightGain1() {
+       alert("weight Gain 1.1  button is clicked")
+       document.getElementById("CP-Min").value = "6";
+       document.getElementById("CP-Max").value = "6";
+       document.getElementById("NEM-Min").value = "6";
+       document.getElementById("NEM-Max").value = "6";
+       document.getElementById("NEG-Min").value = "6";
+       document.getElementById("NEG-Max").value = "6";
+       document.getElementById("CA-Min").value = "6";
+       document.getElementById("CA-Max").value = "6";
+       document.getElementById("P-Min").value = "6";
+       document.getElementById("P-Max").value = "6";
+     }
+     function weightGain2() {
+       alert("weight Gain 2.2  button is clicked")
+       document.getElementById("CP-Min").value = "7";
+       document.getElementById("CP-Max").value = "7";
+       document.getElementById("NEM-Min").value = "7";
+       document.getElementById("NEM-Max").value = "7";
+       document.getElementById("NEG-Min").value = "7";
+       document.getElementById("NEG-Max").value = "7";
+       document.getElementById("CA-Min").value = "7";
+       document.getElementById("CA-Max").value = "7";
+       document.getElementById("P-Min").value = "7";
+       document.getElementById("P-Max").value = "7";
+     }
+     function weightGain3() {
+       alert("weight Gain 3.3  button is clicked")
+       document.getElementById("CP-Min").value = "8";
+       document.getElementById("CP-Max").value = "8";
+       document.getElementById("NEM-Min").value = "8";
+       document.getElementById("NEM-Max").value = "8";
+       document.getElementById("NEG-Min").value = "8";
+       document.getElementById("NEG-Max").value = "8";
+       document.getElementById("CA-Min").value = "8";
+       document.getElementById("CA-Max").value = "8";
+       document.getElementById("P-Min").value = "8";
+       document.getElementById("P-Max").value = "8";
+     }
+     function weightGain4() {
+       alert("weight Gain 4.4  button is clicked")
+       document.getElementById("CP-Min").value = "9";
+       document.getElementById("CP-Max").value = "9";
+       document.getElementById("NEM-Min").value = "9";
+       document.getElementById("NEM-Max").value = "9";
+       document.getElementById("NEG-Min").value = "9";
+       document.getElementById("NEG-Max").value = "9";
+       document.getElementById("CA-Min").value = "9";
+       document.getElementById("CA-Max").value = "9";
+       document.getElementById("P-Min").value = "9";
+       document.getElementById("P-Max").value = "9";
+     }
+     function weightGain5() {
+       alert("weight Gain 5.5  button is clicked")
+       document.getElementById("CP-Min").value = "0";
+       document.getElementById("CP-Max").value = "0";
+       document.getElementById("NEM-Min").value = "0";
+       document.getElementById("NEM-Max").value = "0";
+       document.getElementById("NEG-Min").value = "0";
+       document.getElementById("NEG-Max").value = "0";
+       document.getElementById("CA-Min").value = "0";
+       document.getElementById("CA-Max").value = "0";
+       document.getElementById("P-Min").value = "0";
+       document.getElementById("P-Max").value = "0";
+     }
+     function checkWeightsAreSelectedOrNot(){
+       if (x== 0){
+         alert("Please select the weights")
+       }
+       else{
+         location.href = '/feedstuff';
+       }
+     }
+   </script>
+</html>
+
+
+<!-- <body>
+    <div class="container-fluid">
+
+        <div class="header">
+            <div class="logo top-left">
+                <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+            </div>
+            <div class="heading">
+                <h2>CATTLE WEIGHT</h2>
+            </div>
+        </div>
+
+        <div class="main-body">
+            <div class="row">
+
+                <div class="side-bar">
+                    <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
+                        <a href="/cattleweight">
+                            <div id="menu-buttons" class="active">
+                                <p class="menu-text text-center">Cattle Weight</p>
+                            </div>
+                        </a>
+                      <a href="/feedstuff">
+                        <div id="menu-buttons">
+                            <p class="menu-text text-center">FeedStuffs</p>
+                        </div>
+                      </a>
+                      <a href="/rationweights">
+                        <div id="menu-buttons">
+                            <p class="menu-text text-center">Ration Weights</p>
+                        </div>
+                      </a>
+
+                    </div>
+                </div>
+
+                <div class="main-content">
+                    <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+
+                        <div class="cattle-weights">
+                            <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
+
+                                <h4 class="weights-label">Weights:</h4>
                                 <div class=" selectweight">
                                 <button type="button" class="btn btn-secondary">450 </button>
                                 <button type="button" class="btn btn-secondary">550 </button>
@@ -62,7 +398,6 @@
                                 <button type="button" class="btn btn-secondary">750 </button>
                                 <button type="button" class="btn btn-secondary">950 </button>
                                  </div>
-                                <!-- cattle weight gain selection per day -->
                                 <div class="dropdown weight-gain">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" id="options"> <span id="opt">Weight Gain</span> <span
                                  class="caret"></span>
@@ -78,7 +413,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P, %EE -->
                         <div id="nutrition-table">
                             <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12">
                                 <table id="table-style">
@@ -120,7 +454,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- This is the Next BUttons which navigates to the next page -->
+
                     <div class="next-button">
                         <a href="/feedstuff"><button feedstuff.html type="button" class="btn btn-secondary">Next</button></a>
                     </div>
@@ -129,24 +463,5 @@
          </div>
       </div>
    </body>
-   <!-- This function is used to select the cattle weight gain weights  -->
-   <script type="text/javascript">
-      $(function () {
-        $("#1").click(function () {
-          $("#opt").text($(this).text());
-        });
-        $("#2").click(function() {
-            $("#opt").text($(this).text());
-        });
-        $("#3").click(function() {
-            $("#opt").text($(this).text());
-        });
-        $("#4").click(function() {
-            $("#opt").text($(this).text());
-        });
-        $("#5").click(function() {
-            $("#opt").text($(this).text());
-        });
-      });
-   </script>
-</html>
+
+</html> -->
