@@ -38,185 +38,124 @@
          cursor:pointer;
          }
       </style>
-   </head>
-   <body>
-      <!-- This contains the logo and Heading  -->
-      <div class="container-fluid">
-         <div class="header">
-            <div class="logo top-left">
-               <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
-            </div>
-            <div class="heading">
-               <h2>FEEDSTUFFS</h2>
+</head>
+<body onclick="onBodyClick(event)">
+   <!-- This contains the logo and Heading  -->
+   <div class="container-fluid">
+   <div class="header">
+      <div class="logo top-left">
+         <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+      </div>
+      <div class="heading">
+         <h2>FEEDSTUFFS</h2>
+      </div>
+   </div>
+   <!-- This main body which contains the side-bar and main content -->
+   <div class="main-body">
+      <div class="row">
+         <!-- This side bar is used for menu navigation -->
+         <div class="side-bar col-sm-12 col-md-2 col-lg-2 col-xs-12">
+            <div>
+               <a href="/cattleweight">
+                  <div id="menu-buttons">
+                     <p class="menu-text text-center">Cattle Weight</p>
+                  </div>
+               </a>
+               <a href="/feedstuff">
+                  <div id="menu-buttons" class="active">
+                     <p class="menu-text text-center">FeedStuffs</p>
+                  </div>
+               </a>
+               <a href="/rationweights">
+                  <div id="menu-buttons">
+                     <p class="menu-text text-center">Ration Weights</p>
+                  </div>
+               </a>
             </div>
          </div>
-         <!-- This main body which contains the side-bar and main content -->
-         <div class="main-body">
-            <div class="row">
-               <!-- This side bar is used for menu navigation -->
-               <div class="side-bar">
-                  <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
-                     <a href="/cattleweight">
-                        <div id="menu-buttons">
-                           <p class="menu-text text-center">Cattle Weight</p>
-                        </div>
-                     </a>
-                     <a href="/feedstuff">
-                        <div id="menu-buttons" class="active">
-                           <p class="menu-text text-center">FeedStuffs</p>
-                        </div>
-                     </a>
-                     <a href="/rationweights">
-                        <div id="menu-buttons">
-                           <p class="menu-text text-center">Ration Weights</p>
-                        </div>
-                     </a>
+         <!-- Navigation bar to select ingredients in alphabetical order -->
+         <div class="main-content col-sm-12 col-md-10 col-lg-10 col-xs-12">
+            <div>
+               <div>
+                  <p>
+                  <h5>
+                  Weight Selected: <span id="weight"></span></p>
+               </div>
+               <div class="feed-categories">
+                  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                     <div class="btn-group mr-2" role="group" aria-label="First group">
+                        <button type="button" value="A" class="btn btn-secondary">A</button>
+                        <button type="button" value="B" class="btn btn-secondary">B</button>
+                        <button type="button" value="C" class="btn btn-secondary">C</button>
+                        <button type="button" value="D" class="btn btn-secondary">D</button>
+                        <button type="button" value="E" class="btn btn-secondary">E</button>
+                        <button type="button" value="F" class="btn btn-secondary">F</button>
+                        <button type="button" value="G" class="btn btn-secondary">G</button>
+                        <button type="button" value="H" class="btn btn-secondary">H</button>
+                        <button type="button" value="I" class="btn btn-secondary">I</button>
+                        <button type="button" value="J" class="btn btn-secondary">J</button>
+                        <button type="button" value="K" class="btn btn-secondary">K</button>
+                        <button type="button" value="L" class="btn btn-secondary">L</button>
+                        <button type="button" value="M" class="btn btn-secondary">M</button>
+                        <button type="button" value="N" class="btn btn-secondary">N</button>
+                        <button type="button" value="O" class="btn btn-secondary">O</button>
+                        <button type="button" value="P" class="btn btn-secondary">P</button>
+                        <button type="button" value="Q" class="btn btn-secondary">Q</button>
+                        <button type="button" value="R" class="btn btn-secondary">R</button>
+                        <button type="button" value="S" class="btn btn-secondary">S</button>
+                        <button type="button" value="T" class="btn btn-secondary">T</button>
+                        <button type="button" value="U" class="btn btn-secondary">U</button>
+                        <button type="button" value="V" class="btn btn-secondary">V</button>
+                        <button type="button" value="W" class="btn btn-secondary">W</button>
+                        <button type="button" value="X" class="btn btn-secondary">X</button>
+                        <button type="button" value="Y" class="btn btn-secondary">Y</button>
+                        <button type="button" value="Z" class="btn btn-secondary">Z</button>
+                     </div>
                   </div>
                </div>
-               <!-- Navigation bar to select ingredients in alphabetical order -->
-               <div class="main-content">
-                  <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
-                     <div class="feed-categories">
-                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                           <div class="btn-group mr-2" role="group" aria-label="First group">
-                              <button type="button" class="btn btn-secondary">Most Selected FeedStuff</button>
-                              <button type="button" class="btn btn-secondary">A-Z</button>
-                              <button type="button" class="btn btn-secondary">A</button>
-                              <button type="button" class="btn btn-secondary">B</button>
-                              <button type="button" class="btn btn-secondary">C</button>
-                              <button type="button" class="btn btn-secondary">D</button>
-                              <button type="button" class="btn btn-secondary">E - G</button>
-                              <button type="button" class="btn btn-secondary">H - L</button>
-                              <button type="button" class="btn btn-secondary">M - O</button>
-                              <button type="button" class="btn btn-secondary">P - R</button>
-                              <button type="button" class="btn btn-secondary">S</button>
-                              <button type="button" class="btn btn-secondary">T - Z</button>
+               <!-- This selected-items contains the search option to search the ingredients and multiselect option to select the multiple ingredients-->
+               <!-- <div class="selected-items"> -->
+               <!-- <div class="feedstuff"> -->
+               </br>
+               <div class="middle-section">
+                  <div class="row">
+                     <div class="ingredints-list-section col-sm-12 col-md-12 col-lg-6 col-xs-12">
+                        <div><input class="form-control" type="text" id="search" onkeyup="getFeedSearch(event)"
+                           placeholder="Search for names.." title="Type in a name"></div>
+                        <ul style="overflow: auto; width: 300px;height: 150px;" class="list-group" id="result"></ul>
+                        <br>
+                        <div class="result">
+                           <div id="searchResults" class="col-sm-12 col-md-12 col-lg-8 col-xs-12"></div>
+                           <br>
+                        </div>
+                     </div>
+                     <div class="selected-ingredints-selection col-sm-12 col-md-12 col-lg-6 col-xs-12">
+                           <div class="cost-quantity">
+                                 <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                                    <table id="table-style">
+                                       <tr>
+                                          <th>Ingredients</th>
+                                          <th>Fixed Quantity</th>
+                                          <th>Cost</th>
+                                          <th>Delete</th>
+                                       </tr>
+                                    </table>
+                                 </div>
                            </div>
-                        </div>
-                     </div>
-                     <!-- This selected-items contains the search option to search the ingredients and multiselect option to select the multiple ingredients-->
-                     <div class="selected-items">
-                        <div class="feedstuff">
-                           </br>
-                           <input class="search-ingredients" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
-                              title="Type in a name">
-                           <ul id="myUL">
-                              <x-multiselect>
-                                 <li><a href="#" selected>Alfalfa dehydrated 17% CP</a></li>
-                                 <li  selected><a href="#">Alfalfa fresh</a></li>
-                                 <li><a href="#">Alfalfa hay early bloom</a></li>
-                                 <li><a href="#">Alfalfa hay midbloom</a></li>
-                                 <li selected><a href="#">Alfalfa hulls</a></li>
-                                 <li><a href="#">Beans navy cull</a></li>
-                                 <li><a href="#">Beet pulp wet</a></li>
-                                 <li><a href="#">Beet pulp dried</a></li>
-                                 <li><a href="#">Calcium carbonate</a></li>
-                                 <li><a href="#">Canarygrass hay</a></li>
-                                 <li><a href="#">Carrot root fresh</a></li>
-                                 <li><a href="#">Distillers dried solubles</a></li>
-                                 <li><a href="#">Distillers grain, sorghum with solubles</a></li>
-                                 <li><a href="#">Distillers grain, sorghum,wet</a></li>
-                                 <li  selected><a href="#">Ground Corn</a></li>
-                                 <li><a href="#">Grass silage</a></li>
-                                 <li selected><a href="#">Soybean</a></li>
-                                 <li><a href="#">Spelt grain</a></li>
-                                 <li><a href="#">Sudangrass silage</a></li>
-                                 <li selected><a href="#">Wet Feed</a></li>
-                                 <li><a href="#">Wheat straw</a></li>
-                                 <li><a href="#">Wheat mill run</a></li>
-                                 <li><a href="#">Wet Feed</a></li>
-                                 <li><a href="#">Wheat straw</a></li>
-                                 <li><a href="#">Wheat mill run</a></li>
-                                 <li><a href="#">Kelp dried</a></li>
-                                 <li><a href="#">Kenaf hay</a></li>
-                                 <li><a href="#">Kochia fresh</a></li>
-                                 <li><a href="#">Mint slug silage</a></li>
-                                 <li><a href="#">Molasses beet</a></li>
-                                 <li><a href="#">Molasses citrus</a></li>
-                                 <li><a href="#">Oat hay</a></li>
-                                 <li><a href="#">Oat silage</a></li>
-                                 <li><a href="#">Oat straw</a></li>
-                                 <li><a href="#">Pea vine hay</a></li>
-                                 <li><a href="#">Peas cull</a></li>
-                                 <li><a href="#">Peanut skins</a></li>
-                              </x-multiselect>
-                           </ul>
-                        </div>
                      </div>
                   </div>
-                  <!-- cost-quantity contains the selected ingredients,Fixed Quantity and Cost of the each ingredient -->
-                  <div class="cost-quantity">
-                     <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-                        <table id="table-style">
-                           <tr>
-                              <th>Ingredients</th>
-                              <th>Fixed Quantity</th>
-                              <th>Cost</th>
-                           </tr>
-                           <tr>
-                              <td>Alfalfa Fresh</td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value=""></td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="$ 0.85"></td>
-                           </tr>
-                           <tr>
-                              <td>Alfalfa Hulls</td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value=""></td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="$ 0.27"></td>
-                           </tr>
-                           <tr>
-                              <td>Ground Corn</td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value=""></td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="$ 0.45"></td>
-                           </tr>
-                           <tr>
-                              <td>Soybean</td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value=""></td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="$ 1.00"></td>
-                           </tr>
-                           <tr>
-                              <td>Wet Feed</td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value=""></td>
-                              <td><input type="text" class="form-control text-field-button" id="usr" value="$ 13.23"></td>
-                           </tr>
-                        </table>
-                     </div>
-                  </div>
-                  <br>
-                  <!-- Next button for navigating to quantities page -->
-                  <div class="next-button">
-                     <a href="/rationweights"><button quantities.html type="button" class="btn btn-secondary">Calculate</button></a>
-                  </div>
+               </div>
+               <br>
+               <!-- Next button for navigating to quantities page -->
+               <div class="next-button">
+                  <!-- <a href="/rationweights"> -->
+                  <button id="calculateBtn" quantities.html type="button" class="btn btn-secondary"
+                     onclick="calculateBTN()">Calculate</button>
+                  <!-- </a> -->
                </div>
             </div>
          </div>
       </div>
-      <!-- This function is used to search the ingredient -->
-      <script>
-         function myFunction() {
-           var input, filter, ul, li, a, i, txtValue;
-           input = document.getElementById("myInput");
-           filter = input.value.toUpperCase();
-           ul = document.getElementById("myUL");
-           li = ul.getElementsByTagName("li");
-           for (i = 0; i < li.length; i++) {
-             a = li[i].getElementsByTagName("a")[0];
-             txtValue = a.textContent || a.innerText;
-             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-               li[i].style.display = "";
-             } else {
-               li[i].style.display = "none";
-             }
-           }
-         }
-      </script>
-      <!-- This is the webcomponents CDN which is used for the ingredient selection -->
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.22/webcomponents.js'></script>
-      <!-- This function is used to select the multiple components -->
-      <script type="text/javascript">
-         var multiselect = document.querySelector('x-multiselect');
-         multiselect.addEventListener('change', function () {
-           console.log('Selected items:', this.selectedItems());
-         });
-      </script>
+   </div>
    </body>
 </html>
