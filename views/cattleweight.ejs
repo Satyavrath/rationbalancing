@@ -2,234 +2,414 @@
 <html lang="en">
 
 <head>
-  <title>CATTLE WEIGHT</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../../stylesheets/cattleWeight.css">
-  <script src="../../scripts/script.js"></script>
+    <title>CATTLE WEIGHT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../stylesheets/cattleWeight.css">
+    <script src="../../scripts/script.js"></script>
 </head>
-
 <body onLoad="onLoadFunction()">
-
   <body>
     <div class="container-fluid">
       <!-- This contains the logo and Heading  -->
-      <div class="header">
-        <div class="logo top-left">
-          <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+        <div class="header">
+            <div class="logo top-left">
+                <img src="../../images/logo.jpeg" alt="Ration Balancing" class="logo">
+            </div>
+            <div class="heading">
+                <h2>CATTLE WEIGHT</h2>
+            </div>
         </div>
-        <div class="heading">
-          <h2>CATTLE WEIGHT</h2>
-        </div>
-      </div>
-      <!-- This main body which contains the side-bar and main content -->
-      <div class="main-body">
-        <div class="row">
-          <!-- This side bar is used for menu navigation -->
-          <div class="side-bar">
-            <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
-              <a href="/cattleweight">
-                <div id="menu-buttons" class="active">
-                  <p class="menu-text text-center">Cattle Weight</p>
-                </div>
-              </a>
-              <a href="/feedstuff">
-                <div id="menu-buttons">
-                  <p class="menu-text text-center">FeedStuffs</p>
-                </div>
-              </a>
-              <a href="/rationweights">
-                <div id="menu-buttons">
-                  <p class="menu-text text-center">Ration Weights</p>
-                </div>
-              </a>
+        <!-- This main body which contains the side-bar and main content -->
+        <div class="main-body">
+            <div class="row">
+                <!-- This side bar is used for menu navigation -->
+                <div class="side-bar">
+                    <div class="col-sm-12 col-md-2 col-lg-2 col-xs-12">
+                        <a href="/cattleweight">
+                            <div id="menu-buttons" class="active">
+                                <p class="menu-text text-center">Cattle Weight</p>
+                            </div>
+                        </a>
+                      <a href="/feedstuff">
+                        <div id="menu-buttons">
+                            <p class="menu-text text-center">FeedStuffs</p>
+                        </div>
+                      </a>
+                      <a href="/rationweights">
+                        <div id="menu-buttons">
+                            <p class="menu-text text-center">Ration Weights</p>
+                        </div>
+                      </a>
 
-            </div>
-          </div>
-          <!-- In this class which contians the cattle weight selection, cattle weight gain selection and nutrition table -->
-          <div class="main-content">
-            <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
-              <div>
-                <p>
-                  <h5>Selected Weight: <span id="wSelected"></span></h5>
-                </p>
-                <p>
-                  <h5>Selected Weight Gain: <span id="wgSelected"></span></h5>
-                </p>
-              </div>
-              <!-- cattle weight selections -->
-              <div class="cattle-weights">
-                <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
-                  <!-- <span class="badge badge-light">Light</span> -->
-                  <h4 class="weights-label">Weights:</h4>
-                  <button type="button" class="btn btn-secondary" onclick="Function450()">450 </button>
-                  <button type="button" class="btn btn-secondary" onclick="Function550()">550 </button>
-                  <button type="button" class="btn btn-secondary" onclick="Function650()">650 </button>
-                  <button type="button" class="btn btn-secondary" onclick="Function750()">750 </button>
-                  <button type="button" class="btn btn-secondary" onclick="Function950()">950 </button>
-                  <!-- cattle weight gain selection per day -->
-                  <select id="Gain" class="weightGain">
-                    <option id="1" value="6">Select Weight Gain</option>
-                    <option id="1" value="7">1.1 Pounds</option>
-                    <option id="2" value="8">2.2 Pounds</option>
-                    <option id="3" value="9">3.3 Pounds</option>
-                    <option id="4" value="10">4.4 Pounds</option>
-                    <option id="5" value="11">5.5 Pounds</option>
-                  </select>
+                    </div>
                 </div>
-              </div>
-              <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P, %EE -->
-              <div id="nutrition-table">
-                <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12">
-                  <table id="table-style">
-                    <tr>
-                      <th scope="col"><u>Nutrition</u></th>
-                      <th scope="col"><u>Min</u></th>
-                      <th scope="col"><u>Max</u></th>
-                    </tr>
-                    <tr>
-                      <td scope="row">%CP</td>
-                      <td><input type="text" id="CP-Min" class="form-control text-field-button" id="usr" value=""></td>
-                      <td><input type="text" id="CP-Max" class="form-control text-field-button" id="usr" value=""></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">NE M</td>
-                      <td><input type="text" id="NEM-Min" class="form-control text-field-button" id="usr" value=""></td>
-                      <td><input type="text" id="NEM-Max" class="form-control text-field-button" id="usr" value=""></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">NE G</td>
-                      <td><input type="text" id="NEG-Min" class="form-control text-field-button" id="usr" value=""></td>
-                      <td><input type="text" id="NEG-Max" class="form-control text-field-button" id="usr" value=""></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">%CA</td>
-                      <td><input type="text" id="CA-Min" class="form-control text-field-button" id="usr" value=""></td>
-                      <td><input type="text" id="CA-Max" class="form-control text-field-button" id="usr" value=""></td>
-                    </tr>
-                    <tr>
-                      <td scope="row">%P</td>
-                      <td><input type="text" id="P-Min" class="form-control text-field-button" id="usr" value=""></td>
-                      <td><input type="text" id="P-Max" class="form-control text-field-button" id="usr" value=""></td>
-                    </tr>
-                  </table>
+                <!-- In this class which contians the cattle weight selection, cattle weight gain selection and nutrition table -->
+                <div class="main-content">
+                    <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+                        <div>
+                            <p><h5>Selected Weight: <span id="wSelected"></span></h5></p>
+                            <p><h5>Selected Weight Gain: <span id="wgSelected"></span></h5></p>
+                         </div>
+                        <!-- cattle weight selections -->
+                        <div class="cattle-weights">
+                            <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
+                                <!-- <span class="badge badge-light">Light</span> -->
+                                <h4 class="weights-label">Weights:</h4>
+                                <button type="button" class="btn btn-secondary" onclick="Function450()" >450 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function550()" >550 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function650()" >650 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function750()" >750 </button>
+                                <button type="button" class="btn btn-secondary" onclick="Function950()" >950 </button>
+                                <!-- cattle weight gain selection per day -->
+                                    <select id="Gain" class="weightGain">
+                                      <option id="1" value="6" >Select Weight Gain</option>
+                                      <option id="1" value="7" >1.1 Pounds</option>
+                                      <option id="2" value="8" >2.2 Pounds</option>
+                                      <option id="3" value="9" >3.3 Pounds</option>
+                                      <option id="4" value="10">4.4 Pounds</option>
+                                      <option id="5" value="11">5.5 Pounds</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P, %EE -->
+                        <div id="nutrition-table">
+                            <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12">
+                                <table id="table-style">
+                                    <tr>
+                                        <th scope="col"><u>Nutrition</u></th>
+                                        <th scope="col"><u>Min</u></th>
+                                        <th scope="col"><u>Max</u></th>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%CP</td>
+                                        <td><input type="text" id="CP-Min" class="form-control text-field-button" id="usr" value=""></td>
+                                        <td><input type="text" id="CP-Max" class="form-control text-field-button" id="usr" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">NE M</td>
+                                        <td><input type="text" id="NEM-Min" class="form-control text-field-button" id="usr" value=""></td>
+                                        <td><input type="text" id="NEM-Max" class="form-control text-field-button" id="usr" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">NE G</td>
+                                        <td><input type="text" id="NEG-Min" class="form-control text-field-button" id="usr" value=""></td>
+                                        <td><input type="text" id="NEG-Max" class="form-control text-field-button" id="usr" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%CA</td>
+                                        <td><input type="text" id="CA-Min" class="form-control text-field-button" id="usr" value=""></td>
+                                        <td><input type="text" id="CA-Max" class="form-control text-field-button" id="usr" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">%P</td>
+                                        <td><input type="text" id="P-Min" class="form-control text-field-button" id="usr" value=""></td>
+                                        <td><input type="text" id="P-Max" class="form-control text-field-button" id="usr" value=""></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="cost-quantity">
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- This is the Next BUttons which navigates to the next page feedstuff.html-->
+                    <div class="next-button">
+                        <!-- <a onclick="checkWeightsAreSelectedOrNot()"></a> -->
+                          <a href="/feedstuff"><button type="button" class="btn btn-secondary" onclick="clickedNEXTBTN();localstorageWeight();">Next</button></a>
+                    </div>
                 </div>
-              </div>
-              <div class="cost-quantity">
-                <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
-                </div>
-              </div>
             </div>
-            <!-- This is the Next BUttons which navigates to the next page feedstuff.html-->
-            <div class="next-button">
-              <!-- <a onclick="checkWeightsAreSelectedOrNot()"></a> -->
-              <a href="/feedstuff"><button type="button" class="btn btn-secondary"
-                  onclick="clickedNEXTBTN();localstorageWeight();">Next</button></a>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-  </body>
-  <!-- This function is used to select the cattle weight gain weights  -->
-  <script type="text/javascript">
-    var x = 0;
-    function onLoadFunction() {
-      //localStorage.clear();
-      // alert("This function is working")
-      document.getElementById("Gain").disabled = true;
-    }
-    function enable() {
-      document.getElementById("Gain").disabled = false;
-    }
+   </body>
+   <!-- This function is used to select the cattle weight gain weights  -->
+   <script type="text/javascript">
+     var x = 0;
+     function onLoadFunction() {
+         //localStorage.clear();
+         // alert("This function is working")
+         document.getElementById("Gain").disabled = true;
+     }
+     function enable() {
+         document.getElementById("Gain").disabled = false;
+     }
     //  Onclick function for 450 Pounds cattle weight
-    function Function450() {
-      document.getElementById("wSelected").innerHTML = 450;
-      enable();
-      x = 1;
-      document.getElementById("CP-Min").value = "1";
-      document.getElementById("CP-Max").value = "1";
-      document.getElementById("NEM-Min").value = "1";
-      document.getElementById("NEM-Max").value = "1";
-      document.getElementById("NEG-Min").value = "1";
-      document.getElementById("NEG-Max").value = "1";
-      document.getElementById("CA-Min").value = "1";
-      document.getElementById("CA-Max").value = "1";
-      document.getElementById("P-Min").value = "1";
-      document.getElementById("P-Max").value = "1";
-    }
+     function Function450() {
+         document.getElementById("wSelected").innerHTML = 450;
+         enable();
+         x = 1;
+         document.getElementById("CP-Min").value = "1";
+         document.getElementById("CP-Max").value = "1";
+         document.getElementById("NEM-Min").value = "1";
+         document.getElementById("NEM-Max").value = "1";
+         document.getElementById("NEG-Min").value = "1";
+         document.getElementById("NEG-Max").value = "1";
+         document.getElementById("CA-Min").value = "1";
+         document.getElementById("CA-Max").value = "1";
+         document.getElementById("P-Min").value = "1";
+         document.getElementById("P-Max").value = "1";
+     }
     //  Onclick function for 550 Pounds cattle weight
-    function Function550() {
-      document.getElementById("wSelected").innerHTML = 550;
-      enable();
-      x = 2;
-      document.getElementById("CP-Min").value = "2";
-      document.getElementById("CP-Max").value = "2";
-      document.getElementById("NEM-Min").value = "2";
-      document.getElementById("NEM-Max").value = "2";
-      document.getElementById("NEG-Min").value = "2";
-      document.getElementById("NEG-Max").value = "2";
-      document.getElementById("CA-Min").value = "2";
-      document.getElementById("CA-Max").value = "2";
-      document.getElementById("P-Min").value = "2";
-      document.getElementById("P-Max").value = "2";
-    }
+     function Function550() {
+         document.getElementById("wSelected").innerHTML = 550;
+         enable();
+         x = 2;
+         document.getElementById("CP-Min").value = "2";
+         document.getElementById("CP-Max").value = "2";
+         document.getElementById("NEM-Min").value = "2";
+         document.getElementById("NEM-Max").value = "2";
+         document.getElementById("NEG-Min").value = "2";
+         document.getElementById("NEG-Max").value = "2";
+         document.getElementById("CA-Min").value = "2";
+         document.getElementById("CA-Max").value = "2";
+         document.getElementById("P-Min").value = "2";
+         document.getElementById("P-Max").value = "2";
+     }
     //  Onclick function for 650 Pounds cattle weight
-    function Function650() {
-      document.getElementById("wSelected").innerHTML = 650;
-      enable();
-      x = 3;
-      document.getElementById("CP-Min").value = "3";
-      document.getElementById("CP-Max").value = "3";
-      document.getElementById("NEM-Min").value = "3";
-      document.getElementById("NEM-Max").value = "3";
-      document.getElementById("NEG-Min").value = "3";
-      document.getElementById("NEG-Max").value = "3";
-      document.getElementById("CA-Min").value = "3";
-      document.getElementById("CA-Max").value = "3";
-      document.getElementById("P-Min").value = "3";
-      document.getElementById("P-Max").value = "3";
-    }
-    //  Onclick function for 750 Pounds cattle weight
-    function Function750() {
-      document.getElementById("wSelected").innerHTML = 750;
-      enable();
-      x = 4;
-      document.getElementById("CP-Min").value = "4";
-      document.getElementById("CP-Max").value = "4";
-      document.getElementById("NEM-Min").value = "4";
-      document.getElementById("NEM-Max").value = "4";
-      document.getElementById("NEG-Min").value = "4";
-      document.getElementById("NEG-Max").value = "4";
-      document.getElementById("CA-Min").value = "4";
-      document.getElementById("CA-Max").value = "4";
-      document.getElementById("P-Min").value = "4";
-      document.getElementById("P-Max").value = "4";
-    }
-    //  Onclick function for 950 Pounds cattle weight
-    function Function950() {
-      document.getElementById("wSelected").innerHTML = 950;
-      enable();
-      x = 5;
-      document.getElementById("CP-Min").value = "5";
-      document.getElementById("CP-Max").value = "5";
-      document.getElementById("NEM-Min").value = "5";
-      document.getElementById("NEM-Max").value = "5";
-      document.getElementById("NEG-Min").value = "5";
-      document.getElementById("NEG-Max").value = "5";
-      document.getElementById("CA-Min").value = "5";
-      document.getElementById("CA-Max").value = "5";
-      document.getElementById("P-Min").value = "5";
-      document.getElementById("P-Max").value = "5";
-    }
+     function Function650() {
+         document.getElementById("wSelected").innerHTML = 650;
+         enable();
+         x = 3;
+         document.getElementById("CP-Min").value = "3";
+         document.getElementById("CP-Max").value = "3";
+         document.getElementById("NEM-Min").value = "3";
+         document.getElementById("NEM-Max").value = "3";
+         document.getElementById("NEG-Min").value = "3";
+         document.getElementById("NEG-Max").value = "3";
+         document.getElementById("CA-Min").value = "3";
+         document.getElementById("CA-Max").value = "3";
+         document.getElementById("P-Min").value = "3";
+         document.getElementById("P-Max").value = "3";
+     }
+     //  Onclick function for 750 Pounds cattle weight
+     function Function750() {
+         document.getElementById("wSelected").innerHTML = 750;
+         enable();
+         x = 4;
+         document.getElementById("CP-Min").value = "4";
+         document.getElementById("CP-Max").value = "4";
+         document.getElementById("NEM-Min").value = "4";
+         document.getElementById("NEM-Max").value = "4";
+         document.getElementById("NEG-Min").value = "4";
+         document.getElementById("NEG-Max").value = "4";
+         document.getElementById("CA-Min").value = "4";
+         document.getElementById("CA-Max").value = "4";
+         document.getElementById("P-Min").value = "4";
+         document.getElementById("P-Max").value = "4";
+     }
+     //  Onclick function for 950 Pounds cattle weight
+     function Function950() {
+         document.getElementById("wSelected").innerHTML = 950;
+         enable();
+         x = 5;
+         document.getElementById("CP-Min").value = "5";
+         document.getElementById("CP-Max").value = "5";
+         document.getElementById("NEM-Min").value = "5";
+         document.getElementById("NEM-Max").value = "5";
+         document.getElementById("NEG-Min").value = "5";
+         document.getElementById("NEG-Max").value = "5";
+         document.getElementById("CA-Min").value = "5";
+         document.getElementById("CA-Max").value = "5";
+         document.getElementById("P-Min").value = "5";
+         document.getElementById("P-Max").value = "5";
+     }
+    //  To display selected weightgain on each page
+     $(document).ready(function() {
+         $("select.weightGain").change(function() {
+             var selectedWeightGain = $(this).children("option:selected").val();
+             //alert("It's running and the x value is " + x + " and selectedWeightGain is " + selectedWeightGain);
+             switch( parseInt(selectedWeightGain)) {
+                 case 7:
+                     weightGain1(selectedWeightGain,x);
+                 break;
+                 case 8:
+                     weightGain2(selectedWeightGain,x);
+                 break;
+                 case 9:
+                     weightGain3(selectedWeightGain,x);
+                 break;
+                 case 10:
+                     weightGain4(selectedWeightGain,x);
+                 break;
+                 case 11:
+                     weightGain5(selectedWeightGain,x);
+                 break;
+                 default:
+                 alert("You didn't select the weight gain")
+             }
+         });
+     });
+    //  Drop-down for weight gain selection 
+     function weightGain1(selectedWeightGain,x) {
+         document.getElementById("wgSelected").innerHTML = "1.1 kg";
+         if (x == 1) {
+            // alert("adding 1.1 to all the Nutrients")
+             document.getElementById("CP-Min").value = "2.1";
+             document.getElementById("CP-Max").value = "2.1";
+             document.getElementById("NEM-Min").value = "2.1";
+             document.getElementById("NEM-Max").value = "2.1";
+             document.getElementById("NEG-Min").value = "2.1";
+             document.getElementById("NEG-Max").value = "2.1";
+             document.getElementById("CA-Min").value = "2.1";
+             document.getElementById("CA-Max").value = "2.1";
+             document.getElementById("P-Min").value = "2.1";
+             document.getElementById("P-Max").value = "2.1";
+         } else if (x == 2) {
+             //alert("adding 3.3 to all the Nutrients")
+             document.getElementById("CP-Min").value = "3.1";
+             document.getElementById("CP-Max").value = "3.1";
+             document.getElementById("NEM-Min").value = "4.3";
+             document.getElementById("NEM-Max").value = "4.3";
+             document.getElementById("NEG-Min").value = "4.3";
+             document.getElementById("NEG-Max").value = "4.3";
+             document.getElementById("CA-Min").value = "4.3";
+             document.getElementById("CA-Max").value = "4.3";
+             document.getElementById("P-Min").value = "4.3";
+             document.getElementById("P-Max").value = "4.3";
+         } else if (selectedWeightGain == 10) {
+             //alert("adding 4.4 to all the Nutrients")
+             document.getElementById("CP-Min").value = "5.4";
+             document.getElementById("CP-Max").value = "5.4";
+             document.getElementById("NEM-Min").value = "5.4";
+             document.getElementById("NEM-Max").value = "5.4";
+             document.getElementById("NEG-Min").value = "5.4";
+             document.getElementById("NEG-Max").value = "5.4";
+             document.getElementById("CA-Min").value = "5.4";
+             document.getElementById("CA-Max").value = "5.4";
+             document.getElementById("P-Min").value = "5.4";
+             document.getElementById("P-Max").value = "5.4";
+         } else if (selectedWeightGain == 11) {
+             //alert("adding 5.5 to all the Nutrients")
+             document.getElementById("CP-Min").value = "6.5";
+             document.getElementById("CP-Max").value = "6.5";
+             document.getElementById("NEM-Min").value = "6.5";
+             document.getElementById("NEM-Max").value = "6.5";
+             document.getElementById("NEG-Min").value = "6.5";
+             document.getElementById("NEG-Max").value = "6.5";
+             document.getElementById("CA-Min").value = "6.5";
+             document.getElementById("CA-Max").value = "6.5";
+             document.getElementById("P-Min").value = "6.5";
+             document.getElementById("P-Max").value = "6.5";
+         } else if (selectedWeightGain == 7) {
+             //alert("adding 1.1 to all the Nutrients")
+             document.getElementById("CP-Min").value = "2.1";
+             document.getElementById("CP-Max").value = "2.1";
+             document.getElementById("NEM-Min").value = "2.1";
+             document.getElementById("NEM-Max").value = "2.1";
+             document.getElementById("NEG-Min").value = "2.1";
+             document.getElementById("NEG-Max").value = "2.1";
+             document.getElementById("CA-Min").value = "2.1";
+             document.getElementById("CA-Max").value = "2.1";
+             document.getElementById("P-Min").value = "2.1";
+             document.getElementById("P-Max").value = "2.1";
+         } else {
+             alert("Select the Weight Gain")
+         }
+     }
+
+     function weightGain2() {
+         document.getElementById("wgSelected").innerHTML = "2.2 kg";
+         //alert("weight Gain 2.2  button is clicked")
+         document.getElementById("CP-Min").value = "7";
+         document.getElementById("CP-Max").value = "7";
+         document.getElementById("NEM-Min").value = "7";
+         document.getElementById("NEM-Max").value = "7";
+         document.getElementById("NEG-Min").value = "7";
+         document.getElementById("NEG-Max").value = "7";
+         document.getElementById("CA-Min").value = "7";
+         document.getElementById("CA-Max").value = "7";
+         document.getElementById("P-Min").value = "7";
+         document.getElementById("P-Max").value = "7";
+     }
+
+     function weightGain3() {
+         document.getElementById("wgSelected").innerHTML = "3.3 kg";
+         //alert("weight Gain 3.3  button is clicked")
+         document.getElementById("CP-Min").value = "8";
+         document.getElementById("CP-Max").value = "8";
+         document.getElementById("NEM-Min").value = "8";
+         document.getElementById("NEM-Max").value = "8";
+         document.getElementById("NEG-Min").value = "8";
+         document.getElementById("NEG-Max").value = "8";
+         document.getElementById("CA-Min").value = "8";
+         document.getElementById("CA-Max").value = "8";
+         document.getElementById("P-Min").value = "8";
+         document.getElementById("P-Max").value = "8";
+     }
+
+     function weightGain4() {
+         document.getElementById("wgSelected").innerHTML = "4.4 kg";
+        // alert("weight Gain 4.4  button is clicked")
+         document.getElementById("CP-Min").value = "9";
+         document.getElementById("CP-Max").value = "9";
+         document.getElementById("NEM-Min").value = "9";
+         document.getElementById("NEM-Max").value = "9";
+         document.getElementById("NEG-Min").value = "9";
+         document.getElementById("NEG-Max").value = "9";
+         document.getElementById("CA-Min").value = "9";
+         document.getElementById("CA-Max").value = "9";
+         document.getElementById("P-Min").value = "9";
+         document.getElementById("P-Max").value = "9";
+     }
+
+     function weightGain5() {
+         document.getElementById("wgSelected").innerHTML = "5.5 kg";
+         //alert("weight Gain 5.5  button is clicked")
+         document.getElementById("CP-Min").value = "0";
+         document.getElementById("CP-Max").value = "0";
+         document.getElementById("NEM-Min").value = "0";
+         document.getElementById("NEM-Max").value = "0";
+         document.getElementById("NEG-Min").value = "0";
+         document.getElementById("NEG-Max").value = "0";
+         document.getElementById("CA-Min").value = "0";
+         document.getElementById("CA-Max").value = "0";
+         document.getElementById("P-Min").value = "0";
+         document.getElementById("P-Max").value = "0";
+     }
+    // to store data locally on browser
+     function localstorageWeight() {
+         // alert("In the local Storage")
+         var weight;
+         switch (x) {
+             case 1:
+                 // alert("This is case "+x)
+                 weight = 450;
+                 // alert("localStorage 450 button is clicked");
+                 break;
+             case 2:
+                 // alert("This is case "+x)
+                 weight = 550;
+                 // alert("localStorage 550 button is clicked")
+                 break;
+             case 3:
+                 // alert("This is case "+x)
+                 weight = 650;
+                 // alert("localStorage 650 button is clicked")
+                 break;
+             case 4:
+                 // alert("This is case "+x)
+                 weight = 750;
+                 // alert("localStorage 750 button is clicked")
+                 break;
+             case 5:
+                 // alert("This is case "+x)
+                 weight = 950;
+                 // alert("localStorage 950 button is clicked")
+                 break;
+             default:
+                 weight = 0;
+                 // alert("Please select Weights first");
+         }
+         // alert(weight);
+         localStorage.setItem("SelectedWeight", weight);
+        //  alert("data Sent")
+         return false;
+     }
+   </script>  
+</html>
