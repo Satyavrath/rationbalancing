@@ -68,45 +68,20 @@
                               <th>P</th>
                            </tr>
                            <tr>
-                              <td style="background-color:#6BADEC">13.5</td>
-                              <td style="background-color:#F1676E">0.9</td>
-                              <td>0.59</td>
-                              <td>0.14</td>
-                              <td>0.24</td>
+                              <td style="background-color:#6BADEC">TBD</td>
+                              <td style="background-color:#F1676E">TBD</td>
+                              <td>TBD</td>
+                              <td>TBD</td>
+                              <td>TBD</td>
                            </tr>
                         </table>
                      </div>
                   </div>
                   <br>
-                  <!-- This table contains the calculated weight of each ingredients and the total ration  -->
-                  <table id="table-style">
+                     <table id="table-ingredients" class="table-ration">
                      <tr>
                         <th>FeedStuffs</th>
-                        <th>Quantity (lbs.)</th>
-                     </tr>
-                     <tr>
-                        <td>Alfalfa Fresh</td>
-                        <td>940.2</td>
-                     </tr>
-                     <tr>
-                        <td>Alfalfa Hulls</td>
-                        <td>250.6</td>
-                     </tr>
-                     <tr>
-                        <td>Ground Corn</td>
-                        <td>1000.8</td>
-                     </tr>
-                     <tr>
-                        <td>Soybean</td>
-                        <td>140.1</td>
-                     </tr>
-                     <tr>
-                        <td>Wet Feed</td>
-                        <td>1150.5</td>
-                     </tr>
-                     <tr>
-                        <td><h3>Total Ration</h3></td>
-                        <td><h3>3482.2</h3></td>
+                        <th>Quantity (lbs)</th>
                      </tr>
                   </table>
                </div>
@@ -118,5 +93,28 @@
             </div>
          </div>
       </div>
+      <script>
+         
+         var ingredients = JSON.parse(localStorage.getItem('key'));
+         var finalOutput = JSON.parse(localStorage.getItem('finalValues'));
+
+        // ingredients =  JSON.parse(localStorage.getItem("selectedIngredients"));
+         //console.log(typeof ingredients);
+         // alert(ingredients);
+         //ingredients = e.target.attributes.id.ownerElement.innerHTML
+        // ingredientID = ingredients.replace(/[ ,.%()]/g, "");
+         //console.log(ingredients);
+         for (i = 0; i<ingredients.length ; i++) {
+            //alert("In the for loop "+ i)
+           // alert(ingredients[i])
+            $('#table-ingredients').append(
+               '<tr>' +
+               '<td id=' +i +'>' +ingredients[i]+ '</td>' +
+               '<td>' +finalOutput[i] + '</td>'+
+               '</tr>'
+            );
+         }
+   </script>
    </body>
 </html>
+
