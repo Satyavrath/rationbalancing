@@ -139,3 +139,82 @@ function calculateBTN() {
     }
     
     localStorageToSendIngredients(unique);
+    // To store selected ingredients key and value in an array.
+      var objectiveEquation = [];
+      for (var i in tableOfContents) {
+        objectiveEquation.push(tableOfContents[i].value + tableOfContents[i].key.replace(/[ ,.%()]/g, ""));
+      }
+      // To fetch index number of selected ingredient in json data
+      var dataId = [];
+      var selectednutrientvalue = [];
+      for (i = 0; i <= unique.length; i++) {
+        for (j = 0; j < 277; j++) {
+          if (ourData[j].name == unique[i]) {
+            dataId.push(j);
+          }
+        }
+      }
+      alert(dataId)
+      cpFeedstuffValues = []
+      nEmFeedstuffValues = []
+      nEgFeedstuffValues = []
+      caFeedstuffValues = []
+      pFeedstuffValues = []
+
+      value1 = []
+      // To store CP,NEm,NEg,Ca,P of selected nutrients in a new array
+      for (var index in dataId) {
+        selectednutrientvalue.push(ourData[dataId[index]].CP + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
+        selectednutrientvalue.push(ourData[dataId[index]].NEm + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
+        selectednutrientvalue.push(ourData[dataId[index]].NEg + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
+        selectednutrientvalue.push(ourData[dataId[index]].Ca + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
+        selectednutrientvalue.push(ourData[dataId[index]].P + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
+        value1.push(ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""))
+        cpFeedstuffValues.push(ourData[dataId[index]].CP)
+        nEmFeedstuffValues.push(ourData[dataId[index]].NEm)
+        nEgFeedstuffValues.push(ourData[dataId[index]].NEg)
+        caFeedstuffValues.push(ourData[dataId[index]].Ca)
+        pFeedstuffValues.push(ourData[dataId[index]].P)
+
+
+      }
+
+
+      //  To store crude protein value of selected ingredients
+      var cpArray = [];
+      for (i = 0; i < selectednutrientvalue.length; i += 5) {
+        cpArray.push(selectednutrientvalue[i]);
+      }
+      //  To store NEm value of selected ingredients
+      var nEMArray = [];
+      for (i = 1; i < selectednutrientvalue.length; i += 5) {
+        nEMArray.push(selectednutrientvalue[i]);
+      }
+      //  To store NEg value of selected ingredients
+      var nEGArray = [];
+      for (i = 2; i < selectednutrientvalue.length; i += 5) {
+        nEGArray.push(selectednutrientvalue[i]);
+      }
+      //  To store calcium value of selected ingredients
+      var caArray = [];
+      for (i = 3; i < selectednutrientvalue.length; i += 5) {
+        caArray.push(selectednutrientvalue[i]);
+
+      }
+      //  To store phosphorous value of selected ingredients
+      var pArray = [];
+      for (i = 4; i < selectednutrientvalue.length; i += 5) {
+        pArray.push(selectednutrientvalue[i]);
+      }
+      var aggregateArray = [];
+      for (i in unique){
+        aggregateArray.push(unique[i].replace(/[ ,.%()]/g, ""));
+      }
+
+      var data = minMaxRange.split(',');
+
+      var s = "Minimize P = " + objectiveEquation.join('+') + " subject to\n" + cpArray.join('+') + ">=" + data[0] + "\n"
+        + cpArray.join('+') + "<=" + data[1] + "\n" + nEMArray.join('+') + ">=" + data[2] + "\n" + nEMArray.join('+') + "<=" + data[3] + "\n"
+        + nEGArray.join('+') + ">=" + data[4] + "\n" + nEGArray.join('+') + "<=" + data[5] + "\n" + caArray.join('+') + ">=" + data[6] + "\n"
+        + caArray.join('+') + "<=" + data[7] + "\n" + pArray.join('+') + ">=" + data[8] + "\n" + pArray.join('+') + "<=" +  data[9]+ "\n" +aggregateArray.join('+') +"= 100";
+        console.log(s);
