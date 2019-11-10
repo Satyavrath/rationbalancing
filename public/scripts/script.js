@@ -117,12 +117,25 @@ function calculateBTN() {
     return index === self.indexOf(elem);
   })
   var minMaxRange = localStorage.getItem('objectToPass');
-  for (var i = 0; i < unique.length; i++) {
-    let ing = unique[i];
-    let keyIng = ing.replace(/[ ,.%()]/g, "");
-    let valCost = document.getElementById(keyIng + "Cost").value;
-    tableOfContents.push({
-      key: ing,
-      value: valCost
-    });
-  }
+    for (var i = 0; i < unique.length; i++) {
+      let ing = unique[i];
+      let keyIng = ing.replace(/[ ,.%()]/g, "");
+      let valCost = document.getElementById(keyIng + "Cost").value;
+      tableOfContents.push({
+        key: ing,
+        value: valCost
+      });
+    }
+
+    function localStorageToSendIngredients(unique) {
+      console.log(unique);
+    
+      // localStorage.setItem("selectedIngredients", JSON.stringify("unique"));
+      // Storage.prototype.setObject = function(key, value) {
+      //   this.setItem(key, JSON.stringify(unique));
+      // }
+      localStorage.setItem('key', JSON.stringify(unique));
+      return false;
+    }
+    
+    localStorageToSendIngredients(unique);
