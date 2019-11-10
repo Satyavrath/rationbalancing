@@ -68,3 +68,24 @@ function myScript(e) {
     $("#calculateBtn").show();
   }
 }
+// To hide content when clicked on body.
+function onBodyClick(event) {
+  if (event.target.id != "search") {
+    $("#result").hide();
+  }
+}
+// To find feedstuff based on Advance search.
+function getFeedSearch(event) {
+  $('#result').html('');
+  var searchField = $('#search').val();
+  var expression = new RegExp(searchField, "i");
+  // $.getJSON('../data/ingredients.json',function(data){
+  $.getJSON('https://raw.githubusercontent.com/Satyavrath/rationbalancing/master/data/ingredients.json', function (data) {
+    $.each(data, function (key, value) {
+      if (value.name.search(expression) != -1) {
+        $('#result').append('<li>' + value.name + '</li>');
+      };
+    });
+    $("#result").show();
+  });
+}
