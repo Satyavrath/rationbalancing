@@ -218,3 +218,230 @@ function calculateBTN() {
         + nEGArray.join('+') + ">=" + data[4] + "\n" + nEGArray.join('+') + "<=" + data[5] + "\n" + caArray.join('+') + ">=" + data[6] + "\n"
         + caArray.join('+') + "<=" + data[7] + "\n" + pArray.join('+') + ">=" + data[8] + "\n" + pArray.join('+') + "<=" +  data[9]+ "\n" +aggregateArray.join('+') +"= 100";
         console.log(s);
+        var epsilon = .00000000000001  // 10^-14
+
+        var maxSigDig = 13; // max number of sig digits
+      
+        // var exit = false; // get out of here
+      
+        var okToRoll = true;		// preliminary testing results
+      
+        var stepName = "";		// for error trap
+      
+        var tab = unescape( "%09" );	// these are now the appropriate strings;
+      
+        var cr = unescape( "%0D" );  
+        
+        var lf = unescape( "%0A" );
+      
+        var symb = unescape( "%C5" );
+      
+        var backSlash = unescape( "%5C" );
+      
+        var gteSymbol = unescape( "%B3" ); // symbols in old netscape
+      
+        var lteSymbol = unescape( "%B2" );
+      
+        var lte = unescape ("%u2264");	// actual symbol in IE
+      
+        var gte = unescape ("%u2265");
+      
+        var comma = ",";
+      
+        var singular = false;
+      
+        var msFormat = false;
+      
+        var maxRows = 15;
+      
+        var maxCols = 30;
+      
+        var numRows = 0;
+      
+        var numCols = 0;
+      
+        var numConstraints = 0;
+      
+        var maximization = true;		// this is a max problem
+      
+        var phase1 = false;			// are we in phase 1?
+      
+        var objectiveName = "p";
+      
+        var numVariables = 1;
+      
+        var variables = [];
+      
+        var theTableau = new makeArray2 (1,1);
+      
+        var theStringTableau = new makeArray2 (1,1); 	// to display steps in the computation
+      
+        var starred = new makeArray(1);		// starred rows
+      
+        var TableauNumber = 1;				// the number of tableaus
+      
+        var maxSteps = 50;					// maximum number of tableaux
+      
+        var numSigDigs = 6;					// default accuracy
+      
+        var activeVars = new Array();			// active variables
+      
+        // old globals below...
+      
+        var maxDenom = 1000;  // for fraction approximation
+      
+        var tol = .000000001; // for 10 digit accuracy guaranteed cutoff for fraction approx not yet implemented
+      
+      
+        // end instructions
+      
+        var fractionMode = false;
+      
+        var integerMode = false;
+      
+        var okToRoll = true;
+      
+        var browserName = navigator.appName;
+      
+        var browserVersion = navigator.appVersion;
+      
+        if ( (browserName == "Netscape") && (parseInt(browserVersion) >= 3)) browserName = "N";
+      
+        else if ( (browserName == "Microsoft Internet Explorer") && (parseInt(browserVersion) >= 3) ) browserName = "M";
+      
+        var spreedsheetOutputValue;
+      
+        // ******************** MATH UTILITIES ******************
+      
+        function hcf (a,b) {
+      
+        var bigger = Math.abs(a);
+      
+        var smaller = Math.abs(b);
+      
+        var x = 0;
+      
+        var theResult = 1;
+      
+        if ( (a == 0) || (b == 0) ) return(1);
+      
+        if (smaller > bigger) {x = bigger; bigger = smaller;  smaller = x}
+
+        var testRatio = roundSigDig(bigger/smaller, 11);
+      
+        var testRatio2 = 0;
+      
+        if (testRatio == Math.floor(testRatio) ) return (smaller)
+      
+        else
+         {
+         // look for a factor of the smaller, deplete it by that factor and multiply bigger by it
+      
+         var found = false;
+      
+         var upperlimit = smaller;
+      
+         for (var i = upperlimit; i >= 2; i--)
+      
+           {
+      
+           testRatio = roundSigDig(smaller/i, 10);
+      
+           testRatio2 = roundSigDig(bigger/i, 10);
+      
+           if  ( (testRatio == Math.floor(testRatio) ) && (testRatio2 == Math.floor(testRatio2) ) )
+      
+             {
+      
+             smaller = Math.round(smaller/i);
+      
+             smaller = Math.round(bigger/i);
+      
+             return(theResult *hcf(bigger, smaller) );
+             }
+           }
+           return(theResult);
+      
+           }
+      
+        alert("error!");
+      
+        return(-1); // should never get here
+      
+        } // hcf
+
+        function lcm(a,b) {
+      
+        // lowest common multiple
+      
+        var bigger = Math.abs(a);
+      
+        var smaller = Math.abs(b);
+      
+        var x = 0;
+      
+        if ( (a == 0) || (b == 0) ) return(1);
+      
+        if (smaller > bigger) {x = bigger; bigger = smaller;  smaller = x}
+
+        var testRatio = roundSigDig(bigger/smaller, 11)
+      
+        if (testRatio == Math.floor(testRatio) ) return (bigger)
+      
+        else
+         {     
+         // look for a factor of the smaller, deplete it by that factor and multiply bigger by it
+      
+         var found = false;
+      
+         for (var i = 2; i <= smaller; i++)
+      
+           {
+      
+           if (i*i >= smaller) break;
+      
+           testRatio = roundSigDig(smaller/i, 11);
+      
+           if (testRatio == Math.floor(testRatio) )
+      
+             {
+      
+             smaller = testRatio;
+      
+             bigger = bigger*i;
+      
+             return( lcm(bigger, smaller) );
+      
+             }
+      
+           }
+      
+           return(bigger*smaller);
+      
+           }
+      
+        alert("error!");
+      
+        return(-1); // should never get here
+      
+        } // lcm
+
+        // *** reducing a fraction ***
+      
+        function reduce(fraction){
+      
+        with (Math)
+      
+         {
+      
+         var HCF = hcf(fraction[1], fraction[2]);
+      
+         fraction[1] = Math.round(fraction[1]/HCF);
+      
+         fraction[2] = Math.round(fraction[2]/HCF);
+      
+         } // with math
+      
+        return(fraction);
+        } // reduce fraction
+    }
