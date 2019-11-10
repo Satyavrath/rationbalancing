@@ -111,3 +111,18 @@ function clickedNEXTBTN() {
   listofIngs = [cp, nem, neg, ca, p];
   localStorage.setItem('objectToPass', listofIngs);
 }
+function calculateBTN() {
+  tableOfContents = [];
+  var unique = ingredients.filter(function (elem, index, self) {
+    return index === self.indexOf(elem);
+  })
+  var minMaxRange = localStorage.getItem('objectToPass');
+  for (var i = 0; i < unique.length; i++) {
+    let ing = unique[i];
+    let keyIng = ing.replace(/[ ,.%()]/g, "");
+    let valCost = document.getElementById(keyIng + "Cost").value;
+    tableOfContents.push({
+      key: ing,
+      value: valCost
+    });
+  }
