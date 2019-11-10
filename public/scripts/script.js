@@ -89,3 +89,25 @@ function getFeedSearch(event) {
     $("#result").show();
   });
 }
+// On click function to navigate to feedstuff page
+function clickedNEXTBTN() {
+
+  let cpMin = document.getElementById("CP-Min").value;
+  let cpMax = document.getElementById("CP-Max").value;
+  cp.push(cpMin);
+  cp.push(cpMax);
+  let nemMin = document.getElementById("NEM-Min").value;
+  let nemMax = document.getElementById("NEM-Max").value;
+  nem.push(nemMin); nem.push(nemMax);
+  negMin = document.getElementById("NEG-Min").value;
+  negMax = document.getElementById("NEG-Max").value;
+  neg = [negMin, negMax];
+  caMin = document.getElementById("CA-Min").value;
+  caMax = document.getElementById("CA-Max").value;
+  ca = [caMin, caMax];
+  pMin = document.getElementById("P-Min").value;
+  pMax = document.getElementById("P-Max").value;
+  p = [pMin, pMax];
+  listofIngs = [cp, nem, neg, ca, p];
+  localStorage.setItem('objectToPass', listofIngs);
+}
