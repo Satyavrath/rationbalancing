@@ -770,6 +770,60 @@ function calculateBTN() {
                  } // end else
                }
              }
-          
-          
-    }
+  }
+
+  // Makes a matrix integer by least common multiples of rows 
+
+    function makeInteger(theMatrix, RowNum, ColNum,Strings) {
+
+      var rowArray = new makeArray2(ColNum,2);
+    
+      var outArray = new makeArray2(RowNum,ColNum);
+    
+      for (var i = 1; i <= RowNum; i++)
+    
+       {
+    
+       // set up fraction row array
+    
+       for (var j = 1; j <= ColNum; j++)
+    
+         {
+    
+         for (var k = 1; k <= 2; k++) rowArray[j][k] = toFracArr(theMatrix[i][j],maxDenom, tol)[k];
+    
+         } // j
+    
+    
+    
+       // get the lcm of all the row denominators
+    
+       var rowLcm = 1;
+    
+       for (j = 1; j <= ColNum; j++) rowLcm = lcm(rowLcm,rowArray[j][2]);
+    
+       // now multiply the row by the lcm
+    
+       var x = 0;
+    
+       for  (j = 1; j <= ColNum; j++)
+    
+         {
+    
+         x = rowLcm*rowArray[j][1]/rowArray[j][2];
+    
+         if (!Strings) outArray[i][j] = Math.round(x);
+    
+         else outArray[i][j] = Math.round(x).toString();
+    
+         } // j
+    
+       outArray[0][j] = rowLcm;
+    
+       } // i
+    
+      return(outArray);
+    
+    
+    
+    } // makeInteger
