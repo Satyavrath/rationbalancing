@@ -770,7 +770,7 @@ function calculateBTN() {
                  } // end else
                }
              }
-  }
+  
 
   // Makes a matrix integer by least common multiples of rows 
 
@@ -827,3 +827,34 @@ function calculateBTN() {
     
     
     } // makeInteger
+
+  // check for subString
+    function checkString(InString,subString,backtrack)
+
+  {
+
+  var found = -1;  var theString = InString; var Length = theString.length; var symbLength = subString.length;
+
+  for (var i = Length- symbLength; i >-1; i--)
+
+   {
+
+   TempChar=theString.substring (i, i+ symbLength);
+
+   if (TempChar == subString)
+
+       {
+
+       found = i;
+
+       if (backtrack) i = -1
+
+       }
+
+   } // i
+
+  return(found);
+
+  } // check
+  
+}
