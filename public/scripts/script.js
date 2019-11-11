@@ -1035,11 +1035,26 @@ function calculateBTN() {
     
        var parsd = new makeArray (Ar[0]+1, "");    
        for (var i = 1; i < Ar[0]; i++)
-    
          {
-    
-         parsd[i] = stripChar(Ar[i+1],"_");
-    
+         parsd[i] = stripChar(Ar[i+1],"_");  
          }
+         var vars = [];
+        for (var i = 1; i < Ar[0]; i++)
+        {
+        vars[i-1] = /([a-zA-Z].*)/.exec(parsd[i])[1];
+
+        parsd[i] = parsd[i].replace(/[a-zA-Z].*/, '');
+
+        if (parsd[i] == "+") parsd[i] = "1";  // fix up the coefficients
+
+        else if  (parsd[i] == "-") parsd[i] = "-1";
+
+        parsd[i] = stripChar(parsd[i],"+");
+
+        }
+        parsd[0] = vars;
+        return (parsd);
+
+  }
   
 }
