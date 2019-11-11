@@ -444,4 +444,201 @@ function calculateBTN() {
       
         return(fraction);
         } // reduce fraction
+        function toFracArr(x, maxDenom, tol) {
+
+          // identical to toFrac, except this returns an array [1] = numerator;  [2] = denom
+        
+          // rather than a string
+        
+          // tolerance is the largest error you will tolerate before resorting to
+        
+          // expressing the result as the input decimal in fraction form
+        
+          // suggest no less than 10^-10, since we round all to 15 decimal places.
+        
+           var theFrac = new Array();
+        
+           theFrac[1] = 0;
+        
+           theFrac[2] = 0;
+        
+           var p1 = 1;   var p2 = 0; var q1 = 0;var q2 = 1; var u =0; var t = 0;
+        
+           var flag = true;
+        
+           var negflag = false;
+        
+           var a = 0;
+        
+           var xIn = x; // variable for later
+        
+        
+        
+           if (x >10000000000) return(theFrac);
+        
+          while (flag)
+        
+           {
+        
+           if (x<0) {x = -x; negflag = true; p1 = -p1}
+        
+           var intPart = Math.floor(x);
+        
+           var decimalPart = roundSigDig((x - intPart),15);
+        
+           x = decimalPart;
+        
+           a = intPart;
+        
+           t = a*p1 + p2;
+        
+           u = a*q1 + q2;
+        
+           if  ( (Math.abs(t) > 10000000000 ) || (u > maxDenom ) )
+        
+             {
+        
+               n = p1;
+        
+               d = q1;
+        
+               break;
+        
+             }
+             p = t;
+        
+             q = u;
+        
+           if ( x == 0 )
+        
+             {
+        
+             n = p;
+        
+             d = q;
+        
+             break;
+        
+             }
+             p2 = p1;
+        
+             p1 = p;
+        
+             q2 = q1;
+        
+             q1 = q;
+        
+             x = 1/x;
+        
+           } // while ( true );
+        
+           theFrac[1] = n;
+        
+           theFrac[2] = d;
+        
+           return(theFrac);
+        
+          } // toFracArr
+        
+          function toFrac(x, maxDenom, tol) {
+        
+          // tolerance is the largest errror you will tolerate before resorting to
+        
+          // expressing the result as the input decimal in fraction form
+        
+          // suggest no less than 10^-10, since we round all to 15 decimal places.
+        
+           var theFrac = new Array();
+        
+           theFrac[1] = 0;
+        
+           theFrac[2] = 0;
+        
+           var p1 = 1;
+        
+           var p2 = 0;
+        
+           var q1 = 0;
+        
+           var q2 = 1;
+        
+           var u =0;
+        
+           var t = 0;
+        
+           var flag = true;
+        
+           var negflag = false;
+        
+           var a = 0;
+        
+           var xIn = x; // variable for later
+        
+           if (x >10000000000) return(theFrac);
+        
+          while (flag)
+        
+           {
+        
+           if (x<0) {x = -x; negflag = true; p1 = -p1}
+        
+           var intPart = Math.floor(x);
+        
+           var decimalPart = roundSigDig((x - intPart),15);
+        
+           x = decimalPart;
+        
+           a = intPart;
+        
+           t = a*p1 + p2;
+        
+           u = a*q1 + q2;
+        
+           if  ( (Math.abs(t) > 10000000000 ) || (u > maxDenom ) )
+        
+             {
+        
+               n = p1;
+        
+               d = q1;
+        
+               break;
+        
+             }
+        
+             p = t;
+        
+             q = u;
+        
+           if ( x == 0 )
+        
+             {
+        
+             n = p;
+             d = q;
+             break;
+        
+             }
+        
+             p2 = p1;
+        
+             p1 = p;
+        
+             q2 = q1;
+        
+             q1 = q;
+        
+             x = 1/x;
+        
+           } // while ( true );
+        
+           theFrac[1] = n;
+        
+           theFrac[2] = d;
+        
+           if (theFrac[2] == 1) return (theFrac[1].toString());
+        
+           else return (theFrac[1] + "/" + theFrac[2]);
+        
+          } // toFrac
     }
