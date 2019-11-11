@@ -1056,5 +1056,210 @@ function calculateBTN() {
         return (parsd);
 
   }
+  // ****************SIMPLEX METHOD****************
+
+  function simplexMethod(InMatrix, rows, cols) {
+
+    var negIndicator = false;
+  
+    var testRatio = new Array();
+  
+    var theRow = 0; singular = false;
+
+    // var displayInplaceOfDocument = "working..";
+
+    while ( (phase1) && (TableauNumber <= maxSteps) )
+  
+     {  
+       var checkingForZeros = true;
+       var foundAZero = false;
+       while(checkingForZeros) {
+         checkingForZeros = false;
+         for (i = 1; i <= numRows-1; i++)
+           {
+           if (starred[i] == 1)  break;
+           } // i
+         theRowx = i;
+         // check the first column to see if it has a zero on the
+         // right-hand side and is hence equivalent to <= constraint
+         // Fix 01 if it is really small make it zero first:
+         if (roundSigDig(InMatrix[theRowx][cols],maxSigDig)==0) InMatrix[theRowx][cols]=0;
+  
+         if ((InMatrix[theRowx][cols] == 0)&&(starred[theRowx] == 1)){
+           checkingForZeros  = true;
+           foundAZero = true;
+           for (var j = 1; j <= cols-1; j++) {
+             InMatrix[theRowx][j] *= -1;
+             } // j
+           starred[theRowx] = 0;
+           // add additional tableaus
+           TableauNumber +=1;
+           displayInplaceOfDocument += "..";
+           // document.theSpreadsheet.expr.value += "..";
+           displayMatrix(1);
+           } // found a zero on the right-hand side
+         } // while checking for zeros
+  
+       // at this  point, check if there are any starred rows left
+       phase1 = false;
+       for (var i = 1; i <= numConstraints; i++) {
+         if (starred[i] == 1) {phase1 = true; break}
+         } // i
+  
+     if (phase1) {
+     // there are starred rows left
+     // scan the first starred row starred row for the largest pos. element & pivot on that column
+       // this is actually step 2
+       if(!foundAZero) {
+         // find the largest positive entry in the first starred row
+         // and pivot
+         var rowmax = 0;
+         for (i = 1; i <= numRows-1; i++)
+           {
+           if (starred[i] == 1) break;
+           } // i
+  
+         theRowx = i;
+  
+         for (j = 1; j <= numCols-2; j++)
+           {
+  
+           numx = roundSigDig(InMatrix[i][j],10);
+  
+           if (numx > rowmax) {rowmax = numx; theColx = j;}
+  
+           } // j
+  
+         if (rowmax == 0) {singular = true; displayFinalStatus(); return(InMatrix)}
+         else 
+           {
+           // get the lowest ratio and pivot on theRowx, theColx;
+           for (var i = 1; i <=rows-1; i++)
+             {
+             testRatio[i] = -1;
+          if (roundSigDig(InMatrix[i][theColx],maxSigDig) >0) // dont want to pivot on a number too close to zero
+               {
+               if (Math.abs(InMatrix[i][cols]) < epsilon) InMatrix[i][cols] = 0;
+               // fixing numbers really close to zero
+               testRatio[i] = InMatrix[i][cols]/ InMatrix[i][theColx];
+               }
+             } // i
+           var minRatio = 10000000000000;
+  
+           theRow = 0;			// this will have smallest ratio
+  
+           for (var i = 1; i <=rows-1; i++)
+             {
+             if ((testRatio[i] >= 0) && (testRatio[i] < minRatio))
+               {
+               minRatio = testRatio[i];
+               theRow = i;
+               } // end if
+             else if ((testRatio[i] >= 0) && (testRatio[i] == minRatio))
+               {
+               if (starred[i] == 1) theRow = i;
+               // select starred ones in preference to others
+               else if (Math.random()>.5) theRow = i;
+               // random tie-breaking
+               }
+             } // i
+         // escape clause follows
+           if (theRow == 0) {singular = true; displayFinalStatus(); return(InMatrix)}
+           InMatrix = pivot(InMatrix,rows,cols,theRow,theColx);
+           // end of this step
+         } // if did not find a zero
+         TableauNumber +=1;
+         displayInplaceOfDocument += "..";  
+         displayMatrix(1);
+         }
+       } // end of phase 1 treatment  
+     }
+    // END OF PHASE I
+  
+    // NOW PHASE II  
+  
+    var testnum = 0;
+    for (var i = 1; i <= cols-1; i++)
+     {
+     testnum = roundSigDig(InMatrix[rows][i],10)
+     if (testnum<0){
+       negIndicator = true;
+       }
+     } // i
+    var theCol = 0;
+    if (negIndicator)
+     {
+     // look for most negative of them;
+     var minval = 0;
+     for (i = 1; i <= cols-1; i++)
+       {
+       testnum = roundSigDig(InMatrix[rows][i],10);
+       if (testnum<minval){
+         minval = testnum;
+         theCol = i;
+         }
+     } // i 
+     }
+    while((negIndicator) && (TableauNumber <= maxSteps) ) // phase 2
+     {
+     for (var i = 1; i <=rows-1; i++){
+       testRatio[i] = -1;
+       if (roundSigDig(InMatrix[i][theCol],maxSigDig) >0) // dont want to pivot on a number too close to zero
+         {
+         if (Math.abs(InMatrix[i][cols]) < epsilon) InMatrix[i][cols] = 0;
+         // fixing numbers really close to zero
+         testRatio[i] = InMatrix[i][cols]/ InMatrix[i][theCol];  
+         }
+       } // i
+  
+     var minRatio = 10000000000000;
+     theRow = 0;			// this will have smallest ratio
+     for (var i = 1; i <=rows-1; i++)
+       {
+        if ((testRatio[i] >= 0) && (testRatio[i] < minRatio)){
+         minRatio = testRatio[i];
+         theRow = i;
+         }
+       else if ((testRatio[i] >= 0) && (testRatio[i] == minRatio)){
+               if (Math.random()>.5) theRow = i;
+               // random tie-breaking
+               }
+       } // i
+     // escape clause:
+     if (theRow == 0) {singular = true; displayFinalStatus(); return(InMatrix)}
+     InMatrix = pivot(InMatrix,rows,cols,theRow,theCol);
+     // end of this step
+     TableauNumber +=1;
+     displayInplaceOfDocument += "..";
+     displayMatrix(1);
+     negIndicator = false;
+     for (var i = 1; i <= cols-1; i++){
+       if (roundSigDig(InMatrix[rows][i], 10) <0){
+         negIndicator = true;
+         }
+       } // i
+    // ERROR CORRECTION BELOW:
+
+      if (negIndicator)  // need to select the most negative EVERY time
+      {
+          // look for most negative of them;
+          var minval = 0;
+
+          for (i = 1; i <= cols-1; i++)
+          {
+            testnum = roundSigDig(InMatrix[rows][i],10);
+            if (testnum<minval)
+            {
+                minval = testnum;
+                theCol = i;
+            }
+          } // i
+      }  // end if negIndicator is still true
+    //alert(theCol)
+     } // while negIndicator
+    displayFinalStatus();
+    return(InMatrix);
+  
+    }
   
 }
