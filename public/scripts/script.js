@@ -1,3 +1,12 @@
+var ourData;
+var customId = [];
+var tableOfContents = [];
+var ingredients = [];
+var cp = [];
+var nem = []; var neg = []; var ca = []; var p = [];
+var listofIngs = [];
+var unique = [];
+
 // To search any ingredient based by name.
 
 $(document).ready(function () {
