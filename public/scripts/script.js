@@ -895,5 +895,23 @@ function calculateBTN() {
     return(InMatrix);
     }
 
+    function rightString (InString, num)  {
+
+      OutString=InString.substring (InString.length-num, InString.length);
+   
+      return (OutString);
+   
+     }
+
+     function rightTrim (InString)  {
+   
+      var length = InString.length;
+   
+      OutString=InString.substring(0,length-1);
+   
+      return (OutString);
+   
+     }
+
   
 }
