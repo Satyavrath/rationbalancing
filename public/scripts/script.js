@@ -471,9 +471,7 @@ function calculateBTN() {
            var a = 0;
         
            var xIn = x; // variable for later
-        
-        
-        
+ 
            if (x >10000000000) return(theFrac);
         
           while (flag)
@@ -641,4 +639,137 @@ function calculateBTN() {
            else return (theFrac[1] + "/" + theFrac[2]);
         
           } // toFrac
+
+          //  returns last character of a string
+          function lastChar(theString) {
+
+            if (theString == "") return(theString);
+          
+            var len = theString.length;
+          
+            return theString.charAt(len-1);
+          
+            }
+          
+          
+          // returns bool value to find character
+            function isCharHere (InString, RefString)  {
+          
+             if(InString.length!=1)
+          
+               return (false);
+          
+             if (RefString.indexOf (InString, 0)==-1)
+          
+               return (false);
+          
+             return (true);
+          
+            }
+          // returns true if theString looks like it can be evaluated
+            
+          function looksLikeANumber(theString) {
+     
+            var result = true; var length = theString.length;
+          
+            if (length == 0) return (false);
+          
+            var x = ""
+          
+            var y = "1234567890-+*. /"
+          
+            var yLength = y.length;
+          
+            for (var i = 0; i <= length; i++)
+          
+             {
+          
+             x = theString.charAt(i);
+          
+               result = false;
+          
+               for (var j = 0; j <= yLength; j++)
+          
+                 {
+          
+                 if (x == y.charAt(j)) {result = true; break}
+          
+                 } // j
+          
+             if (result == false) return(false);
+          
+             } // i
+          
+            return(result);
+          
+            }          
+            //  rounds value
+            function roundSix(theNumber) {
+            var x = (Math.round(1000000*theNumber))/1000000;
+            return(x);
+            }
+            function shiftRight(theNumber, k) {
+          
+             if (k == 0) return (theNumber)
+          
+             else
+          
+               {
+          
+               var k2 = 1;
+          
+               var num = k;
+          
+               if (num < 0) num = -num;
+          
+               for (var i = 1; i <= num; i++)
+          
+                 {
+          
+                 k2 = k2*10
+          
+                 }
+          
+               }
+          
+             if (k>0)
+          
+               {return(k2*theNumber)}
+          
+             else
+          
+               {return(theNumber/k2)}
+          
+             }
+
+            function roundSigDig(theNumber, numDigits) {
+          
+               numDigits = numDigits -1	
+          
+             with (Math)
+          
+               {
+          
+               if (theNumber == 0) return(0);
+          
+               else if(abs(theNumber) < 0.000000000001) return(0);
+          
+            // ignores numbers less than 10^(-12)
+          
+               else
+                 {
+          
+                 var k = floor(log(abs(theNumber))/log(10))-numDigits
+          
+                 var k2 = shiftRight(round(shiftRight(abs(theNumber),-k)),k)
+          
+                 if (theNumber > 0) return(k2);
+          
+                 else return(-k2)
+          
+                 } // end else
+               }
+             }
+          
+          
     }
