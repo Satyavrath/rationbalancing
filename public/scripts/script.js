@@ -912,6 +912,60 @@ function calculateBTN() {
       return (OutString);
    
      }
+     function replaceChar (InString,oldSymbol,newSymbol)  {
+
+      var OutString="";
+   
+      var TempChar = "";
+   
+      for (Count=0; Count < InString.length; Count++)  {
+   
+        TempChar=InString.substring (Count, Count+1);
+   
+        if (TempChar!=oldSymbol)
+   
+          OutString=OutString+TempChar
+   
+        else OutString=OutString+newSymbol;
+   
+      }
+   
+      return (OutString);
+   
+     }
+   
+   
+     function replaceSubstring (InString,oldSubstring,newSubstring)  {
+   
+      OutString="";
+   
+      var sublength = oldSubstring.length;
+   
+      for (Count=0; Count < InString.length; Count++)  {
+   
+        TempStr=InString.substring (Count, Count+sublength);
+   
+        TempChar=InString.substring (Count, Count+1);
+   
+        if (TempStr!= oldSubstring)
+   
+          OutString=OutString+TempChar
+   
+        else
+   
+          {
+   
+          OutString=OutString+ newSubstring;
+   
+          Count +=sublength-1
+   
+          }
+
+      }
+   
+      return (OutString);
+   
+     }
 
   
 }
