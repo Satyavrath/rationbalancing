@@ -856,5 +856,44 @@ function calculateBTN() {
   return(found);
 
   } // check
+
+  // finds pivot element 
+
+  function pivot(InMatrix,rows,cols,theRow,theCol) {
+  
+    var thePivot = InMatrix[theRow][theCol];
+
+    activeVars[theRow] = theCol; // reset the active variable
+    starred[theRow] = 0; // unstar the row
+  
+    for (var i = 1; i <= cols; i++)
+     {
+  
+     InMatrix[theRow][i] = InMatrix[theRow][i]/thePivot;
+  
+     } 
+  
+    for (var i = 1; i <= rows; i++)
+  
+     {
+  
+     if ( (i != theRow) && (InMatrix[i][theCol] != 0) )
+  
+       {
+  
+       var factr = InMatrix[i][theCol];
+  
+       for (var j = 1; j <= cols; j++)
+  
+         {
+  
+         InMatrix[i][j] = roundSigDig(InMatrix[i][j],maxSigDig+2) - roundSigDig(factr*InMatrix[theRow][j],maxSigDig+2); // Fix 01 avoiding subtractive error
+  
+         } 
+       }
+     }  
+    return(InMatrix);
+    }
+
   
 }
