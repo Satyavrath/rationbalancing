@@ -1268,7 +1268,246 @@ function calculateBTN() {
      } // while negIndicator
     displayFinalStatus();
     return(InMatrix);
-  
     }
+    function SetupTableau() {
+
+      // reads problem and sets up the first tableau
+    
+      // get out of here if not ok
+    
+      if (!okToRoll) return (666);
   
+      // first, adjust some globals...
+    
+      maximization = true;
+    
+      singular = false;		// start with a clean slate
+    
+      var theString = s;
+      theString += cr;		// want an extra cr at the end
+    
+      theString = stripSpaces(theString);
+    
+      theString = stripChar(theString,tab);			// get rid of tabs
+    
+      theString = stripChar(theString,":");			// get rid of colons
+    
+      theString = replaceSubstring(theString,lf, cr);	// replace line feeds by carriage returns
+    
+      // convert everything to lower case
+    
+      theString = theString.toLowerCase();
+    
+      // now parse commas into line breaks and introduce a line break after "subject to"
+    
+      theString = replaceSubstring(theString, "to", "to"+cr);
+    
+      theString = replaceSubstring(theString, ",", cr);
+    
+      theString = replaceSubstring(theString, cr+"subject", "subject"); // in case they have introduced a line break or comma before 'subject to'
+    
+      // now get rid of double carriage returns
+    
+    
+      var doublecr = true;
+    
+      while (doublecr)
+    
+       {
+    
+       if (checkString(theString,cr+cr,false) == -1) doublecr = false;
+    
+       else theString = replaceSubstring(theString,cr+cr,cr);
+    
+       }
+    
+      // get rid of terminating cr
+    
+      if (lastChar(theString) == cr) theString = rightTrim(theString,1);
+      theString = replaceSubstring(theString, "<=", lteSymbol);
+    
+      theString = replaceSubstring(theString, ">=", gteSymbol);
+    
+      theString = replaceSubstring(theString, lte, lteSymbol);
+    
+      theString = replaceSubstring(theString, gte, gteSymbol);
+    
+      // look for "maximize" and chop the string there
+    
+      var check = checkString(theString,"maxi",false)
+    
+      if (check == -1)
+    
+       {check = checkString(theString,"mini",false); maximization = false; phase1 = true}
+    
+      if (check == -1) {
+    
+        okToRoll = false;
+        return(666);}
+    
+      len = theString.length;
+    
+      theString = theString.substring(check,len);
+    
+      // now the string starts with "max or "min"
+      // now extract the objective and constraints
+    
+      var tempAr = parser(theString,cr);
+    
+      var numConstTemp = tempAr[0]-1;
+      //alert(numConstTemp);
+      for (var i = 2; i <= numConstTemp+1; i++) {
+    
+       if (tempAr[i] && tempAr[i].match(/=/)) {
+    
+         tempAr[i] = tempAr[i].replace(/=/, lteSymbol);
+    
+         tempAr[numConstTemp+2] = tempAr[i].replace(lteSymbol, gteSymbol);
+         numConstTemp += 1;
+         tempAr[0] += 1;
+    
+       }
+    
+      }
+    
+      // alert("HERElines of the problem are: "+tempAr[0] + " blocks " + tempAr[1] + " \n" + tempAr[2] + "\n" + tempAr[3] + "\n" +  tempAr[4] + " \n " +  tempAr[5] + "***")    
+        
+      var line1 = tempAr[1];
+
+      // get rid of "subject to, if there"
+    
+      check = checkString(line1,"subj",true);
+    
+      if (check > 0) line1 = line1.substring(0,check);
+
+      // now look for objective
+    
+      check = checkString(line1,"=",false);
+    
+      if (check <=0) return(666);
+    
+      objectiveName = line1.charAt(check-1);
+    
+      len = line1.length;
+    
+      var expression = line1.substring(check+1,len);
+    
+      // alert(expression);
+    
+      var OBJ = parseLinearExpr(expression);
+    
+      variables = OBJ[0];
+    
+      // alert (variables);
+    
+      numConstraints = tempAr[0]-1;
+    
+      // alert(numConstraints+1);
+    
+      // make the tableau .. note that all the variables are assumed to appear in the objective!!!
+    
+      numVariables = variables.length;
+
+      // alert("number of variables =" +  numVariables)
+
+      numRows = numConstraints+1;
+    
+      numCols = numRows + numVariables + 1;
+    
+      theTableau = new makeArray2 (numRows,numCols);
+    
+      theStringTableau = new makeArray2 (numRows,numCols); // for display purposes
+    
+      if (phase1) starred = new makeArray(numRows);		// for starred rows
+
+      // do the last row
+    
+      for (var j = 1; j <= numCols; j++) theTableau[numRows][j] = 0; // init
+    
+      for (var i = 1; i <= numVariables; i++)
+    
+       {
+    
+       if (maximization) theTableau[numRows][i] = -eval(OBJ[i]);
+    
+       else theTableau[numRows][i] = eval(OBJ[i]);
+    
+       }
+    
+      theTableau[numRows][numCols-1] = 1;
+    
+      theTableau[numRows][numCols] = 0;
+    
+      theString = tempAr[2];
+    
+      var x = checkString(theString,"to",false);
+    
+      len = theString.length;
+    
+      if (x != -1) theString = theString.substring(x+2,len);
+    
+      // alert(theString);
+
+      tempAr[2] = theString;
+    
+      var GTE = false; // greater-than-eq flag
+      for (var i = 1; i <= numConstraints; i++)
+    
+       {
+    
+       activeVars[i] = i + numVariables;
+       starred[i] = 0;
+    
+       GTE = false; // clean slate
+       twoPart = parser(tempAr[1+i], lteSymbol);
+    
+       if (twoPart[0] < 2) {
+         twoPart = parser(tempAr[1+i], gteSymbol); phase1 = true; GTE = true;
+    
+         }
+
+       if (twoPart[0] <2)
+    
+         {
+           // error verifier
+    
+         i += 1;
+    
+         okToRoll = false;
+         return (666)
+    
+         }
+       var leftHandSide = parseLinearExpr(twoPart[1]);
+       for (var j = 1; j <= numCols; j++) theTableau[i][j] = 0;	// init
+    
+       theTableau[i][numCols] = eval(twoPart[2]); 		// the right-hand side
+    
+       if (GTE) {
+         theTableau[i][numVariables + i] = -1;
+         starred[i] = 1;
+         phase1 = true;
+           }
+    
+       else theTableau[i][numVariables + i] = 1;
+       var theIndex = 0;
+    
+       for (var j = 1; j <= numVariables; j++)
+    
+         {
+    
+         theVar = variables[j-1];
+         theIndex = -1;
+            for (var k = 0; k < leftHandSide[0].length; k++) {
+              if (leftHandSide[0][k] == theVar) {
+                theIndex = k;
+                break;
+              }
+            }
+             if (theIndex == -1) theTableau[i][j] = 0;
+             else theTableau[i][j] = eval(leftHandSide[theIndex+1]);
+         }
+       } 
+      displayMatrix(1);
+      return(1);
+      } 
 }
