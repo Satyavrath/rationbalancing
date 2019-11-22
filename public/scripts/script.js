@@ -1510,4 +1510,214 @@ function calculateBTN() {
       displayMatrix(1);
       return(1);
       } 
+
+      // Display Final Status function  Goes Here
+
+
+
+
+
+
+      function displayMatrix(number) {
+
+        var theString = "Tableau #" + TableauNumber + cr;
+      
+      
+      
+        if (singular) theString += "undefined";
+      
+      
+      
+        else
+      
+        {
+      
+        var RowNum = numRows;
+      
+      
+      
+        var ColNum = numCols;
+      
+        // alert("about to display a "+ RowNum+ " x " + ColNum + "matrix");
+      
+      
+      
+        // first round all the results and get the longest resulting string
+      
+        var maxLength = 1;
+      
+        var x = "", i=0, j=0, k=0;
+      
+        var xLen = 0;
+      
+        // ok to here
+      
+        // prepare the stringmatrix if integer mode:
+      
+      
+      
+        if (integerMode) theStringTableau = makeInteger(theTableau, RowNum, ColNum,true);
+      
+      
+      
+         // else, handle fractions & decimals
+      
+        else {
+      
+         for (i = 1; i <= RowNum; i++)
+      
+         {
+      
+         for (j = 1; j <= ColNum; j++)
+      
+           {
+      
+        // alert("i = "+i + " j = " + j + "table entry = " + theTableau[i][j]);
+      
+        if (fractionMode) x = toFrac (roundSigDig(theTableau[i][j],15) , maxDenom, tol);
+      
+         else x = roundSigDig(theTableau[i][j], numSigDigs).toString();
+      
+        // alert("x = "+x);
+      
+           xLen = x.length;
+      
+        // alert("xLen =" + xLen);
+      
+           if (xLen > maxLength) maxLength = xLen;
+      
+           theStringTableau[i][j] = x;
+      
+      
+      
+           } // j
+      
+         } // i
+      
+         } // end else (if not integer mode)
+      
+      
+      
+        if (maxLength < 6) maxLength = 6;  // more space
+      
+      
+      
+         var spaceString = "";
+      
+         for (i = 0; i <= RowNum; i++) // was 1
+      
+           {
+      
+      
+      
+           for (j = 1; j <= ColNum; j++)
+      
+             {
+      
+             if (i == 0)
+      
+               {
+      
+               if  (j <= numVariables)  x = variables[j-1];
+      
+               else if (j == numVariables + numConstraints + 1) {x = objectiveName; if (!maximization) x = "-"+x;}
+      
+               else if (j < ColNum) { var mmm = j - numVariables ; x = "s" + mmm.toString();}
+      
+               else if (j == ColNum) x = " ";
+      
+               } // end if
+      
+      
+      
+             else x = theStringTableau[i][j];
+      
+      
+      
+      
+      
+             sp = maxLength - x.length
+      
+             spaceString = "";
+      
+             for (k = 0; k <= sp; k++) spaceString += " ";
+      
+             theString += x + spaceString;
+      
+      
+      
+             } // j
+      
+           theString += cr;
+      
+           } // i
+      
+        }
+        spreedsheetOutputValue += theString + cr;
+        // document.theSpreadsheet.output.value += theString + cr;
+      
+        return(0);
+      
+        }
+        function makeArray3 (X,Y,Z) {
+
+          var count;
+
+          this.length = X+1;
+
+          for (var count = 1; count <= X+1; count++)
+
+           // to allow starting at 1
+
+             this[count] = new makeArray2(Y,Z);
+
+         } // makeArray3
+
+        function makeArray2 (X,Y) {
+
+           var count;
+
+           this.length = X+1;
+
+           for (var count = 0; count <= X+1; count++)
+
+          // to allow starting at 1
+
+           this[count] = new makeArray(Y);
+
+         } // makeArray2
+         function makeArray (Y)
+
+         {
+      
+         var count;
+      
+         this.length = Y+1;
+      
+         for (var count = 1; count <= Y+1; count++)
+      
+           this[count] = 0;
+      
+         } // makeArray
+         
+         function stripSpaces (InString)  {
+
+          OutString="";
+       
+          for (Count=0; Count < InString.length; Count++)  {
+       
+            TempChar=InString.substring (Count, Count+1);
+       
+            if (TempChar!=" ")
+       
+              OutString=OutString+TempChar;
+       
+            }
+       
+          return (OutString);
+       
+          }
+        
+      
 }
+
