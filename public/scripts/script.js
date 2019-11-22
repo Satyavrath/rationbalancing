@@ -1699,7 +1699,7 @@ function calculateBTN() {
            this[count] = 0;
       
          } // makeArray
-         
+
          function stripSpaces (InString)  {
 
           OutString="";
@@ -1717,6 +1717,36 @@ function calculateBTN() {
           return (OutString);
        
           }
+          function stripChar (InString,symbol)  {
+
+            OutString="";
+         
+            for (Count=0; Count < InString.length; Count++)  {
+         
+              TempChar=InString.substring (Count, Count+1);
+         
+              if (TempChar!=symbol)
+         
+                OutString=OutString+TempChar;
+         
+            }
+         
+            return (OutString);
+         
+           }
+           function doIt(){
+            fractionMode = false;
+            integerMode = false;
+            var theMode = 0;
+            var num = 1;
+            TableauNumber = 1;
+         
+         
+            SetupTableau();
+         
+            theTableau = simplexMethod(theTableau,numRows,numCols);
+           }
+         doIt();
         
       
 }
