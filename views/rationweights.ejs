@@ -116,6 +116,34 @@
                '<td>' +  sumOfWeights + '</td>'+
                '</tr>'
             );
+            
+          // color coding to identify Nutrient requirement
+          cpColor = "";nEMColor = ""; nEGColor = ""; caColor = ""; pColor = "";
+         if (cpValue < data[0]){
+            cpColor = "background-color:#F1676E"
+         }else if(cpValue > data[1]){
+            cpColor = "background-color:#6BADEC"
+         }
+         if (nEMValue < data[2]){
+            nEMColor = "background-color:#F1676E"
+         }else if(nEMValue > data[3]){
+            nEMColor = "background-color:#6BADEC"
+         }
+         if (nEGValue < data[4]){
+            nEGColor = "background-color:#F1676E"
+         }else if(nEGValue > data[5]){
+            nEGColor = "background-color:#6BADEC"
+         }
+         if (caValue < data[6]){
+            caColor = "background-color:#F1676E"
+         }else if(caValue > data[7]){
+            caColor = "background-color:#6BADEC"
+         }
+         if (pValue < data[8]){
+            pColor = "background-color:#F1676E"
+         }else if(pValue > data[9]){
+            pColor = "background-color:#6BADEC"
+         }
    </script>
    </body>
 </html>
