@@ -116,7 +116,7 @@
                '<td>' +  sumOfWeights + '</td>'+
                '</tr>'
             );
-            
+
           // color coding to identify Nutrient requirement
           cpColor = "";nEMColor = ""; nEGColor = ""; caColor = ""; pColor = "";
          if (cpValue < data[0]){
@@ -144,6 +144,16 @@
          }else if(pValue > data[9]){
             pColor = "background-color:#6BADEC"
          }
+         // To store actual nutirent content based on selected feedstuff
+         $('#table-style').append(
+            '<tr>'+
+               '<td style='+ cpColor+'>'+cpValue+'</td>'+
+               '<td style='+ nEMColor+'>'+nEMValue+'</td>'+
+               '<td style='+ nEGColor+'>'+nEGValue+'</td>'+
+               '<td style='+ caColor+'>'+caValue+'</td>'+
+               '<td style='+ pColor+'>'+pValue+'</td>'+
+           '</tr>'
+         );
    </script>
    </body>
 </html>
