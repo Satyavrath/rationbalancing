@@ -357,17 +357,13 @@ function calculateBTN() {
 
 			var upperlimit = smaller;
 
-			for (var i = upperlimit; i >= 2; i--)
-
-			{
+			for (var i = upperlimit; i >= 2; i--) {
 
 				testRatio = roundSigDig(smaller / i, 10);
 
 				testRatio2 = roundSigDig(bigger / i, 10);
 
-				if ((testRatio == Math.floor(testRatio)) && (testRatio2 == Math.floor(testRatio2)))
-
-				{
+				if ((testRatio == Math.floor(testRatio)) && (testRatio2 == Math.floor(testRatio2))) {
 
 					smaller = Math.round(smaller / i);
 
@@ -413,17 +409,13 @@ function calculateBTN() {
 
 			var found = false;
 
-			for (var i = 2; i <= smaller; i++)
-
-			{
+			for (var i = 2; i <= smaller; i++) {
 
 				if (i * i >= smaller) break;
 
 				testRatio = roundSigDig(smaller / i, 11);
 
-				if (testRatio == Math.floor(testRatio))
-
-				{
+				if (testRatio == Math.floor(testRatio)) {
 
 					smaller = testRatio;
 
@@ -449,9 +441,7 @@ function calculateBTN() {
 
 	function reduce(fraction) {
 
-		with(Math)
-
-		{
+		with (Math) {
 
 			var HCF = hcf(fraction[1], fraction[2]);
 
@@ -498,9 +488,7 @@ function calculateBTN() {
 
 		if (x > 10000000000) return (theFrac);
 
-		while (flag)
-
-		{
+		while (flag) {
 
 			if (x < 0) {
 				x = -x;
@@ -520,9 +508,7 @@ function calculateBTN() {
 
 			u = a * q1 + q2;
 
-			if ((Math.abs(t) > 10000000000) || (u > maxDenom))
-
-			{
+			if ((Math.abs(t) > 10000000000) || (u > maxDenom)) {
 
 				n = p1;
 
@@ -535,9 +521,7 @@ function calculateBTN() {
 
 			q = u;
 
-			if (x == 0)
-
-			{
+			if (x == 0) {
 
 				n = p;
 
@@ -602,9 +586,7 @@ function calculateBTN() {
 
 		if (x > 10000000000) return (theFrac);
 
-		while (flag)
-
-		{
+		while (flag) {
 
 			if (x < 0) {
 				x = -x;
@@ -624,9 +606,7 @@ function calculateBTN() {
 
 			u = a * q1 + q2;
 
-			if ((Math.abs(t) > 10000000000) || (u > maxDenom))
-
-			{
+			if ((Math.abs(t) > 10000000000) || (u > maxDenom)) {
 
 				n = p1;
 
@@ -640,9 +620,7 @@ function calculateBTN() {
 
 			q = u;
 
-			if (x == 0)
-
-			{
+			if (x == 0) {
 
 				n = p;
 				d = q;
@@ -713,17 +691,13 @@ function calculateBTN() {
 
 		var yLength = y.length;
 
-		for (var i = 0; i <= length; i++)
-
-		{
+		for (var i = 0; i <= length; i++) {
 
 			x = theString.charAt(i);
 
 			result = false;
 
-			for (var j = 0; j <= yLength; j++)
-
-			{
+			for (var j = 0; j <= yLength; j++) {
 
 				if (x == y.charAt(j)) {
 					result = true;
@@ -749,9 +723,7 @@ function calculateBTN() {
 
 		if (k == 0) return (theNumber)
 
-		else
-
-		{
+		else {
 
 			var k2 = 1;
 
@@ -759,9 +731,7 @@ function calculateBTN() {
 
 			if (num < 0) num = -num;
 
-			for (var i = 1; i <= num; i++)
-
-			{
+			for (var i = 1; i <= num; i++) {
 
 				k2 = k2 * 10
 
@@ -769,13 +739,9 @@ function calculateBTN() {
 
 		}
 
-		if (k > 0)
-
-		{
+		if (k > 0) {
 			return (k2 * theNumber)
-		} else
-
-		{
+		} else {
 			return (theNumber / k2)
 		}
 
@@ -785,9 +751,7 @@ function calculateBTN() {
 
 		numDigits = numDigits - 1
 
-		with(Math)
-
-		{
+		with (Math) {
 
 			if (theNumber == 0) return (0);
 
@@ -818,15 +782,11 @@ function calculateBTN() {
 
 		var outArray = new makeArray2(RowNum, ColNum);
 
-		for (var i = 1; i <= RowNum; i++)
-
-		{
+		for (var i = 1; i <= RowNum; i++) {
 
 			// set up fraction row array
 
-			for (var j = 1; j <= ColNum; j++)
-
-			{
+			for (var j = 1; j <= ColNum; j++) {
 
 				for (var k = 1; k <= 2; k++) rowArray[j][k] = toFracArr(theMatrix[i][j], maxDenom, tol)[k];
 
@@ -843,9 +803,7 @@ function calculateBTN() {
 
 			var x = 0;
 
-			for (j = 1; j <= ColNum; j++)
-
-			{
+			for (j = 1; j <= ColNum; j++) {
 
 				x = rowLcm * rowArray[j][1] / rowArray[j][2];
 
@@ -865,24 +823,18 @@ function calculateBTN() {
 	} // makeInteger
 
 	// check for subString
-	function checkString(InString, subString, backtrack)
-
-	{
+	function checkString(InString, subString, backtrack) {
 
 		var found = -1;
 		var theString = InString;
 		var Length = theString.length;
 		var symbLength = subString.length;
 
-		for (var i = Length - symbLength; i > -1; i--)
-
-		{
+		for (var i = Length - symbLength; i > -1; i--) {
 
 			TempChar = theString.substring(i, i + symbLength);
 
-			if (TempChar == subString)
-
-			{
+			if (TempChar == subString) {
 
 				found = i;
 
@@ -911,19 +863,13 @@ function calculateBTN() {
 
 		}
 
-		for (var i = 1; i <= rows; i++)
+		for (var i = 1; i <= rows; i++) {
 
-		{
-
-			if ((i != theRow) && (InMatrix[i][theCol] != 0))
-
-			{
+			if ((i != theRow) && (InMatrix[i][theCol] != 0)) {
 
 				var factr = InMatrix[i][theCol];
 
-				for (var j = 1; j <= cols; j++)
-
-				{
+				for (var j = 1; j <= cols; j++) {
 
 					InMatrix[i][j] = roundSigDig(InMatrix[i][j], maxSigDig + 2) - roundSigDig(factr * InMatrix[theRow][j], maxSigDig + 2); // Fix 01 avoiding subtractive error
 
@@ -990,9 +936,7 @@ function calculateBTN() {
 
 				OutString = OutString + TempChar
 
-			else
-
-			{
+			else {
 
 				OutString = OutString + newSubstring;
 
@@ -1020,9 +964,7 @@ function calculateBTN() {
 
 		for (Count = 0; Count < len; Count++) {
 
-			if (InString.charAt(Count) == Sep)
-
-			{
+			if (InString.charAt(Count) == Sep) {
 
 				NumSeps++;
 
@@ -1042,9 +984,7 @@ function calculateBTN() {
 
 		parse[0] = NumSeps + 1;
 
-		for (var i = 1; i <= NumSeps; i++)
-
-		{
+		for (var i = 1; i <= NumSeps; i++) {
 
 			parse[i] = InString.substring(location[i - 1] + 1, location[i]);
 		}
@@ -1111,9 +1051,7 @@ function calculateBTN() {
 
 		// var displayInplaceOfDocument = "working..";
 
-		while ((phase1) && (TableauNumber <= maxSteps))
-
-		{
+		while ((phase1) && (TableauNumber <= maxSteps)) {
 			var checkingForZeros = true;
 			var foundAZero = false;
 			while (checkingForZeros) {
@@ -1348,9 +1286,7 @@ function calculateBTN() {
 
 		var doublecr = true;
 
-		while (doublecr)
-
-		{
+		while (doublecr) {
 
 			if (checkString(theString, cr + cr, false) == -1) doublecr = false;
 
@@ -1373,9 +1309,7 @@ function calculateBTN() {
 
 		var check = checkString(theString, "maxi", false)
 
-		if (check == -1)
-
-		{
+		if (check == -1) {
 			check = checkString(theString, "mini", false);
 			maximization = false;
 			phase1 = true
@@ -1466,9 +1400,7 @@ function calculateBTN() {
 
 		for (var j = 1; j <= numCols; j++) theTableau[numRows][j] = 0; // init
 
-		for (var i = 1; i <= numVariables; i++)
-
-		{
+		for (var i = 1; i <= numVariables; i++) {
 
 			if (maximization) theTableau[numRows][i] = -eval(OBJ[i]);
 
@@ -1493,9 +1425,7 @@ function calculateBTN() {
 		tempAr[2] = theString;
 
 		var GTE = false; // greater-than-eq flag
-		for (var i = 1; i <= numConstraints; i++)
-
-		{
+		for (var i = 1; i <= numConstraints; i++) {
 
 			activeVars[i] = i + numVariables;
 			starred[i] = 0;
@@ -1510,9 +1440,7 @@ function calculateBTN() {
 
 			}
 
-			if (twoPart[0] < 2)
-
-			{
+			if (twoPart[0] < 2) {
 				// error verifier
 
 				i += 1;
@@ -1533,9 +1461,7 @@ function calculateBTN() {
 			} else theTableau[i][numVariables + i] = 1;
 			var theIndex = 0;
 
-			for (var j = 1; j <= numVariables; j++)
-
-			{
+			for (var j = 1; j <= numVariables; j++) {
 
 				theVar = variables[j - 1];
 				theIndex = -1;
@@ -1553,9 +1479,6 @@ function calculateBTN() {
 		return (1);
 	}
 
-	// Display Final Status function  Goes Here
-
-
 	function displayMatrix(number) {
 
 		var theString = "Tableau #" + TableauNumber + cr;
@@ -1564,9 +1487,7 @@ function calculateBTN() {
 		if (singular) theString += "undefined";
 
 
-		else
-
-		{
+		else {
 
 			var RowNum = numRows;
 
@@ -1599,13 +1520,9 @@ function calculateBTN() {
 
 			else {
 
-				for (i = 1; i <= RowNum; i++)
+				for (i = 1; i <= RowNum; i++) {
 
-				{
-
-					for (j = 1; j <= ColNum; j++)
-
-					{
+					for (j = 1; j <= ColNum; j++) {
 
 						// alert("i = "+i + " j = " + j + "table entry = " + theTableau[i][j]);
 
@@ -1641,13 +1558,9 @@ function calculateBTN() {
 			{
 
 
-				for (j = 1; j <= ColNum; j++)
+				for (j = 1; j <= ColNum; j++) {
 
-				{
-
-					if (i == 0)
-
-					{
+					if (i == 0) {
 
 						if (j <= numVariables) x = variables[j - 1];
 
@@ -1713,9 +1626,7 @@ function calculateBTN() {
 			this[count] = new makeArray(Y);
 
 	} // makeArray2
-	function makeArray(Y)
-
-	{
+	function makeArray(Y) {
 
 		var count;
 
@@ -1769,13 +1680,199 @@ function calculateBTN() {
 		var theMode = 0;
 		var num = 1;
 		TableauNumber = 1;
-
-
 		SetupTableau();
 
 		theTableau = simplexMethod(theTableau, numRows, numCols);
 	}
 	doIt();
+	function displayFinalStatus() {
 
+		// gives the solution or error messages
+
+		let x;
+		// if (TableauNumber > maxSteps) document.theSpreadsheet.expr.value = "No optimal solution found after 50 steps. Aborted.";
+		//       if (TableauNumber > maxSteps){
+		// displayInplaceOfDocument = "No optimal solution found after 50 steps. Aborted."
+		//       alert("No optimal solution found after 50 steps. Aborted.");
+		//       } 
+		// else if (singular) document.theSpreadsheet.expr.value = "No optimal solution exists for this problem."
+		// else if (singular){
+		//   displayInplaceOfDocument = "No optimal solution exists for this problem."
+		// alert("No optimal solution exists for this problem");
+		// }
+
+		// else
+
+		// {
+		x = "Optimal Solution: " + objectiveName + " = ";
+		//alert(x)
+		// document.theSpreadsheet.expr.value = "Optimal Solution: " + objectiveName + " = ";
+		displayInplaceOfDocument = "Optimal Solution: " + objectiveName + " = ";
+		var numx = 0;
+		var theRowx = 0;
+		var theColx = 0;
+		var count = 0;
+		var theChar = "";
+		var theStr = "";
+		var objectiveVal = theTableau[numRows][numCols];
+
+		if (!maximization) objectiveVal = -objectiveVal;
+		// here we get the p value
+		if ((fractionMode) || (integerMode)) {
+			displayInplaceOfDocument += toFrac(roundSigDig(objectiveVal, 15), maxDenom, tol) + "; ";
+			// document.theSpreadsheet.expr.value += toFrac(roundSigDig(objectiveVal, 15), maxDenom, tol) + "; ";
+			x += toFrac(roundSigDig(objectiveVal, 15), maxDenom, tol) + "; ";
+			//alert(x)
+		} else {
+			// document.theSpreadsheet.expr.value += roundSigDig(objectiveVal, numSigDigs).toString() + "; ";
+			displayInplaceOfDocument += roundSigDig(objectiveVal, numSigDigs).toString() + "; ";
+			x += roundSigDig(objectiveVal, numSigDigs).toString() + "; ";
+			//alert(x) // Optimal Solution: p = 115;
+		}
+
+		var thePivotPosn = new Array();
+		var useThis = true;
+		var outputValues = new Array();
+		// var variablesToInEquation= new Array();
+		for (var j = 1; j <= numVariables; j++) {
+			useThis = true;
+			count = 0;
+			theRowx = 0;
+			theChar = variables[j - 1]; // name of this variable
+			thePivotPosn[j] = 0;
+			useThis = true;
+			displayInplaceOfDocument += theChar + " = ";
+			// document.theSpreadsheet.expr.value += theChar + " = ";
+			//alert(theChar);
+			x += theChar + " = ";
+			// variablesToInEquation.push(x)
+			// alert("This is the variablesToInEquation output"+variablesToInEquation)
+			// alert(x) // Optimal Solution: p = 115; x =
+			// Another LOOP
+			// Optimal Solution: p = 115; x = 10, y =
+			// Another loop
+			// Optimal Solution: p = 115; x = 10, y = 10, z =
+			// Another loop
+			// Optimal Solution: p = 115; x = 10, y = 10, z = 0, w =
+
+			for (var i = 1; i <= numRows; i++) {
+				numx = roundSigDig(theTableau[i][j], 10);
+				if (numx != 0) {
+					count++; // counting number of bnonzero entries in the column
+					if (numx != 0) theRowx = i
+				}
+			} // i
+			//alert(theRowx)
+			if ((count == 1) && (roundSigDig(theTableau[theRowx][j], 10) > 0)) {
+
+				// correction May 20 2010 he second condition above did not check that the pivot was positive!!!
+				thePivotPosn[j] = theRowx; // row of that pivot
+				// check if we have not already used a pivot in that row
+				// in the case of more than one pivot per row
+				if (theRowx == numRows) useThis = false; // Fix 02 added this line. Reason: (positive) pivot in the bottom row indicates that that variable is zero
+				for (var u = 1; u <= j - 1; u++)
+					if (thePivotPosn[j] == thePivotPosn[u]) useThis = false;
+
+				// present solution
+				// alert(useThis)
+				if (useThis) {
+					//alert("In the use case");
+					if ((fractionMode) || (integerMode)) theStr = toFrac(roundSigDig((theTableau[theRowx][numCols] / theTableau[theRowx][j]), 15), maxDenom, tol);
+					else theStr = roundSigDig((theTableau[theRowx][numCols] / theTableau[theRowx][j]), numSigDigs).toString();
+				} else theStr = "0";
+				outputValues.push(theStr);
+				//alert(theStr)
+				if (j < numVariables) theStr += ", ";
+				// document.theSpreadsheet.expr.value += theStr;
+				//alert(theStr)
+				displayInplaceOfDocument += theStr;
+				// alert("This PUBG "+displayInplaceOfDocument)
+				x += theStr;
+				//alert(x);
+				// Optimal Solution: p = 115; x = 10,
+				// Another loop
+				//Optimal Solution: p = 115; x = 10, y = 10,
+				// Another LOOP
+				// Optimal Solution: p = 115; x = 10, y = 10, z = 0, w = 20
+				//alert("starred row is row #" + theRowx + "column is "+j)
+			} // if a pivot there
+			else {
+				theStr = "0";
+				outputValues.push(theStr);
+				if (j < numVariables) theStr += ", ";
+				// document.theSpreadsheet.expr.value += theStr;
+				displayInplaceOfDocument += theStr;
+				x += theStr;
+				//alert(x);
+				// Optimal Solution: p = 115; x = 10, y = 10, z = 0,
+			}
+		} // j
+		cpValue = 0; nEMValue = 0; nEGValue = 0; caValue = 0; pValue = 0;
+		for (var i = 0; i < cpArray.length; i++) {
+			cpValue += parseFloat(cpFeedstuffValues[i] * outputValues[i])
+			nEMValue += parseFloat(nEmFeedstuffValues[i] * outputValues[i])
+			nEGValue += parseFloat(nEgFeedstuffValues[i] * outputValues[i])
+			caValue += parseFloat(caFeedstuffValues[i] * outputValues[i])
+			pValue += parseFloat(pFeedstuffValues[i] * outputValues[i])
+		}
+		// console.log(outputValues)
+		// It send the output values to Ration Balance Page
+		//  sends data to ration balance page
+		function localStorageToSendOutputValues(outputValues) {
+			console.log("This is total output withouth limitation " + outputValues);
+
+			// localStorage.setItem("selectedIngredients", JSON.stringify("unique"));
+			// Storage.prototype.setObject = function(key, value) {
+			//   this.setItem(key, JSON.stringify(unique));
+			// }
+			// sumOfWeights = 0;
+			// for (var i = 0; i < outputValues.length; i++){
+			//   sumOfWeights += parseFloat(outputValues[i]);
+			// }
+
+			// total weight of selected feedstuff 
+			// sumOfWeights = ;
+
+			// To convert the output w.r.t to 100 lb.
+			finalOutput = outputValues.map(input => (parseFloat(input) * 100 / outputValues.reduce((a, b) =>
+				parseFloat(a) + parseFloat(b))).toFixed(4));
+
+			// console.log(sumOfWeights);
+
+			// outputValues.map(console.log(num/sumOfWeights) )
+			// for (var i = 0; i < outputValues.length; i++){
+			//   finalOutput.push(parseFloat(((outputValues[i])/sumOfWeights)*100));
+			// }
+			console.log("This is final output w.r.t to 100 lb  " + finalOutput);
+			localStorage.setItem('finalValues', JSON.stringify(finalOutput));
+			localStorage.setItem('cpValue', JSON.stringify((cpValue.toFixed(3))));
+			localStorage.setItem('nEMValue', JSON.stringify((parseFloat(nEMValue) / 100).toFixed(3)));
+			localStorage.setItem('nEGValue', JSON.stringify((parseFloat(nEGValue) / 100).toFixed(3)));
+			localStorage.setItem('caValue', JSON.stringify((caValue).toFixed(3)))
+			localStorage.setItem('pValue', JSON.stringify((pValue).toFixed(3)))
+			return false;
+		}
+		console.log("THis is CPARRAY " + cpArray)
+		console.log("This is feedstuff name  " + value1)
+		localStorageToSendOutputValues(outputValues);
+		// alert("This is the expression for "+ cpValue.join('+'))
+		// console.log(cpValue.join('+'))
+		console.log("This is the value of CP" + cpValue)
+		console.log("This is the value of nEm" + parseFloat(nEMValue) / 100)
+		console.log("This is the value of nEG" + parseFloat(nEGValue) / 100)
+		console.log("This is the value of ca" + caValue)
+		console.log("This is the value of p" + pValue)
+		// alert("This is the length"+ cpArray[0].replace(value1[0],outputValues[0]))
+		// alert("This is the length"+ cpArray[1].replace(value1[1],outputValues[1]))
+		// range = parseFloat(cpValue.join('+'))
+		// range1 = parseFloat(pValue.join('+'))
+		// console.log(range)
+		// console.log(parseFloat(115*0.00869565))
+		// console.log(parseFloat(0.52*0.00869565))
+		// console.log(parseFloat(20.41*0.00869565))
+		// console.log(range1)
+		location.href = '/rationweights';
+
+	} // end of presentation
 
 }
