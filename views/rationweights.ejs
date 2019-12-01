@@ -107,6 +107,15 @@
                '</tr>'
             );
          }
+         // total sumof final weights
+         sumOfWeights = finalOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
+         // Total weight row added at the end of the table-ingredients
+         $('#table-ingredients').append(
+               '<tr>' +
+               '<td>'+  "<h5>TotalWeight</h5>"   +'</td>'+
+               '<td>' +  sumOfWeights + '</td>'+
+               '</tr>'
+            );
    </script>
    </body>
 </html>
