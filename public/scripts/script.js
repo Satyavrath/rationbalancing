@@ -178,8 +178,8 @@ function calculateBTN() {
 	// To store CP,NEm,NEg,Ca,P of selected nutrients in a new array
 	for (var index in dataId) {
 		selectednutrientvalue.push(ourData[dataId[index]].CP + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
-		selectednutrientvalue.push(ourData[dataId[index]].NEm + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
-		selectednutrientvalue.push(ourData[dataId[index]].NEg + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
+		selectednutrientvalue.push((parseFloat(ourData[dataId[index]].NEm)/100).toString() + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
+		selectednutrientvalue.push((parseFloat(ourData[dataId[index]].NEg)/100).toString() + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));	
 		selectednutrientvalue.push(ourData[dataId[index]].Ca + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
 		selectednutrientvalue.push(ourData[dataId[index]].P + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
 		value1.push(ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""))
@@ -188,8 +188,6 @@ function calculateBTN() {
 		nEgFeedstuffValues.push(ourData[dataId[index]].NEg)
 		caFeedstuffValues.push(ourData[dataId[index]].Ca)
 		pFeedstuffValues.push(ourData[dataId[index]].P)
-
-
 	}
 
 
@@ -229,7 +227,7 @@ function calculateBTN() {
 	var s = "Minimize P = " + objectiveEquation.join('+') + " subject to\n" + cpArray.join('+') + ">=" + data[0] + "\n" +
 		cpArray.join('+') + "<=" + data[1] + "\n" + nEMArray.join('+') + ">=" + data[2] + "\n" + nEMArray.join('+') + "<=" + data[3] + "\n" +
 		nEGArray.join('+') + ">=" + data[4] + "\n" + nEGArray.join('+') + "<=" + data[5] + "\n" + caArray.join('+') + ">=" + data[6] + "\n" +
-		caArray.join('+') + "<=" + data[7] + "\n" + pArray.join('+') + ">=" + data[8] + "\n" + pArray.join('+') + "<=" + data[9] + "\n" + aggregateArray.join('+') + "= 100";
+		caArray.join('+') + "<=" + data[7] + "\n" + pArray.join('+') + ">=" + data[8] + "\n" + pArray.join('+') + "<=" + data[9] + "\n";
 	console.log(s);
 	var epsilon = .00000000000001 // 10^-14
 
@@ -1049,7 +1047,7 @@ function calculateBTN() {
 		var theRow = 0;
 		singular = false;
 
-		// var displayInplaceOfDocument = "working..";
+		var displayInplaceOfDocument = "working..";
 
 		while ((phase1) && (TableauNumber <= maxSteps)) {
 			var checkingForZeros = true;
