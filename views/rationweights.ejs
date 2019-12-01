@@ -67,13 +67,6 @@
                               <th>%CA</th>
                               <th>P</th>
                            </tr>
-                           <tr>
-                              <td style="background-color:#6BADEC">TBD</td>
-                              <td style="background-color:#F1676E">TBD</td>
-                              <td>TBD</td>
-                              <td>TBD</td>
-                              <td>TBD</td>
-                           </tr>
                         </table>
                      </div>
                   </div>
@@ -97,13 +90,13 @@
          
          var ingredients = JSON.parse(localStorage.getItem('key'));
          var finalOutput = JSON.parse(localStorage.getItem('finalValues'));
-
-        // ingredients =  JSON.parse(localStorage.getItem("selectedIngredients"));
-         //console.log(typeof ingredients);
-         // alert(ingredients);
-         //ingredients = e.target.attributes.id.ownerElement.innerHTML
-        // ingredientID = ingredients.replace(/[ ,.%()]/g, "");
-         //console.log(ingredients);
+         var cpValue = JSON.parse(localStorage.getItem('cpValue'));
+         var nEMValue = JSON.parse(localStorage.getItem('nEMValue'));
+         var nEGValue = JSON.parse(localStorage.getItem('nEGValue'));
+         var caValue = JSON.parse(localStorage.getItem('caValue'));
+         var pValue = JSON.parse(localStorage.getItem('pValue'));
+         var minMaxRange = localStorage.getItem('objectToPass');
+         var data = minMaxRange.split(',');  
          for (i = 0; i<ingredients.length ; i++) {
             //alert("In the for loop "+ i)
            // alert(ingredients[i])
