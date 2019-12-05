@@ -73,6 +73,7 @@
                      <table id="table-ingredients" class="table-ration">
                      <tr>
                         <th>FeedStuffs</th>
+                        <th>Actual Quantity (lbs)</th>
                         <th>Quantity (lbs)</th>
                      </tr>
                   </table>
@@ -99,6 +100,7 @@
          
          var ingredients = JSON.parse(sessionStorage.getItem('key'));
          var finalOutput = JSON.parse(sessionStorage.getItem('finalValues'));
+         var outputValues = JSON.parse(localStorage.getItem('outputValues'));
          var cpValue = JSON.parse(sessionStorage.getItem('cpValue'));
          var nEMValue = JSON.parse(sessionStorage.getItem('nEMValue'));
          var nEGValue = JSON.parse(sessionStorage.getItem('nEGValue'));
@@ -112,55 +114,59 @@
             $('#table-ingredients').append(
                '<tr>' +
                '<td id=' +i +'>' +ingredients[i]+ '</td>' +
+               '<td>' +outputValues[i] + '</td>'+
                '<td>' +finalOutput[i] + '</td>'+
                '</tr>'
             );
          }
          // total sumof final weights
          sumOfWeights = finalOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
+         percentageOfWeights = finalOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
          // Total weight row added at the end of the table-ingredients
          $('#table-ingredients').append(
                '<tr>' +
                '<td>'+  "<h5>TotalWeight</h5>"   +'</td>'+
                '<td>' +  sumOfWeights + '</td>'+
+               '<td>' +  percentageOfWeights + '</td>'+
                '</tr>'
             );
 
           // color coding to identify Nutrient requirement
          cpColor = "";nEMColor = ""; nEGColor = ""; caColor = ""; pColor = "";
-         if (cpValue < data[0]){
+         if (parseFloat(cpValue) < parseFloat(data[0])){
             cpColor = "background-color:#F1676E"
-         }else if(cpValue > data[1]){
+         }else if(parseFloat(cpValue) > parseFloat(data[1])){
             cpColor = "background-color:#6BADEC"
+           
          }
-         if (nEMValue < data[2]){
+         if (parseFloat(nEMValue) < parseFloat(data[2])){
             nEMColor = "background-color:#F1676E"
-         }else if(nEMValue > data[3]){
+         }else if(parseFloat(nEMValue) > parseFloat(data[3])){
             nEMColor = "background-color:#6BADEC"
          }
-         if (nEGValue < data[4]){
+         if (parseFloat(nEGValue) < parseFloat(data[4])){
             nEGColor = "background-color:#F1676E"
-         }else if(nEGValue > data[5]){
+         }else if(parseFloat(nEGValue) > parseFloat(data[5])){
             nEGColor = "background-color:#6BADEC"
          }
-         if (caValue < data[6]){
+         if (parseFloat(caValue) < parseFloat(data[6])){
             caColor = "background-color:#F1676E"
-         }else if(caValue > data[7]){
+         }else if(parseFloat(caValue) > parseFloat(data[7])){
             caColor = "background-color:#6BADEC"
          }
-         if (pValue < data[8]){
+         if (parseFloat(pValue) < parseFloat(data[8])){
             pColor = "background-color:#F1676E"
-         }else if(pValue > data[9]){
+         }else if(parseFloat(pValue) > parseFloat(data[9])){
             pColor = "background-color:#6BADEC"
          }
          // To store actual nutirent content based on selected feedstuff
          $('#table-style').append(
             '<tr>'+
-                  '<th> %CP ('+ PreviousCPMinSelected +' Min - '+PreviousCPMaxSelected +' Max)</th>'+
-                  '<th> N EM ('+ PreviousNEMMinSelected +' Min - '+PreviousNEMMaxSelected +' Max)</th>'+
-                  '<th> N EG ('+  PreviousNEGMinSelected +' Min - '+ PreviousNEGMaxSelected +' Max)</th>'+
-                  '<th> %CA ('+ PreviousCAMinSelected +' Min - '+ PreviousCAMaxSelected +' Max)</th>'+
-                  '<th> P ('+ PreviousPMinSelected +' Min - '+PreviousPMaxSelected +' Max) </th>'+
+                  '<th> %CP ['+ PreviousCPMinSelected +' Min - '+PreviousCPMaxSelected +' Max]</th>'+
+                  '<th> Nem(Mcal/cwt) ['+ PreviousNEMMinSelected +' Min - '+PreviousNEMMaxSelected +' Max]</th>'+
+                  '<th> Neg(Mcal/cwt) ['+  PreviousNEGMinSelected +' Min - '+ PreviousNEGMaxSelected +' Max]</th>'+
+                  '<th> %CA ['+ PreviousCAMinSelected +' Min - '+ PreviousCAMaxSelected +' Max]</th>'+
+                  '<th> P ['+ PreviousPMinSelected +' Min - '+PreviousPMaxSelected +' Max] </th>'+
             '</tr>'+
             '<tr>'+
                '<td style='+ cpColor+'>'+cpValue+'</td>'+
@@ -174,20 +180,6 @@
 
          weight = sessionStorage.getItem("SelectedWeight");
          gain = sessionStorage.getItem("SelectedWeightGain");
-/*
-         PreviousCPMinSelected = sessionStorage.getItem("CPMinSelected");
-         PreviousCPMaxSelected = sessionStorage.getItem("CPMaxSelected");
-         PreviousNEMMinSelected = sessionStorage.getItem("NEMMinSelected");
-         PreviousNEMMaxSelected = sessionStorage.getItem("NEMMaxSelected");
-         PreviousNEGMinSelected = sessionStorage.getItem("NEGMinSelected");
-         PreviousNEGMaxSelected = sessionStorage.getItem("NEGMaxSelected");
-         PreviousCAMinSelected =  sessionStorage.getItem("CAMinSelected");
-         PreviousCAMaxSelected = sessionStorage.getItem("CAMaxSelected");
-         PreviousPMinSelected = sessionStorage.getItem("PMinSelected");
-         PreviousPMaxSelected = sessionStorage.getItem("PMaxSelected");
- */        
-         
-         //alert( CPMinSelected, CPMaxSelected, NEMMinSelected,  NEMMinSelected, CAMinSelected, CAMaxSelected, CPMinSelected, CPMaxSelected);
    </script>
    </body>
 </html>
