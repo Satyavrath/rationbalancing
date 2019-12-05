@@ -101,6 +101,27 @@ body {
     color: black;
 }
 
+.table-ration {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(190, 187, 187);
+}
+
+.table-ration td,
+.table-ration th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table-ration th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(198, 245, 173);
+    color: black;
+}
+
 .info {
   padding: 20px;
   position: relative;
@@ -119,3 +140,4 @@ body {
 .blue-info {
   background-color: #6BADEC;
 }
+

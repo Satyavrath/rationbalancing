@@ -51,6 +51,16 @@ body {
     padding-right: 10px;
 }
 
+
+.btn-secondary:focus {
+    background-color: #C6F5AD !important;
+    border-color: black !important;
+    color: black !important;
+    text-decoration-style: solid;
+    border-radius: 10px !important;
+    padding-right: 10px !important;
+}
+
 .menu-text {
     font-size: 20px;
     font-weight: 600;
@@ -60,6 +70,7 @@ body {
     padding-left: 10px;
     padding-top: 2px;
 }
+
 
 .quantities {
     min-width: 800px;
