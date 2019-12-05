@@ -134,11 +134,17 @@ function calculateBTN() {
 		let ing = unique[i];
 		let keyIng = ing.replace(/[ ,.%()]/g, "");
 		let valCost = document.getElementById(keyIng + "Cost").value;
+		let valQuantity = document.getElementById(keyIng + "Quantity").value;
 		tableOfContents.push({
 			key: ing,
-			value: valCost
+			value: valCost,
+			quantity: valQuantity
 		});
 	}
+	var inputQuantity = [];
+for(var i in tableOfContents){
+  inputQuantity.push(tableOfContents[i].quantity)
+  }
 
 	function localStorageToSendIngredients(unique) {
 		console.log(unique);
@@ -1806,12 +1812,24 @@ function calculateBTN() {
 			}
 		} // j
 		cpValue = 0; nEMValue = 0; nEGValue = 0; caValue = 0; pValue = 0;
+		// finaloutput value stored in an array
+		finaloutputValue = [];
+          for(var i = 0; i < cpArray.length;i++){ 
+          if (inputQuantity[i] == ""){
+            finaloutputValue.push(outputValues[i])
+          }else{
+            finaloutputValue.push(inputQuantity[i])
+          }
+		}
+		console.log("This is inputQuantity  "+ inputQuantity)
+        console.log("This is outputValues  "+ outputValues)
+        console.log("This is finaloutpuvalue  "+ finaloutputValue)
 		for (var i = 0; i < cpArray.length; i++) {
-			cpValue += parseFloat(cpFeedstuffValues[i] * outputValues[i])
-			nEMValue += parseFloat(nEmFeedstuffValues[i] * outputValues[i])
-			nEGValue += parseFloat(nEgFeedstuffValues[i] * outputValues[i])
-			caValue += parseFloat(caFeedstuffValues[i] * outputValues[i])
-			pValue += parseFloat(pFeedstuffValues[i] * outputValues[i])
+			cpValue += parseFloat(cpFeedstuffValues[i] * finaloutputValue[i])
+			nEMValue += parseFloat(nEmFeedstuffValues[i] * finaloutputValue[i])
+			nEGValue += parseFloat(nEgFeedstuffValues[i] * finaloutputValue[i])
+			caValue += parseFloat(caFeedstuffValues[i] * finaloutputValue[i])
+			pValue += parseFloat(pFeedstuffValues[i] * finaloutputValue[i])
 		}
 		// console.log(outputValues)
 		// It send the output values to Ration Balance Page
@@ -1842,6 +1860,7 @@ function calculateBTN() {
 			//   finalOutput.push(parseFloat(((outputValues[i])/sumOfWeights)*100));
 			// }
 			console.log("This is final output w.r.t to 100 lb  " + finalOutput);
+			sessionStorage.setItem('outputValues', JSON.stringify(finaloutputValue));
 			sessionStorage.setItem('finalValues', JSON.stringify(finalOutput));
 			sessionStorage.setItem('cpValue', JSON.stringify((cpValue.toFixed(3))));
 			sessionStorage.setItem('nEMValue', JSON.stringify((parseFloat(nEMValue) / 100).toFixed(3)));

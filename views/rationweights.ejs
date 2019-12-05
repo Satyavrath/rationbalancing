@@ -100,7 +100,7 @@
          
          var ingredients = JSON.parse(sessionStorage.getItem('key'));
          var finalOutput = JSON.parse(sessionStorage.getItem('finalValues'));
-         var outputValues = JSON.parse(localStorage.getItem('outputValues'));
+         var outputValues = JSON.parse(sessionStorage.getItem('outputValues'));
          var cpValue = JSON.parse(sessionStorage.getItem('cpValue'));
          var nEMValue = JSON.parse(sessionStorage.getItem('nEMValue'));
          var nEGValue = JSON.parse(sessionStorage.getItem('nEGValue'));
@@ -116,11 +116,11 @@
                '<td id=' +i +'>' +ingredients[i]+ '</td>' +
                '<td>' +outputValues[i] + '</td>'+
                '<td>' +finalOutput[i] + '</td>'+
-               '</tr>'
+               '</tr>'     
             );
          }
          // total sumof final weights
-         sumOfWeights = finalOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
+         sumOfWeights = outputValues.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
          percentageOfWeights = finalOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
          // Total weight row added at the end of the table-ingredients
          $('#table-ingredients').append(
