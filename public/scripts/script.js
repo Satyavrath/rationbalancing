@@ -230,10 +230,11 @@ function calculateBTN() {
 
 	var data = minMaxRange.split(',');
 
-	var s = "Minimize P = " + objectiveEquation.join('+') + " subject to\n" + cpArray.join('+') + ">=" + data[0] + "\n" +
-		cpArray.join('+') + "<=" + data[1] + "\n" + nEMArray.join('+') + ">=" + data[2] + "\n" + nEMArray.join('+') + "<=" + data[3] + "\n" +
-		nEGArray.join('+') + ">=" + data[4] + "\n" + nEGArray.join('+') + "<=" + data[5] + "\n" + caArray.join('+') + ">=" + data[6] + "\n" +
-		caArray.join('+') + "<=" + data[7] + "\n" + pArray.join('+') + ">=" + data[8] + "\n" + pArray.join('+') + "<=" + data[9] + "\n";
+	var s = "Minimize P = " + objectiveEquation.join('+') + " subject to\n" + cpArray.join('+') + ">=" + data[0] + "\n"
+    + cpArray.join('+') + "<=" + data[1] + "\n" + caArray.join('+') + ">=" + data[6] + "\n"
+    + caArray.join('+') + "<=" + data[7] +"\n" + pArray.join('+') + ">=" + data[8] + "\n" + pArray.join('+') + "<=" +  data[9]+
+    "\n" + nEGArray.join('+') + ">=" + data[4] + "\n" + nEGArray.join('+') + "<=" + data[5] +  "\n"+nEMArray.join('+') + ">=" + data[2] + "\n" + 
+	nEMArray.join('+') + "<=" + data[3] ;
 	console.log(s);
 	var epsilon = .00000000000001 // 10^-14
 
