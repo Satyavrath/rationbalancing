@@ -56,8 +56,8 @@ function myScript(e) {
 	$('#table-style').append(
 		'<tr>' +
 		'<td id=' + customId + '>' + e.target.attributes.id.ownerElement.innerHTML + '</td>' +
-		'<td> <input type="text" class="form-control text-field-button" id=' + customId + "Quantity" + ' value=""> </td>' +
-		'<td><input type="text" class="form-control text-field-button" id=' + customId + "Cost" + ' value=""></td>' +
+		'<td> <input type="number" step= "any" class="form-control text-field-button" id=' + customId + "Quantity" + ' value=""> </td>' +
+		'<td><input type="number" step= "any" class="form-control text-field-button" id=' + customId + "Cost" + ' value="" required></td>' +
 		'<td><img src="../images/delete.jpeg" alt="Delete" style="width:30px;height:30px;"></td>' +
 		'</tr>'
 	);
@@ -142,9 +142,9 @@ function calculateBTN() {
 		});
 	}
 	var inputQuantity = [];
-for(var i in tableOfContents){
-  inputQuantity.push(tableOfContents[i].quantity)
-  }
+	for (var i in tableOfContents) {
+		inputQuantity.push(tableOfContents[i].quantity)
+	}
 
 	function localStorageToSendIngredients(unique) {
 		console.log(unique);
@@ -184,8 +184,8 @@ for(var i in tableOfContents){
 	// To store CP,NEm,NEg,Ca,P of selected nutrients in a new array
 	for (var index in dataId) {
 		selectednutrientvalue.push(ourData[dataId[index]].CP + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
-		selectednutrientvalue.push((parseFloat(ourData[dataId[index]].NEm)/100).toString() + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
-		selectednutrientvalue.push((parseFloat(ourData[dataId[index]].NEg)/100).toString() + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));	
+		selectednutrientvalue.push((parseFloat(ourData[dataId[index]].NEm) / 100).toString() + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
+		selectednutrientvalue.push((parseFloat(ourData[dataId[index]].NEg) / 100).toString() + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
 		selectednutrientvalue.push(ourData[dataId[index]].Ca + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
 		selectednutrientvalue.push(ourData[dataId[index]].P + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
 		value1.push(ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""))
@@ -1814,16 +1814,16 @@ for(var i in tableOfContents){
 		cpValue = 0; nEMValue = 0; nEGValue = 0; caValue = 0; pValue = 0;
 		// finaloutput value stored in an array
 		finaloutputValue = [];
-          for(var i = 0; i < cpArray.length;i++){ 
-          if (inputQuantity[i] == ""){
-            finaloutputValue.push(outputValues[i])
-          }else{
-            finaloutputValue.push(inputQuantity[i])
-          }
+		for (var i = 0; i < cpArray.length; i++) {
+			if (inputQuantity[i] == "") {
+				finaloutputValue.push(outputValues[i])
+			} else {
+				finaloutputValue.push(inputQuantity[i])
+			}
 		}
-		console.log("This is inputQuantity  "+ inputQuantity)
-        console.log("This is outputValues  "+ outputValues)
-        console.log("This is finaloutpuvalue  "+ finaloutputValue)
+		console.log("This is inputQuantity  " + inputQuantity)
+		console.log("This is outputValues  " + outputValues)
+		console.log("This is finaloutpuvalue  " + finaloutputValue)
 		for (var i = 0; i < cpArray.length; i++) {
 			cpValue += parseFloat(cpFeedstuffValues[i] * finaloutputValue[i])
 			nEMValue += parseFloat(nEmFeedstuffValues[i] * finaloutputValue[i])
