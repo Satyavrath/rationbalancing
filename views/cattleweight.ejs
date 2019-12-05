@@ -45,6 +45,12 @@
                             <p class="menu-text text-center">Ration Weights</p>
                         </div>
                       </a>
+                      <a href="/index">
+                        <div id="menu-buttons">
+                            <p class="menu-text text-center">Logout</p>
+                        </div>
+                      </a>
+
 
                     </div>
                 </div>
@@ -130,6 +136,36 @@
    </body>
    <!-- This function is used to select the cattle weight gain weights  -->
    <script type="text/javascript">
+    
+    Previousweight = sessionStorage.getItem("SelectedWeight");
+    Previousgain = sessionStorage.getItem("SelectedWeightGain");
+            
+    document.getElementById("wSelected").innerHTML = Previousweight; 
+    document.getElementById("wgSelected").innerHTML = Previousgain;
+    PreviousCPMinSelected = sessionStorage.getItem("CPMinSelected");
+    PreviousCPMaxSelected = sessionStorage.getItem("CPMaxSelected");
+    PreviousNEMMinSelected = sessionStorage.getItem("NEMMinSelected");
+    PreviousNEMMaxSelected = sessionStorage.getItem("NEMMaxSelected");
+    PreviousNEGMinSelected = sessionStorage.getItem("NEGMinSelected");
+    PreviousNEGMaxSelected = sessionStorage.getItem("NEGMaxSelected");
+    PreviousCAMinSelected =  sessionStorage.getItem("CAMinSelected");
+    PreviousCAMaxSelected = sessionStorage.getItem("CAMaxSelected");
+    PreviousPMinSelected = sessionStorage.getItem("PMinSelected");
+    PreviousPMaxSelected = sessionStorage.getItem("PMaxSelected");
+    
+    // alert(Previousweight);
+  
+     document.getElementById("CP-Min").value = PreviousCPMinSelected; 
+     document.getElementById("CP-Max").value = PreviousCPMaxSelected; 
+     document.getElementById("NEM-Min").value = PreviousNEMMinSelected; 
+     document.getElementById("NEM-Max").value = PreviousNEMMaxSelected; 
+     document.getElementById("NEG-Min").value = PreviousNEGMinSelected; 
+     document.getElementById("NEG-Max").value = PreviousNEGMaxSelected; 
+     document.getElementById("CA-Min").value = PreviousCAMinSelected; 
+     document.getElementById("CA-Max").value = PreviousCAMaxSelected; 
+     document.getElementById("P-Min").value = PreviousPMinSelected; 
+     document.getElementById("P-Max").value = PreviousPMaxSelected; 
+ 
      var x = 0;
      function onLoadFunction() {
          //localStorage.clear();
@@ -372,6 +408,8 @@
          document.getElementById("P-Min").value = "0";
          document.getElementById("P-Max").value = "0";
      }
+     //alert(wgSelected);
+     console.log(wgSelected);
     // to store data locally on browser
      function localstorageWeight() {
          // alert("In the local Storage")
@@ -407,9 +445,60 @@
                  // alert("Please select Weights first");
          }
          // alert(weight);
-         localStorage.setItem("SelectedWeight", weight);
+         //localStorage.setItem("SelectedWeight", weight);
         //  alert("data Sent")
-         return false;
+         //return false;
+         //let weight = document.getElementById("wSelected").innerHTML;
+         let wG = document.getElementById("wgSelected").innerHTML;
+         let CPMinSelected = document.getElementById("CP-Min").value;
+         let CPMaxSelected = document.getElementById("CP-Max").value;
+         let NEMMinSelected = document.getElementById("NEM-Min").value;
+         let NEMMaxSelected = document.getElementById("NEM-Max").value;
+         let NEGMinSelected = document.getElementById("NEG-Min").value;
+         let NEGMaxSelected = document.getElementById("NEG-Max").value;
+         let CAMinSelected = document.getElementById("CA-Min").value;
+         let CAMaxSelected = document.getElementById("CA-Max").value;
+         let PMinSelected = document.getElementById("P-Min").value;
+         let PMaxSelected = document.getElementById("P-Max").value;
+
+         if(sessionStorage) {
+            // Store data
+
+            sessionStorage.setItem("SelectedWeight", weight);
+            sessionStorage.setItem("SelectedWeightGain", wG);
+            sessionStorage.setItem("CPMinSelected", CPMinSelected);
+            sessionStorage.setItem("CPMaxSelected", CPMaxSelected);
+            sessionStorage.setItem("NEMMinSelected", NEMMinSelected);
+            sessionStorage.setItem("NEMMaxSelected", NEMMaxSelected);
+            sessionStorage.setItem("NEGMinSelected", NEGMinSelected);
+            sessionStorage.setItem("NEGMaxSelected", NEGMaxSelected);
+            sessionStorage.setItem("CAMinSelected", CAMinSelected);
+            sessionStorage.setItem("CAMaxSelected", CAMaxSelected);
+            sessionStorage.setItem("PMinSelected", PMinSelected);
+            sessionStorage.setItem("PMaxSelected", PMaxSelected);
+
+/*
+
+
+            sessionStorage.setItem("CPMinSelected", CPMinSelected);
+            sessionStorage.setItem("CPMaxSelected", CPMaxSelected);
+            sessionStorage.setItem("NEMMinSelected", NEMMinSelected);
+            sessionStorage.setItem("NEMMaxSelected", NEMMaxSelected);
+            sessionStorage.setItem("NEGMinSelected", NEGMinSelected);
+            sessionStorage.setItem("NEGMaxSelected", NEGMaxSelected);
+            sessionStorage.setItem("CAMinSelected", CAMinSelected);
+            sessionStorage.setItem("CAMaxSelected", CAMaxSelected);
+            sessionStorage.setItem("PMinSelected", PMinSelected);
+            sessionStorage.setItem("PMaxSelected", PMaxSelected);
+
+*/
+
+             
+        
+        } else {
+            alert("Sorry, your browser do not support session storage. So you cannot save the session data");
+        }
+
      }
    </script>  
 </html>

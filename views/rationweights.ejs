@@ -50,6 +50,11 @@
                         <p class="menu-text text-center">Ration Weights</p>
                      </div>
                   </a>
+                  <a href="/index">
+                     <div id="menu-buttons">
+                         <p class="menu-text text-center">Logout</p>
+                     </div>
+                   </a>
                </div>
             </div>
             <!-- This is main content code which contains calculated nutrients, total weight of each ingredients and total ration -->
@@ -60,13 +65,7 @@
                      <div class="total-nutrients">
                         <h2>Total Nutrients</h2>
                         <table id="table-style">
-                           <tr>
-                              <th>%CP</th>
-                              <th>N EM</th>
-                              <th>N EG</th>
-                              <th>%CA</th>
-                              <th>P</th>
-                           </tr>
+                          
                         </table>
                      </div>
                   </div>
@@ -87,15 +86,25 @@
          </div>
       </div>
       <script>
+            PreviousCPMinSelected = sessionStorage.getItem("CPMinSelected");
+            PreviousCPMaxSelected = sessionStorage.getItem("CPMaxSelected");
+            PreviousNEMMinSelected = sessionStorage.getItem("NEMMinSelected");
+            PreviousNEMMaxSelected = sessionStorage.getItem("NEMMaxSelected");
+            PreviousNEGMinSelected = sessionStorage.getItem("NEGMinSelected");
+            PreviousNEGMaxSelected = sessionStorage.getItem("NEGMaxSelected");
+            PreviousCAMinSelected =  sessionStorage.getItem("CAMinSelected");
+            PreviousCAMaxSelected = sessionStorage.getItem("CAMaxSelected");
+            PreviousPMinSelected = sessionStorage.getItem("PMinSelected");
+            PreviousPMaxSelected = sessionStorage.getItem("PMaxSelected");
          
-         var ingredients = JSON.parse(localStorage.getItem('key'));
-         var finalOutput = JSON.parse(localStorage.getItem('finalValues'));
-         var cpValue = JSON.parse(localStorage.getItem('cpValue'));
-         var nEMValue = JSON.parse(localStorage.getItem('nEMValue'));
-         var nEGValue = JSON.parse(localStorage.getItem('nEGValue'));
-         var caValue = JSON.parse(localStorage.getItem('caValue'));
-         var pValue = JSON.parse(localStorage.getItem('pValue'));
-         var minMaxRange = localStorage.getItem('objectToPass');
+         var ingredients = JSON.parse(sessionStorage.getItem('key'));
+         var finalOutput = JSON.parse(sessionStorage.getItem('finalValues'));
+         var cpValue = JSON.parse(sessionStorage.getItem('cpValue'));
+         var nEMValue = JSON.parse(sessionStorage.getItem('nEMValue'));
+         var nEGValue = JSON.parse(sessionStorage.getItem('nEGValue'));
+         var caValue = JSON.parse(sessionStorage.getItem('caValue'));
+         var pValue = JSON.parse(sessionStorage.getItem('pValue'));
+         var minMaxRange = sessionStorage.getItem('objectToPass');
          var data = minMaxRange.split(',');  
          for (i = 0; i<ingredients.length ; i++) {
             //alert("In the for loop "+ i)
@@ -118,7 +127,7 @@
             );
 
           // color coding to identify Nutrient requirement
-          cpColor = "";nEMColor = ""; nEGColor = ""; caColor = ""; pColor = "";
+         cpColor = "";nEMColor = ""; nEGColor = ""; caColor = ""; pColor = "";
          if (cpValue < data[0]){
             cpColor = "background-color:#F1676E"
          }else if(cpValue > data[1]){
@@ -147,6 +156,13 @@
          // To store actual nutirent content based on selected feedstuff
          $('#table-style').append(
             '<tr>'+
+                  '<th> %CP ('+ PreviousCPMinSelected +' Min - '+PreviousCPMaxSelected +' Max)</th>'+
+                  '<th> N EM ('+ PreviousNEMMinSelected +' Min - '+PreviousNEMMaxSelected +' Max)</th>'+
+                  '<th> N EG ('+  PreviousNEGMinSelected +' Min - '+ PreviousNEGMaxSelected +' Max)</th>'+
+                  '<th> %CA ('+ PreviousCAMinSelected +' Min - '+ PreviousCAMaxSelected +' Max)</th>'+
+                  '<th> P ('+ PreviousPMinSelected +' Min - '+PreviousPMaxSelected +' Max) </th>'+
+            '</tr>'+
+            '<tr>'+
                '<td style='+ cpColor+'>'+cpValue+'</td>'+
                '<td style='+ nEMColor+'>'+nEMValue+'</td>'+
                '<td style='+ nEGColor+'>'+nEGValue+'</td>'+
@@ -154,6 +170,24 @@
                '<td style='+ pColor+'>'+pValue+'</td>'+
            '</tr>'
          );
+         
+
+         weight = sessionStorage.getItem("SelectedWeight");
+         gain = sessionStorage.getItem("SelectedWeightGain");
+/*
+         PreviousCPMinSelected = sessionStorage.getItem("CPMinSelected");
+         PreviousCPMaxSelected = sessionStorage.getItem("CPMaxSelected");
+         PreviousNEMMinSelected = sessionStorage.getItem("NEMMinSelected");
+         PreviousNEMMaxSelected = sessionStorage.getItem("NEMMaxSelected");
+         PreviousNEGMinSelected = sessionStorage.getItem("NEGMinSelected");
+         PreviousNEGMaxSelected = sessionStorage.getItem("NEGMaxSelected");
+         PreviousCAMinSelected =  sessionStorage.getItem("CAMinSelected");
+         PreviousCAMaxSelected = sessionStorage.getItem("CAMaxSelected");
+         PreviousPMinSelected = sessionStorage.getItem("PMinSelected");
+         PreviousPMaxSelected = sessionStorage.getItem("PMaxSelected");
+ */        
+         
+         //alert( CPMinSelected, CPMaxSelected, NEMMinSelected,  NEMMinSelected, CAMinSelected, CAMaxSelected, CPMinSelected, CPMaxSelected);
    </script>
    </body>
 </html>

@@ -71,15 +71,19 @@
                      <p class="menu-text text-center">Ration Weights</p>
                   </div>
                </a>
+               <a href="/index">
+                  <div id="menu-buttons">
+                      <p class="menu-text text-center">Logout</p>
+                  </div>
+                </a>
             </div>
          </div>
          <!-- Navigation bar to select ingredients in alphabetical order -->
          <div class="main-content col-sm-12 col-md-10 col-lg-10 col-xs-12">
             <div>
                <div>
-                  <p>
-                  <h5>
-                  Weight Selected: <span id="weight"></span></p>
+                  <p><h5>Weight Selected: <span id="weight"></span></h5></p>
+                  <p><h5>Selected Weight Gain: <span id="gain"></span></h5></p>
                </div>
                <div class="feed-categories">
                   <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -149,7 +153,7 @@
                <!-- Next button for navigating to quantities page -->
                <div class="next-button">
                   <!-- <a href="/rationweights"> -->
-                  <button id="calculateBtn" quantities.html type="button" class="btn btn-secondary"
+                  <button id="calculateBtn" type="button" class="btn btn-secondary"
                      onclick="calculateBTN()">Calculate</button>
                   <!-- </a> -->
                </div>
@@ -158,8 +162,11 @@
       </div>
    </div>
    <script>
-      weight = localStorage.getItem("SelectedWeight");
+      weight = sessionStorage.getItem("SelectedWeight");
+      gain = sessionStorage.getItem("SelectedWeightGain");
+      //alert(weight +"+"+ gain);
       document.getElementById("weight").innerHTML = weight; 
+      document.getElementById("gain").innerHTML = gain; 
    </script>
    </body>
 </html>

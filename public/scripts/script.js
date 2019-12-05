@@ -41,7 +41,7 @@ $(document).ready(function () {
 function myScript(e) {
 
 	let ings = e.target.attributes.id.ownerElement.innerHTML
-
+	//let names= ["karthik","satya"];
 	ingredients.push(ings);
 	customId = ings.replace(/[ ,.%()]/g, "");
 	var tableData = document.getElementsByTagName("td");
@@ -121,7 +121,7 @@ function clickedNEXTBTN() {
 	pMax = document.getElementById("P-Max").value;
 	p = [pMin, pMax];
 	listofIngs = [cp, nem, neg, ca, p];
-	localStorage.setItem('objectToPass', listofIngs);
+	sessionStorage.setItem('objectToPass', listofIngs);
 }
 
 function calculateBTN() {
@@ -129,7 +129,7 @@ function calculateBTN() {
 	var unique = ingredients.filter(function (elem, index, self) {
 		return index === self.indexOf(elem);
 	})
-	var minMaxRange = localStorage.getItem('objectToPass');
+	var minMaxRange = sessionStorage.getItem('objectToPass');
 	for (var i = 0; i < unique.length; i++) {
 		let ing = unique[i];
 		let keyIng = ing.replace(/[ ,.%()]/g, "");
@@ -147,7 +147,7 @@ function calculateBTN() {
 		// Storage.prototype.setObject = function(key, value) {
 		//   this.setItem(key, JSON.stringify(unique));
 		// }
-		localStorage.setItem('key', JSON.stringify(unique));
+		sessionStorage.setItem('key', JSON.stringify(unique));
 		return false;
 	}
 
@@ -167,7 +167,7 @@ function calculateBTN() {
 			}
 		}
 	}
-	alert(dataId)
+	//alert(dataId)
 	cpFeedstuffValues = []
 	nEmFeedstuffValues = []
 	nEgFeedstuffValues = []
@@ -1842,12 +1842,12 @@ function calculateBTN() {
 			//   finalOutput.push(parseFloat(((outputValues[i])/sumOfWeights)*100));
 			// }
 			console.log("This is final output w.r.t to 100 lb  " + finalOutput);
-			localStorage.setItem('finalValues', JSON.stringify(finalOutput));
-			localStorage.setItem('cpValue', JSON.stringify((cpValue.toFixed(3))));
-			localStorage.setItem('nEMValue', JSON.stringify((parseFloat(nEMValue) / 100).toFixed(3)));
-			localStorage.setItem('nEGValue', JSON.stringify((parseFloat(nEGValue) / 100).toFixed(3)));
-			localStorage.setItem('caValue', JSON.stringify((caValue).toFixed(3)))
-			localStorage.setItem('pValue', JSON.stringify((pValue).toFixed(3)))
+			sessionStorage.setItem('finalValues', JSON.stringify(finalOutput));
+			sessionStorage.setItem('cpValue', JSON.stringify((cpValue.toFixed(3))));
+			sessionStorage.setItem('nEMValue', JSON.stringify((parseFloat(nEMValue) / 100).toFixed(3)));
+			sessionStorage.setItem('nEGValue', JSON.stringify((parseFloat(nEGValue) / 100).toFixed(3)));
+			sessionStorage.setItem('caValue', JSON.stringify((caValue).toFixed(3)))
+			sessionStorage.setItem('pValue', JSON.stringify((pValue).toFixed(3)))
 			return false;
 		}
 		console.log("THis is CPARRAY " + cpArray)
