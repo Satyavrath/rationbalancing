@@ -65,7 +65,6 @@
                      <div class="total-nutrients">
                         <h2>Total Nutrients</h2>
                         <table id="table-style">
-                          
                         </table>
                      </div>
                   </div>
@@ -81,8 +80,8 @@
                </div>
                <!-- This is the info table which indicatesmaximum and minimum nutrient range -->
                <div class="info">
-                  <p><span class="dot red-info"></span> Red indicates below the minimum total nutrient range</p>
-                  <p><span class="dot blue-info"></span> Blue indicates above the maximum total nutrient range</p>
+                  <span class="dot red-info"></span> Red indicates below the minimum total nutrient range. 
+                  <span class="dot blue-info"></span> Blue indicates above the maximum total nutrient range
                </div>
             </div>
          </div>
@@ -99,26 +98,27 @@
             PreviousPMinSelected = sessionStorage.getItem("PMinSelected");
             PreviousPMaxSelected = sessionStorage.getItem("PMaxSelected");
          
-         var ingredients = JSON.parse(localStorage.getItem('key'));
-         var finalOutput = JSON.parse(localStorage.getItem('drymatterPercentage'));
-         var dryMatterOutput = JSON.parse(localStorage.getItem('dryMatterOutputValue'));
-         var asFedValue = JSON.parse(localStorage.getItem('asFedValue'));
-         var cpValue = JSON.parse(localStorage.getItem('cpValueDry'));
-         var nEMValue = JSON.parse(localStorage.getItem('nEMValueDry'));
-         var nEGValue = JSON.parse(localStorage.getItem('nEGValueDry'));
-         var caValue = JSON.parse(localStorage.getItem('caValueDry'));
-         var pValue = JSON.parse(localStorage.getItem('pValueDry'));
+         var ingredients = JSON.parse(sessionStorage.getItem('key'));
+         var finalOutput = JSON.parse(sessionStorage.getItem('drymatterPercentage'));
+         var dryMatterOutput = JSON.parse(sessionStorage.getItem('dryMatterOutputValue'));
+         var asFedValue = JSON.parse(sessionStorage.getItem('asFedValue'));
+         var cpValue = JSON.parse(sessionStorage.getItem('cpValueDry'));
+         var nEMValue = JSON.parse(sessionStorage.getItem('nEMValueDry'));
+         var nEGValue = JSON.parse(sessionStorage.getItem('nEGValueDry'));
+         var caValue = JSON.parse(sessionStorage.getItem('caValueDry'));
+         var pValue = JSON.parse(sessionStorage.getItem('pValueDry'));
          var minMaxRange = sessionStorage.getItem('objectToPass');
-         var data = minMaxRange.split(',');  
+         var data = minMaxRange.split(','); 
+         console.log("This is asfed  "+ asFedValue) ;
          for (i = 0; i<ingredients.length ; i++) {
             //alert("In the for loop "+ i)
            // alert(ingredients[i])
             $('#table-ingredients').append(
                '<tr>' +
                '<td id=' +i +'>' +ingredients[i]+ '</td>' +
-               '<td>' +asFedValue[i] + '</td>'+
-               '<td>' +dryMatterOutput[i] + '</td>'+
-               '<td>' +finalOutput[i] + '</td>'+
+               '<td style="text-align:center">' + asFedValue[i] + '</td>'+
+               '<td style="text-align:center">' + dryMatterOutput[i].toFixed(3) + '</td>'+
+               '<td style="text-align:center">' + finalOutput[i] + '</td>'+
                '</tr>'     
             );
          }
@@ -126,13 +126,14 @@
          sumOfAsFedWeights = asFedValue.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
          sumOfDryMatterWeights = dryMatterOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
          totalPercentageOfWeights = finalOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
+        
          // Total weight row added at the end of the table-ingredients
          $('#table-ingredients').append(
                '<tr>' +
-               '<td>'+  "<h5>TotalWeight</h5>"   +'</td>'+
-               '<td>' + sumOfAsFedWeights.toFixed(3) + '</td>'+
-               '<td>' + sumOfDryMatterWeights.toFixed(3) + '</td>'+
-               '<td>' +  totalPercentageOfWeights + '</td>'+
+               '<td style>'+  "<h5>TotalWeight</h5>"   +'</td>'+
+               '<td style="text-align:center">' + sumOfAsFedWeights.toFixed(3) + '</td>'+
+               '<td style="text-align:center">' + sumOfDryMatterWeights.toFixed(3) + '</td>'+
+               '<td style="text-align:center">' +  totalPercentageOfWeights + '</td>'+
                '</tr>'
             );
 
@@ -165,16 +166,27 @@
             pColor = "background-color:#6BADEC"
          }
          // To store actual nutirent content based on selected feedstuff
+         
          $('#table-style').append(
             '<tr>'+
-                  '<th> %CP ['+ PreviousCPMinSelected +' Min - '+PreviousCPMaxSelected +' Max]</th>'+
-                  '<th> Nem(Mcal/cwt) ['+ PreviousNEMMinSelected +' Min - '+PreviousNEMMaxSelected +' Max]</th>'+
-                  '<th> Neg(Mcal/cwt) ['+  PreviousNEGMinSelected +' Min - '+ PreviousNEGMaxSelected +' Max]</th>'+
-                  '<th> %CA ['+ PreviousCAMinSelected +' Min - '+ PreviousCAMaxSelected +' Max]</th>'+
-                  '<th> P ['+ PreviousPMinSelected +' Min - '+PreviousPMaxSelected +' Max] </th>'+
+                  '<th style = "background-color:#ffff80"> <font color="red">Nutrients </font></th>'+
+                  '<th> %CP </th>'+
+                  '<th> Nem(Mcal/cwt) </th>'+
+                  '<th> Neg(Mcal/cwt) </th>'+
+                  '<th> %CA </th>'+
+                  '<th> P  </th>'+
             '</tr>'+
             '<tr>'+
-               '<td style='+ cpColor+'>'+cpValue+'</td>'+
+               '<th style = "background-color:#ffff80"> <font color="red"> Selected Range (Min-Max) </font> </th>'+
+               '<td>'+ PreviousCPMinSelected +' - '+PreviousCPMaxSelected +'</td>'+
+               '<td>'+ PreviousNEMMinSelected +' - '+PreviousNEMMaxSelected +'</td>'+
+               '<td>'+  PreviousNEGMinSelected +' - '+ PreviousNEGMaxSelected +'</td>'+
+               '<td>'+ PreviousCAMinSelected +' - ' +PreviousCAMinSelected +'</td>'+
+               '<td>'+ PreviousPMinSelected +' - '+PreviousPMaxSelected +'</td>'+
+               '</tr>'+
+            '<tr>'+
+               '<th style = "background-color:#ffff80">  <font color="red"> Concentration per lb.(DM) </font> </th>'+
+               '<td style='+ cpColor+'>'+ cpValue+'</td>'+
                '<td style='+ nEMColor+'>'+nEMValue+'</td>'+
                '<td style='+ nEGColor+'>'+nEGValue+'</td>'+
                '<td style='+ caColor+'>'+caValue+'</td>'+

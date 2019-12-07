@@ -179,9 +179,10 @@ function calculateBTN() {
 	nEgFeedstuffValues = []
 	caFeedstuffValues = []
 	pFeedstuffValues = []
+	dryMatterValues = []
 
 	value1 = []
-	// To store CP,NEm,NEg,Ca,P of selected nutrients in a new array
+	// To store CP,NEm,NEg,Ca,P,DM value of selected nutrients in a new array
 	for (var index in dataId) {
 		selectednutrientvalue.push(ourData[dataId[index]].CP + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
 		selectednutrientvalue.push((parseFloat(ourData[dataId[index]].NEm) / 100).toString() + ourData[dataId[index]].name.replace(/[ ,.%()]/g, ""));
@@ -194,6 +195,7 @@ function calculateBTN() {
 		nEgFeedstuffValues.push(ourData[dataId[index]].NEg)
 		caFeedstuffValues.push(ourData[dataId[index]].Ca)
 		pFeedstuffValues.push(ourData[dataId[index]].P)
+		dryMatterValues.push(ourData[dataId[index]].DM)
 	}
 
 
@@ -1812,84 +1814,70 @@ function calculateBTN() {
 				// Optimal Solution: p = 115; x = 10, y = 10, z = 0,
 			}
 		} // j
-		cpValue = 0; nEMValue = 0; nEGValue = 0; caValue = 0; pValue = 0;
+		cpValueDry = 0; nEMValueDry = 0; nEGValueDry = 0; caValueDry = 0; pValueDry = 0;
 		// finaloutput value stored in an array
-		finaloutputValue = [];
+		asFedoutputValue = [];
+		// dryMatteroutput value stored in an array
+		dryMatterOutputValue = [];
 		for (var i = 0; i < cpArray.length; i++) {
 			if (inputQuantity[i] == "") {
-				finaloutputValue.push(outputValues[i])
+				asFedoutputValue.push(outputValues[i])
+				dryMatterOutputValue.push((outputValues[i]*(dryMatterValues[i]))/100)
 			} else {
-				finaloutputValue.push(inputQuantity[i])
+				asFedoutputValue.push(inputQuantity[i])
+				dryMatterOutputValue.push(inputQuantity[i]*dryMatterValues[i]/100)
 			}
 		}
 		console.log("This is inputQuantity  " + inputQuantity)
 		console.log("This is outputValues  " + outputValues)
-		console.log("This is finaloutpuvalue  " + finaloutputValue)
+		console.log("This is asFedoutputValue  " + asFedoutputValue)
+		console.log("This is dryMatterOutputValue  "+ dryMatterOutputValue)
 		for (var i = 0; i < cpArray.length; i++) {
-			cpValue += parseFloat(cpFeedstuffValues[i] * finaloutputValue[i])
-			nEMValue += parseFloat(nEmFeedstuffValues[i] * finaloutputValue[i])
-			nEGValue += parseFloat(nEgFeedstuffValues[i] * finaloutputValue[i])
-			caValue += parseFloat(caFeedstuffValues[i] * finaloutputValue[i])
-			pValue += parseFloat(pFeedstuffValues[i] * finaloutputValue[i])
+		
+			  cpValueDry += parseFloat(cpFeedstuffValues[i]*dryMatterOutputValue[i])
+
+			  nEMValueDry += parseFloat(nEmFeedstuffValues[i]*dryMatterOutputValue[i]) 
+		
+			  nEGValueDry += parseFloat(nEgFeedstuffValues[i]*dryMatterOutputValue[i])
+
+			  caValueDry += parseFloat(caFeedstuffValues[i]*dryMatterOutputValue[i])
+
+			  pValueDry += parseFloat(pFeedstuffValues[i]*dryMatterOutputValue[i])
 		}
 		// console.log(outputValues)
 		// It send the output values to Ration Balance Page
 		//  sends data to ration balance page
-		function localStorageToSendOutputValues(outputValues) {
-			console.log("This is total output withouth limitation " + outputValues);
-
-			// localStorage.setItem("selectedIngredients", JSON.stringify("unique"));
-			// Storage.prototype.setObject = function(key, value) {
-			//   this.setItem(key, JSON.stringify(unique));
-			// }
-			// sumOfWeights = 0;
-			// for (var i = 0; i < outputValues.length; i++){
-			//   sumOfWeights += parseFloat(outputValues[i]);
-			// }
-
-			// total weight of selected feedstuff 
-			// sumOfWeights = ;
+		function localStorageToSendOutputValues(asFedoutputValue) {
+			console.log("This is total output withouth limitation " + asFedoutputValue);
 
 			// To convert the output w.r.t to 100 lb.
-			finalOutput = outputValues.map(input => (parseFloat(input) * 100 / outputValues.reduce((a, b) =>
-				parseFloat(a) + parseFloat(b))).toFixed(4));
+			dryMatterOutputpercentage = dryMatterOutputValue.map(input => (parseFloat(input)*100/dryMatterOutputValue.reduce((a,b) =>
+			 parseFloat(a) + parseFloat(b))).toFixed(4));
+			//  Total dry-matter quantity 
+			dryMattertotalSum = dryMatterOutputValue.reduce((a, b) => parseFloat(a) + parseFloat(b)).toFixed(4);
 
-			// console.log(sumOfWeights);
-
-			// outputValues.map(console.log(num/sumOfWeights) )
-			// for (var i = 0; i < outputValues.length; i++){
-			//   finalOutput.push(parseFloat(((outputValues[i])/sumOfWeights)*100));
-			// }
-			console.log("This is final output w.r.t to 100 lb  " + finalOutput);
-			sessionStorage.setItem('outputValues', JSON.stringify(finaloutputValue));
-			sessionStorage.setItem('finalValues', JSON.stringify(finalOutput));
-			sessionStorage.setItem('cpValue', JSON.stringify((cpValue.toFixed(3))));
-			sessionStorage.setItem('nEMValue', JSON.stringify((parseFloat(nEMValue) / 100).toFixed(3)));
-			sessionStorage.setItem('nEGValue', JSON.stringify((parseFloat(nEGValue) / 100).toFixed(3)));
-			sessionStorage.setItem('caValue', JSON.stringify((caValue).toFixed(3)))
-			sessionStorage.setItem('pValue', JSON.stringify((pValue).toFixed(3)))
+			// console.log("This is final output w.r.t to 100 lb  " + finalOutput);
+			sessionStorage.setItem('drymatterPercentage', JSON.stringify(dryMatterOutputpercentage));
+			sessionStorage.setItem('dryMatterOutputValue', JSON.stringify(dryMatterOutputValue));
+			sessionStorage.setItem('asFedValue', JSON.stringify(asFedoutputValue));
+			sessionStorage.setItem('cpValueDry', JSON.stringify((parseFloat(cpValueDry)/dryMattertotalSum).toFixed(3)));
+			sessionStorage.setItem('nEMValueDry', JSON.stringify((parseFloat(nEMValueDry/100)/dryMattertotalSum).toFixed(3)));
+			sessionStorage.setItem('nEGValueDry', JSON.stringify((parseFloat(nEGValueDry/100) /dryMattertotalSum).toFixed(3)));
+			sessionStorage.setItem('caValueDry', JSON.stringify((parseFloat(caValueDry)/dryMattertotalSum).toFixed(3)))
+			sessionStorage.setItem('pValueDry', JSON.stringify((parseFloat(pValueDry)/dryMattertotalSum).toFixed(3)))
 			return false;
 		}
-		console.log("THis is CPARRAY " + cpArray)
-		console.log("This is feedstuff name  " + value1)
-		localStorageToSendOutputValues(outputValues);
+		// console.log("THis is CPARRAY " + cpArray)
+		// console.log("This is feedstuff name  " + value1)
+		localStorageToSendOutputValues(asFedoutputValue);
 		// alert("This is the expression for "+ cpValue.join('+'))
 		// console.log(cpValue.join('+'))
-		console.log("This is the value of CP" + cpValue)
-		console.log("This is the value of nEm" + parseFloat(nEMValue) / 100)
-		console.log("This is the value of nEG" + parseFloat(nEGValue) / 100)
-		console.log("This is the value of ca" + caValue)
-		console.log("This is the value of p" + pValue)
-		// alert("This is the length"+ cpArray[0].replace(value1[0],outputValues[0]))
-		// alert("This is the length"+ cpArray[1].replace(value1[1],outputValues[1]))
-		// range = parseFloat(cpValue.join('+'))
-		// range1 = parseFloat(pValue.join('+'))
-		// console.log(range)
-		// console.log(parseFloat(115*0.00869565))
-		// console.log(parseFloat(0.52*0.00869565))
-		// console.log(parseFloat(20.41*0.00869565))
-		// console.log(range1)
-		location.href = '/rationweights';
+		// console.log("This is the value of CP" + cpValueDry)
+		// console.log("This is the value of nEm" + parseFloat(nEMValueDry) / 100)
+		// console.log("This is the value of nEG" + parseFloat(nEGValueDry) / 100)
+		// console.log("This is the value of ca" + caValueDry)
+		// console.log("This is the value of p" + pValueDry)
+		// location.href = '/rationweights';
 
 	} // end of presentation
 
