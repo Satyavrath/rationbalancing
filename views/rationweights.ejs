@@ -73,8 +73,9 @@
                      <table id="table-ingredients" class="table-ration">
                      <tr>
                         <th>FeedStuffs</th>
-                        <th>Actual Quantity (lbs)</th>
-                        <th>Quantity (lbs)</th>
+                        <th>AsFed (lbs)</th>
+                        <th>DryMatter (lbs)</th>
+                        <th>DryMatter Ration (%) </th>
                      </tr>
                   </table>
                </div>
@@ -98,14 +99,15 @@
             PreviousPMinSelected = sessionStorage.getItem("PMinSelected");
             PreviousPMaxSelected = sessionStorage.getItem("PMaxSelected");
          
-         var ingredients = JSON.parse(sessionStorage.getItem('key'));
-         var finalOutput = JSON.parse(sessionStorage.getItem('finalValues'));
-         var outputValues = JSON.parse(sessionStorage.getItem('outputValues'));
-         var cpValue = JSON.parse(sessionStorage.getItem('cpValue'));
-         var nEMValue = JSON.parse(sessionStorage.getItem('nEMValue'));
-         var nEGValue = JSON.parse(sessionStorage.getItem('nEGValue'));
-         var caValue = JSON.parse(sessionStorage.getItem('caValue'));
-         var pValue = JSON.parse(sessionStorage.getItem('pValue'));
+         var ingredients = JSON.parse(localStorage.getItem('key'));
+         var finalOutput = JSON.parse(localStorage.getItem('drymatterPercentage'));
+         var dryMatterOutput = JSON.parse(localStorage.getItem('dryMatterOutputValue'));
+         var asFedValue = JSON.parse(localStorage.getItem('asFedValue'));
+         var cpValue = JSON.parse(localStorage.getItem('cpValueDry'));
+         var nEMValue = JSON.parse(localStorage.getItem('nEMValueDry'));
+         var nEGValue = JSON.parse(localStorage.getItem('nEGValueDry'));
+         var caValue = JSON.parse(localStorage.getItem('caValueDry'));
+         var pValue = JSON.parse(localStorage.getItem('pValueDry'));
          var minMaxRange = sessionStorage.getItem('objectToPass');
          var data = minMaxRange.split(',');  
          for (i = 0; i<ingredients.length ; i++) {
@@ -114,20 +116,23 @@
             $('#table-ingredients').append(
                '<tr>' +
                '<td id=' +i +'>' +ingredients[i]+ '</td>' +
-               '<td>' +outputValues[i] + '</td>'+
+               '<td>' +asFedValue[i] + '</td>'+
+               '<td>' +dryMatterOutput[i] + '</td>'+
                '<td>' +finalOutput[i] + '</td>'+
                '</tr>'     
             );
          }
          // total sumof final weights
-         sumOfWeights = outputValues.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
-         percentageOfWeights = finalOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
+         sumOfAsFedWeights = asFedValue.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
+         sumOfDryMatterWeights = dryMatterOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
+         totalPercentageOfWeights = finalOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
          // Total weight row added at the end of the table-ingredients
          $('#table-ingredients').append(
                '<tr>' +
                '<td>'+  "<h5>TotalWeight</h5>"   +'</td>'+
-               '<td>' +  sumOfWeights + '</td>'+
-               '<td>' +  percentageOfWeights + '</td>'+
+               '<td>' + sumOfAsFedWeights.toFixed(3) + '</td>'+
+               '<td>' + sumOfDryMatterWeights.toFixed(3) + '</td>'+
+               '<td>' +  totalPercentageOfWeights + '</td>'+
                '</tr>'
             );
 
