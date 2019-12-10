@@ -109,6 +109,10 @@
          var pValue = JSON.parse(sessionStorage.getItem('pValueDry'));
          var minMaxRange = sessionStorage.getItem('objectToPass');
          var data = minMaxRange.split(','); 
+         var abc = JSON.parse(sessionStorage.getItem('s'));
+
+         console.log(abc);
+
          console.log("This is asfed  "+ asFedValue) ;
          for (i = 0; i<ingredients.length ; i++) {
             //alert("In the for loop "+ i)
@@ -175,13 +179,13 @@
                   '<th> Neg(Mcal/cwt) </th>'+
                   '<th> %CA </th>'+
                   '<th> P  </th>'+
-            '</tr>'+
+            '</tr>'+s
             '<tr>'+
                '<th style = "background-color:#ffff80"> <font color="red"> Selected Range (Min-Max) </font> </th>'+
                '<td>'+ PreviousCPMinSelected +' - '+PreviousCPMaxSelected +'</td>'+
                '<td>'+ PreviousNEMMinSelected +' - '+PreviousNEMMaxSelected +'</td>'+
                '<td>'+  PreviousNEGMinSelected +' - '+ PreviousNEGMaxSelected +'</td>'+
-               '<td>'+ PreviousCAMinSelected +' - ' +PreviousCAMinSelected +'</td>'+
+               '<td>'+ PreviousCAMinSelected +' - ' +PreviousCAMaxSelected +'</td>'+
                '<td>'+ PreviousPMinSelected +' - '+PreviousPMaxSelected +'</td>'+
                '</tr>'+
             '<tr>'+
