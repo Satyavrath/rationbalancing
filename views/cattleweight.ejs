@@ -21,7 +21,6 @@
 </head>
 
 <body onLoad="onLoadFunction()">
-
     <body>
         <div class="container-fluid">
             <!-- This contains the logo and Heading  -->
@@ -66,9 +65,10 @@
                     <!-- In this class which contians the cattle weight selection, cattle weight gain selection and nutrition table -->
                     <div class="main-content">
                         <div class="col-sm-12 col-md-10 col-lg-10 col-xs-12">
+                           
                             <div>
                                 <p>
-                                    <h5>Selected Weight: <span id="wSelected"></span></h5>
+                                    <h5>Selected Weight: <span id="wSelected"> </span>  Pounds</h5>
                                 </p>
                                 <p>
                                     <h5>Selected Weight Gain: <span id="wgSelected"></span></h5>
@@ -77,7 +77,7 @@
                             <!-- cattle weight selections -->
                             <div class="cattle-weights">
                                 <div class="btn-group" role="group" aria-label="Weight Gain Buttons">
-                                    <!-- <span class="badge badge-light">Light</span> -->
+                                    
                                     <h4 class="weights-label">Weights:</h4>
                                     <button type="button" class="btn btn-secondary" onclick="Function450()">450
                                     </button>
@@ -92,15 +92,15 @@
                                     <!-- cattle weight gain selection per day -->
                                     <select id="Gain" class="weightGain">
                                         <option id="1" value="6">Select Weight Gain</option>
-                                        <option id="1" value="7">1.1 Pounds</option>
-                                        <option id="2" value="8">2.2 Pounds</option>
-                                        <option id="3" value="9">3.3 Pounds</option>
-                                        <option id="4" value="10">4.4 Pounds</option>
-                                        <option id="5" value="11">5.5 Pounds</option>
+                                        <option id="1" value="7">1.1 kg</option>
+                                        <option id="2" value="8">2.2 kg</option>
+                                        <option id="3" value="9">3.3 kg</option>
+                                        <option id="4" value="10">4.4 kg</option>
+                                        <option id="5" value="11">5.5 kg</option>
                                     </select>
                                 </div>
                             </div>
-                            <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P, %EE -->
+                            <!-- This is the nutrition table which contains the constent nutrition values of the %CP, NE M, NE G, %CA, %P -->
                             <div id="nutrition-table">
                                 <form action="/feedstuff" onsubmit="clickedNEXTBTN();localstorageWeight();">
                                     <div class="col-sm-12 col-md-8 col-lg-8 col-xs-12">
@@ -159,14 +159,12 @@
                                     </div>
                                     <!-- This is the Next BUttons which navigates to the next page feedstuff.html-->
                                     <div class="next-button">
-                                        <a href="/feedstuff"><button type="submit" class="btn btn-secondary"> Next
-                                            </button></a>
+                                                <button type="button" class="clearSessionStorage btn btn-secondary" onclick="clearSessionStorage()">Reset</button>
+                                                <a href="/feedstuff"><button type="submit" class="next btn btn-secondary"> Next</button></a>
                                     </div>
+                                    
                             </div>
-                            <div class="cost-quantity">
-                                <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
-                                </div>
-                            </div>
+                            
                         </div>
 
                     </div>
@@ -174,12 +172,16 @@
             </div>
         </div>
     </body>
-    <!-- This function is used to select the cattle weight gain weights  -->
+   
     <script type="text/javascript">
-
+       // This funtion is used to clear the session storage
+        function clearSessionStorage(){
+            sessionStorage.clear();
+            location.reload();
+        }
+        // Assigning the previous selected weights and nutrients to the variables
         Previousweight = sessionStorage.getItem("SelectedWeight");
         Previousgain = sessionStorage.getItem("SelectedWeightGain");
-
         document.getElementById("wSelected").innerHTML = Previousweight;
         document.getElementById("wgSelected").innerHTML = Previousgain;
         PreviousCPMinSelected = sessionStorage.getItem("CPMinSelected");
@@ -193,8 +195,6 @@
         PreviousPMinSelected = sessionStorage.getItem("PMinSelected");
         PreviousPMaxSelected = sessionStorage.getItem("PMaxSelected");
 
-        // alert(Previousweight);
-
         document.getElementById("CP-Min").value = PreviousCPMinSelected;
         document.getElementById("CP-Max").value = PreviousCPMaxSelected;
         document.getElementById("NEM-Min").value = PreviousNEMMinSelected;
@@ -206,10 +206,9 @@
         document.getElementById("P-Min").value = PreviousPMinSelected;
         document.getElementById("P-Max").value = PreviousPMaxSelected;
 
+        // funtions to disable and enable 
         var x = 0;
         function onLoadFunction() {
-            //localStorage.clear();
-            // alert("This function is working")
             document.getElementById("Gain").disabled = true;
         }
         function enable() {
@@ -299,7 +298,6 @@
         $(document).ready(function () {
             $("select.weightGain").change(function () {
                 var selectedWeightGain = $(this).children("option:selected").val();
-                //alert("It's running and the x value is " + x + " and selectedWeightGain is " + selectedWeightGain);
                 switch (parseInt(selectedWeightGain)) {
                     case 7:
                         weightGain1(selectedWeightGain, x);
@@ -326,127 +324,126 @@
             document.getElementById("wgSelected").innerHTML = "1.1 kg";
             if (x == 1) {
                 // alert("adding 1.1 to all the Nutrients")
-                document.getElementById("CP-Min").value = "2.1";
-                document.getElementById("CP-Max").value = "2.1";
-                document.getElementById("NEM-Min").value = "2.1";
-                document.getElementById("NEM-Max").value = "2.1";
-                document.getElementById("NEG-Min").value = "2.1";
-                document.getElementById("NEG-Max").value = "2.1";
-                document.getElementById("CA-Min").value = "2.1";
-                document.getElementById("CA-Max").value = "2.1";
-                document.getElementById("P-Min").value = "2.1";
-                document.getElementById("P-Max").value = "2.1";
+                document.getElementById("CP-Min").value = "10.4";
+                document.getElementById("CP-Max").value = "12.0";
+                document.getElementById("NEM-Min").value = "0.57";
+                document.getElementById("NEM-Max").value = "0.64";
+                document.getElementById("NEG-Min").value = "0.31";
+                document.getElementById("NEG-Max").value = "0.36";
+                document.getElementById("CA-Min").value = "0.39";
+                document.getElementById("CA-Max").value = "0.49";
+                document.getElementById("P-Min").value = "0.20";
+                document.getElementById("P-Max").value = "0.24";
             } else if (x == 2) {
                 //alert("adding 3.3 to all the Nutrients")
-                document.getElementById("CP-Min").value = "3.1";
-                document.getElementById("CP-Max").value = "3.1";
-                document.getElementById("NEM-Min").value = "4.3";
-                document.getElementById("NEM-Max").value = "4.3";
-                document.getElementById("NEG-Min").value = "4.3";
-                document.getElementById("NEG-Max").value = "4.3";
-                document.getElementById("CA-Min").value = "4.3";
-                document.getElementById("CA-Max").value = "4.3";
-                document.getElementById("P-Min").value = "4.3";
-                document.getElementById("P-Max").value = "4.3";
+                document.getElementById("CP-Min").value = "9.8";
+                document.getElementById("CP-Max").value = "11.2";
+                document.getElementById("NEM-Min").value = "0.57";
+                document.getElementById("NEM-Max").value = "0.63";
+                document.getElementById("NEG-Min").value = "0.31";
+                document.getElementById("NEG-Max").value = "0.36";
+                document.getElementById("CA-Min").value = "0.34";
+                document.getElementById("CA-Max").value = "0.41";
+                document.getElementById("P-Min").value = "0.18";
+                document.getElementById("P-Max").value = "0.21";
             } else if (selectedWeightGain == 10) {
                 //alert("adding 4.4 to all the Nutrients")
-                document.getElementById("CP-Min").value = "5.4";
-                document.getElementById("CP-Max").value = "5.4";
-                document.getElementById("NEM-Min").value = "5.4";
-                document.getElementById("NEM-Max").value = "5.4";
-                document.getElementById("NEG-Min").value = "5.4";
-                document.getElementById("NEG-Max").value = "5.4";
-                document.getElementById("CA-Min").value = "5.4";
-                document.getElementById("CA-Max").value = "5.4";
-                document.getElementById("P-Min").value = "5.4";
-                document.getElementById("P-Max").value = "5.4";
+                document.getElementById("CP-Min").value = "9.4";
+                document.getElementById("CP-Max").value = "10.5";
+                document.getElementById("NEM-Min").value = "0.57";
+                document.getElementById("NEM-Max").value = "0.63";
+                document.getElementById("NEG-Min").value = "0.31";
+                document.getElementById("NEG-Max").value = "0.36";
+                document.getElementById("CA-Min").value = "0.30";
+                document.getElementById("CA-Max").value = "0.37";
+                document.getElementById("P-Min").value = "0.17";
+                document.getElementById("P-Max").value = "0.19";
             } else if (selectedWeightGain == 11) {
                 //alert("adding 5.5 to all the Nutrients")
-                document.getElementById("CP-Min").value = "6.5";
-                document.getElementById("CP-Max").value = "6.5";
-                document.getElementById("NEM-Min").value = "6.5";
-                document.getElementById("NEM-Max").value = "6.5";
-                document.getElementById("NEG-Min").value = "6.5";
-                document.getElementById("NEG-Max").value = "6.5";
-                document.getElementById("CA-Min").value = "6.5";
-                document.getElementById("CA-Max").value = "6.5";
-                document.getElementById("P-Min").value = "6.5";
-                document.getElementById("P-Max").value = "6.5";
+                document.getElementById("CP-Min").value = "9.0";
+                document.getElementById("CP-Max").value = "10.0";
+                document.getElementById("NEM-Min").value = "0.57";
+                document.getElementById("NEM-Max").value = "0.63";
+                document.getElementById("NEG-Min").value = "0.31";
+                document.getElementById("NEG-Max").value = "0.36";
+                document.getElementById("CA-Min").value = "0.28";
+                document.getElementById("CA-Max").value = "0.32";
+                document.getElementById("P-Min").value = "0.16";
+                document.getElementById("P-Max").value = "0.18";
             } else if (selectedWeightGain == 7) {
                 //alert("adding 1.1 to all the Nutrients")
-                document.getElementById("CP-Min").value = "2.1";
-                document.getElementById("CP-Max").value = "2.1";
-                document.getElementById("NEM-Min").value = "2.1";
-                document.getElementById("NEM-Max").value = "2.1";
-                document.getElementById("NEG-Min").value = "2.1";
-                document.getElementById("NEG-Max").value = "2.1";
-                document.getElementById("CA-Min").value = "2.1";
-                document.getElementById("CA-Max").value = "2.1";
-                document.getElementById("P-Min").value = "2.1";
-                document.getElementById("P-Max").value = "2.1";
+                document.getElementById("CP-Min").value = "12.7";
+                document.getElementById("CP-Max").value = "14.4";
+                document.getElementById("NEM-Min").value = "0.78";
+                document.getElementById("NEM-Max").value = "0.88";
+                document.getElementById("NEG-Min").value = "0.50";
+                document.getElementById("NEG-Max").value = "0.58";
+                document.getElementById("CA-Min").value = "0.47";
+                document.getElementById("CA-Max").value = "0.55";
+                document.getElementById("P-Min").value = "0.24";
+                document.getElementById("P-Max").value = "0.27";
             } else {
                 alert("Select the Weight Gain")
             }
         }
-
+        // function weight gain selected 2.2 kg
         function weightGain2() {
             document.getElementById("wgSelected").innerHTML = "2.2 kg";
-            //alert("weight Gain 2.2  button is clicked")
-            document.getElementById("CP-Min").value = "7";
-            document.getElementById("CP-Max").value = "7";
-            document.getElementById("NEM-Min").value = "7";
-            document.getElementById("NEM-Max").value = "7";
-            document.getElementById("NEG-Min").value = "7";
-            document.getElementById("NEG-Max").value = "7";
-            document.getElementById("CA-Min").value = "7";
-            document.getElementById("CA-Max").value = "7";
-            document.getElementById("P-Min").value = "7";
-            document.getElementById("P-Max").value = "7";
-        }
-
+            document.getElementById("CP-Min").value = "14.1";
+            document.getElementById("CP-Max").value = "16.2";
+            document.getElementById("NEM-Min").value = "0.72";
+            document.getElementById("NEM-Max").value = "0.80";
+            document.getElementById("NEG-Min").value = "0.44";
+            document.getElementById("NEG-Max").value = "0.51";
+            document.getElementById("CA-Min").value = "0.62";
+            document.getElementById("CA-Max").value = "0.74";
+            document.getElementById("P-Min").value = "0.29";
+            document.getElementById("P-Max").value = "0.33";
+        } 
+        // function weight gain selected 3.3 kg
         function weightGain3() {
             document.getElementById("wgSelected").innerHTML = "3.3 kg";
             //alert("weight Gain 3.3  button is clicked")
-            document.getElementById("CP-Min").value = "8";
-            document.getElementById("CP-Max").value = "8";
-            document.getElementById("NEM-Min").value = "8";
-            document.getElementById("NEM-Max").value = "8";
-            document.getElementById("NEG-Min").value = "8";
-            document.getElementById("NEG-Max").value = "8";
-            document.getElementById("CA-Min").value = "8";
-            document.getElementById("CA-Max").value = "8";
-            document.getElementById("P-Min").value = "8";
-            document.getElementById("P-Max").value = "8";
+            document.getElementById("CP-Min").value = "16.1";
+            document.getElementById("CP-Max").value = "18.7";
+            document.getElementById("NEM-Min").value = "0.78";
+            document.getElementById("NEM-Max").value = "0.88";
+            document.getElementById("NEG-Min").value = "0.50";
+            document.getElementById("NEG-Max").value = "0.58";
+            document.getElementById("CA-Min").value = "0.76";
+            document.getElementById("CA-Max").value = "0.90";
+            document.getElementById("P-Min").value = "0.35";
+            document.getElementById("P-Max").value = "0.41";
         }
-
+        // function weight gain selected 4.4 kg
         function weightGain4() {
             document.getElementById("wgSelected").innerHTML = "4.4 kg";
             // alert("weight Gain 4.4  button is clicked")
-            document.getElementById("CP-Min").value = "9";
-            document.getElementById("CP-Max").value = "9";
-            document.getElementById("NEM-Min").value = "9";
-            document.getElementById("NEM-Max").value = "9";
-            document.getElementById("NEG-Min").value = "9";
-            document.getElementById("NEG-Max").value = "9";
-            document.getElementById("CA-Min").value = "9";
-            document.getElementById("CA-Max").value = "9";
-            document.getElementById("P-Min").value = "9";
-            document.getElementById("P-Max").value = "9";
+            document.getElementById("CP-Min").value = "18.3";
+            document.getElementById("CP-Max").value = "19.2";
+            document.getElementById("NEM-Min").value = "0.89";
+            document.getElementById("NEM-Max").value = "0.98";
+            document.getElementById("NEG-Min").value = "0.50";
+            document.getElementById("NEG-Max").value = "0.58";
+            document.getElementById("CA-Min").value = "0.80";
+            document.getElementById("CA-Max").value = "0.98";
+            document.getElementById("P-Min").value = "0.38";
+            document.getElementById("P-Max").value = "0.45";
         }
-
+        // function weight gain selected 5.5 kg
         function weightGain5() {
             document.getElementById("wgSelected").innerHTML = "5.5 kg";
             //alert("weight Gain 5.5  button is clicked")
-            document.getElementById("CP-Min").value = "0";
-            document.getElementById("CP-Max").value = "0";
-            document.getElementById("NEM-Min").value = "0";
-            document.getElementById("NEM-Max").value = "0";
-            document.getElementById("NEG-Min").value = "0";
-            document.getElementById("NEG-Max").value = "0";
-            document.getElementById("CA-Min").value = "0";
-            document.getElementById("CA-Max").value = "0";
-            document.getElementById("P-Min").value = "0";
-            document.getElementById("P-Max").value = "0";
+            document.getElementById("CP-Min").value = "18.3";
+            document.getElementById("CP-Max").value = "19.2";
+            document.getElementById("NEM-Min").value = "0.89";
+            document.getElementById("NEM-Max").value = "0.98";
+            document.getElementById("NEG-Min").value = "0.50";
+            document.getElementById("NEG-Max").value = "0.58";
+            document.getElementById("CA-Min").value = "0.80";
+            document.getElementById("CA-Max").value = "0.98";
+            document.getElementById("P-Min").value = "0.38";
+            document.getElementById("P-Max").value = "0.45";
         }
         //alert(wgSelected);
         console.log(wgSelected);
@@ -484,11 +481,8 @@
                     weight = 0;
                 // alert("Please select Weights first");
             }
-            // alert(weight);
-            //localStorage.setItem("SelectedWeight", weight);
-            //  alert("data Sent")
-            //return false;
-            //let weight = document.getElementById("wSelected").innerHTML;
+           
+            // assigning the nutrient values to the variables and storing those values in the session storage
             let wG = document.getElementById("wgSelected").innerHTML;
             let CPMinSelected = document.getElementById("CP-Min").value;
             let CPMaxSelected = document.getElementById("CP-Max").value;
@@ -502,7 +496,7 @@
             let PMaxSelected = document.getElementById("P-Max").value;
 
             if (sessionStorage) {
-                // Store data
+                // Store data in the session storage
 
                 sessionStorage.setItem("SelectedWeight", weight);
                 sessionStorage.setItem("SelectedWeightGain", wG);
@@ -522,6 +516,7 @@
             }
 
         }
+
     </script>
 
 </html>

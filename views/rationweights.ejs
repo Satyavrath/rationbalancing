@@ -16,6 +16,14 @@
          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
          crossorigin="anonymous"></script>
       <link rel="stylesheet" href="../../stylesheets/Rationweights.css">
+      <script>
+         // Shows alert when the user doesn't selected the previous ingredients
+         var ingredients = JSON.parse(sessionStorage.getItem('ingredients'));
+         if(ingredients == null){
+            console.log("Ingredients not selected")
+            alert("Select the ingredients");
+         } 
+      </script>
    </head>
    <body>
       <div class="container-fluid">
@@ -78,15 +86,23 @@
                      </tr>
                   </table>
                </div>
-               <!-- This is the info table which indicatesmaximum and minimum nutrient range -->
+              
+               <!-- This is the info table which indicates maximum,minimum nutrient range colors and Fullforms of CP, Neg, Nem, P -->
                <div class="info">
                   <span class="dot red-info"></span> Red indicates below the minimum total nutrient range. 
                   <span class="dot blue-info"></span> Blue indicates above the maximum total nutrient range
+                  <br>
+                  CP : Crude Protien, Nem : Net Energy Maintainence 
+                  <br>
+                  Neg : Net Energy Gain, Ca : Calcium
+                  <br>
+                  P : Phosphorus
                </div>
             </div>
          </div>
       </div>
       <script>
+         // Gets the previous selected Nutrients  session Storage
             PreviousCPMinSelected = sessionStorage.getItem("CPMinSelected");
             PreviousCPMaxSelected = sessionStorage.getItem("CPMaxSelected");
             PreviousNEMMinSelected = sessionStorage.getItem("NEMMinSelected");
@@ -97,8 +113,8 @@
             PreviousCAMaxSelected = sessionStorage.getItem("CAMaxSelected");
             PreviousPMinSelected = sessionStorage.getItem("PMinSelected");
             PreviousPMaxSelected = sessionStorage.getItem("PMaxSelected");
-         
-         var ingredients = JSON.parse(sessionStorage.getItem('key'));
+         // Gets the calclated output 
+         var ingredients = JSON.parse(sessionStorage.getItem('ingredients'));
          var finalOutput = JSON.parse(sessionStorage.getItem('drymatterPercentage'));
          var dryMatterOutput = JSON.parse(sessionStorage.getItem('dryMatterOutputValue'));
          var asFedValue = JSON.parse(sessionStorage.getItem('asFedValue'));
@@ -110,9 +126,9 @@
          var minMaxRange = sessionStorage.getItem('objectToPass');
          var data = minMaxRange.split(','); 
          console.log("This is asfed  "+ asFedValue) ;
+
+         // displays the calculated output
          for (i = 0; i<ingredients.length ; i++) {
-            //alert("In the for loop "+ i)
-           // alert(ingredients[i])
             $('#table-ingredients').append(
                '<tr>' +
                '<td id=' +i +'>' +ingredients[i]+ '</td>' +
@@ -122,6 +138,7 @@
                '</tr>'     
             );
          }
+
          // total sumof final weights
          sumOfAsFedWeights = asFedValue.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
          sumOfDryMatterWeights = dryMatterOutput.reduce((a,b) =>  parseFloat(a) + parseFloat(b));
@@ -173,15 +190,15 @@
                   '<th> %CP </th>'+
                   '<th> Nem(Mcal/cwt) </th>'+
                   '<th> Neg(Mcal/cwt) </th>'+
-                  '<th> %CA </th>'+
-                  '<th> P  </th>'+
+                  '<th> %Ca </th>'+
+                  '<th> %P  </th>'+
             '</tr>'+
             '<tr>'+
                '<th style = "background-color:#ffff80"> <font color="red"> Selected Range (Min-Max) </font> </th>'+
                '<td>'+ PreviousCPMinSelected +' - '+PreviousCPMaxSelected +'</td>'+
                '<td>'+ PreviousNEMMinSelected +' - '+PreviousNEMMaxSelected +'</td>'+
                '<td>'+  PreviousNEGMinSelected +' - '+ PreviousNEGMaxSelected +'</td>'+
-               '<td>'+ PreviousCAMinSelected +' - ' +PreviousCAMinSelected +'</td>'+
+               '<td>'+ PreviousCAMinSelected +' - ' +PreviousCAMaxSelected +'</td>'+
                '<td>'+ PreviousPMinSelected +' - '+PreviousPMaxSelected +'</td>'+
                '</tr>'+
             '<tr>'+
@@ -194,9 +211,14 @@
            '</tr>'
          );
          
-
+         
          weight = sessionStorage.getItem("SelectedWeight");
          gain = sessionStorage.getItem("SelectedWeightGain");
+         // clears the session storage 
+         function clearSessionStorage(){
+            sessionStorage.clear();
+            location.reload();
+         }
    </script>
    </body>
 </html>

@@ -141,4 +141,7 @@ body {
 .blue-info {
   background-color: #6BADEC;
 }
-
+ .clearSessionStorage  {
+     margin-top: 20px;
+     margin-left: 2%;
+ }

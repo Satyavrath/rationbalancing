@@ -12,9 +12,6 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
    <link rel="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.css">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.js"></script>
-   <script src="../../scripts/script.js"></script>
-   <script src="../../scripts/ui.js"></script>
-   <script src="../../scripts/jquery-1.9.1.js"></script>
    <script src="/scripts/jquery-ui.min.js"></script>
    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
       integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
@@ -34,12 +31,19 @@
          width: 400px;
          cursor: pointer
       }
-
       #searchResults li:hover {
          background-color: lightgreen;
          cursor: pointer;
       }
    </style>
+   <script>
+      //Gives alert when the user came to this page without selecting the weight
+      weight = sessionStorage.getItem("SelectedWeight");
+      if(weight == null){
+         console.log("weight not selected")
+         alert("Select the weight");
+      }
+   </script>
 </head>
 
 <body onclick="onBodyClick(event)">
@@ -123,17 +127,14 @@
                            <button type="button" value="Z" class="btn btn-secondary">Z</button>
                         </div>
                      </div>
-                  </div>
-                  <!-- This selected-items contains the search option to search the ingredients and multiselect option to select the multiple ingredients-->
-                  <!-- <div class="selected-items"> -->
-                  <!-- <div class="feedstuff"> -->
-                  </br>
-                  <form action="/rationweights" onsubmit="calculateBTN();">
+                  </div>    
+                  <!-- This shows the user selected ingredients in the table format dynamically-->                  
+                  <form   action="/rationweights" onsubmit="calculateBTN();">
                      <div class="middle-section">
                         <div class="row">
                            <div class="ingredints-list-section col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                              <div><input class="form-control" type="text" id="search" onkeyup="getFeedSearch(event)"
-                                    placeholder="Search for names.." title="Type in a name"></div>
+                              <!-- <div><input class="form-control" type="text" id="search" onkeyup="getFeedSearch(event)"
+                                    placeholder="Search for names.." title="Type in a name"></div> -->
                               <ul style="overflow: auto; width: 300px;height: 150px;" class="list-group" id="result">
                               </ul>
                               <br>
@@ -149,7 +150,7 @@
                                        <tr>
                                           <th>Ingredients</th>
                                           <th>Fixed Quantity</th>
-                                          <th>Cost</th>
+                                          <th>Cost/lb</th>
                                           <th>Delete</th>
                                        </tr>
                                     </table>
@@ -159,10 +160,12 @@
                         </div>
                      </div>
                      <br>
-                     <!-- Next button for navigating to quantities page -->
+
+                     <!-- Next button for navigating to quantities page and reset button to clear the session storage -->
                      <div class="next-button">
-                        <button id="calculateBtn" type="submit" class="btn btn-secondary" > Calculate
-                           </button>
+                        <button type="button" class="reset btn btn-secondary" onclick="clearSessionStorage()">Reset</button>
+                        <button id="calculateBtn" type="submit" class="next btn btn-secondary" > Calculate
+                        </button>
                      </div>
                   </form>
                </div>
@@ -170,11 +173,23 @@
          </div>
       </div>
       <script>
+         // Gets previous page selected Weight and weightGain from the session storage
          weight = sessionStorage.getItem("SelectedWeight");
          gain = sessionStorage.getItem("SelectedWeightGain");
-         //alert(weight +"+"+ gain);
+         
          document.getElementById("weight").innerHTML = weight;
-         document.getElementById("gain").innerHTML = gain; 
+         document.getElementById("gain").innerHTML = gain;
+
+         // gets the previous selected ingredients, cost and quantity
+         previousIngredients =  JSON.parse(sessionStorage.getItem('ingredients'));
+         previousCost =  JSON.parse(sessionStorage.getItem('cost'));
+         previousQuantity =  JSON.parse(sessionStorage.getItem('quantity'));
+         console.log(previousIngredients);
+         // function to clear the session storage
+         function clearSessionStorage(){
+            sessionStorage.clear();
+            location.reload();
+        }
       </script>
 </body>
 

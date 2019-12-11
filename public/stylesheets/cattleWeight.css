@@ -89,7 +89,7 @@ body {
 }
 
 .next-button {
-    margin-left: 85%;
+    /* margin-left: 85%; */
     margin-top: 15px;
 }
 
@@ -196,4 +196,10 @@ body {
 
 #myUL li a:hover:not(.header) {
     background-color: #eee;
+}
+.next {
+   margin-left: 70%;
+}
+.clearSessionStorage  {
+    margin-left: 5%;
 }

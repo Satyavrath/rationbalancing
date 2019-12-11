@@ -1,3 +1,4 @@
+// Declaring variables Globally 
 var ourData;
 var customId = [];
 var tableOfContents = [];
@@ -9,11 +10,28 @@ var ca = [];
 var p = [];
 var listofIngs = [];
 var unique = [];
+var tableOfContentsfromPrevious = [];
+var previousIngredients = [];
+var previousCost = [];
+var previousQuantity = [];
+previousIngredients =  JSON.parse(sessionStorage.getItem('ingredients'));
+previousCost =  JSON.parse(sessionStorage.getItem('cost'));
+previousQuantity =  JSON.parse(sessionStorage.getItem('quantity'));
 
 // To search any ingredient based by name.
-
 $(document).ready(function () {
-	$("#calculateBtn").hide();
+	
+	if(previousIngredients != null){
+		myScript1();
+		var ourRequest = new XMLHttpRequest();
+		ourRequest.open('GET', 'https://raw.githubusercontent.com/Satyavrath/rationbalancing/master/data/ingredients.json');
+		ourRequest.onload = function () {
+		ourData = JSON.parse(ourRequest.responseText);
+		}
+		ourRequest.send();
+
+	}
+	//$("#calculateBtn");
 	$("button").click(function () {
 		var buttonValue = $(this).val();
 		// alert(buttonValue);
@@ -37,11 +55,54 @@ $(document).ready(function () {
 	});
 });
 
-// To avoid duplicate entry and to display in selected ingredients in table-format
-function myScript(e) {
+// function to display the previously selected ingredients, quantity and cost in the table format
+function myScript1() {
+	if(previousIngredients != null){
+		for(let i=0; i<previousIngredients.length; i++){
+			let ing =  previousIngredients[i];
+			let keyIng = ing.replace(/[ ,.%()]/g, "");
+			$('#table-style').append(
+			   '<tr>' +
+			  '<td id=' + keyIng + '>' + previousIngredients[i] + '</td>' +
+			  '<td> <input type="number" step= "any" class="form-control text-field-button" id=' + keyIng + "Quantity" + ' value="'+ previousQuantity[i] +'"> </td>' +
+			 '<td><input type="number" step= "any" class="form-control text-field-button" id=' + keyIng + "Cost" + ' value="'+ previousCost[i] +'"></td>' +
+			 '<td><img src="../images/delete.jpeg" alt="Delete" style="width:30px;height:30px;"></td>' +
+			   '</tr>'
+			);
+		 }
 
+		 // code to delete the ingredient when the user clicks on the delete button
+		 var index, tab = document.getElementById("table-style");
+		for (var i = 1; i < tab.rows.length; i++) {
+		tab.rows[i].cells[3].onclick = function () {
+			//alert("The selected row is "+ i);
+			index = this.parentElement.rowIndex;
+			//alert("The deleted index is "+ index);
+			tab.deleteRow(index);
+			// deltedRow  = previousIngredients.remove(index);
+			previousIngredients.splice(index - 1, 1);
+			//alert("Removed The previous Ingredients "+ index);
+			previousCost.slice(index - 1, 1);
+			//alert("Removed The previous Cost "+ index);
+			previousQuantity.slice(index - 1, 1);
+			//alert("Removed The previous Quantity "+ index);
+			if (tab.rows.length == 1) {
+				$("#calculateBtn").hide();
+			}
+		}
+	}
+	if (tab.rows.length == 1) {
+		$("#calculateBtn").hide();
+	} else {
+		$("#calculateBtn").show();
+	}
+	}
+		
+}
+
+// To avoids duplicate entry and to display in selected ingredients in table-format
+function myScript(e) {
 	let ings = e.target.attributes.id.ownerElement.innerHTML
-	//let names= ["karthik","satya"];
 	ingredients.push(ings);
 	customId = ings.replace(/[ ,.%()]/g, "");
 	var tableData = document.getElementsByTagName("td");
@@ -79,12 +140,14 @@ function myScript(e) {
 		$("#calculateBtn").show();
 	}
 }
+
 // To hide content when clicked on body.
 function onBodyClick(event) {
 	if (event.target.id != "search") {
 		$("#result").hide();
 	}
 }
+
 // To find feedstuff based on Advance search.
 function getFeedSearch(event) {
 	$('#result').html('');
@@ -100,9 +163,9 @@ function getFeedSearch(event) {
 		$("#result").show();
 	});
 }
-// On click function to navigate to feedstuff page
-function clickedNEXTBTN() {
 
+// On click function to store the nutrients in the session stoage
+function clickedNEXTBTN() {
 	let cpMin = document.getElementById("CP-Min").value;
 	let cpMax = document.getElementById("CP-Max").value;
 	cp.push(cpMin);
@@ -124,56 +187,88 @@ function clickedNEXTBTN() {
 	sessionStorage.setItem('objectToPass', listofIngs);
 }
 
+// Function which calculate the final ration
 function calculateBTN() {
 	tableOfContents = [];
+	// checks the if the previously selected ingredients null or not, if it is not null stores the ingredients, cost and quantity into the tableofcontents array
+	if(previousIngredients != null ) {
+		//alert("ON the previous ingredients not equal to null Function");
+		for (var i = 0; i < previousIngredients.length; i++) {
+			//alert("On the CalculateBTN function");
+			let ing =  previousIngredients[i];
+			let keyIng = ing.replace(/[ ,.%()]/g, "");
+			CostPrevious = document.getElementById(keyIng + "Cost").value;
+			//debugger;
+			QuantityPrevious =  document.getElementById(keyIng + "Quantity").value;
+			//alert("Got the previous edited data ");
+			tableOfContents.push({
+				key: ing,
+				value: CostPrevious,
+				quantity: QuantityPrevious
+			});
+		}
+	}
+
+	// Gets the user selected ingredients 
 	var unique = ingredients.filter(function (elem, index, self) {
 		return index === self.indexOf(elem);
 	})
+	//alert("After unique filter");
 	var minMaxRange = sessionStorage.getItem('objectToPass');
+	let valCost;
+	let valQuantity;
 	for (var i = 0; i < unique.length; i++) {
+		//alert("uploading the unique ingredients");
 		let ing = unique[i];
 		let keyIng = ing.replace(/[ ,.%()]/g, "");
-		let valCost = document.getElementById(keyIng + "Cost").value;
-		let valQuantity = document.getElementById(keyIng + "Quantity").value;
+		valCost = document.getElementById(keyIng + "Cost").value;
+		valQuantity = document.getElementById(keyIng + "Quantity").value;
 		tableOfContents.push({
 			key: ing,
 			value: valCost,
 			quantity: valQuantity
 		});
 	}
+	//debugger;
 	var inputQuantity = [];
 	for (var i in tableOfContents) {
 		inputQuantity.push(tableOfContents[i].quantity)
 	}
-
+	//debugger;
 	function localStorageToSendIngredients(unique) {
 		console.log(unique);
-
-		// localStorage.setItem("selectedIngredients", JSON.stringify("unique"));
-		// Storage.prototype.setObject = function(key, value) {
-		//   this.setItem(key, JSON.stringify(unique));
-		// }
-		sessionStorage.setItem('key', JSON.stringify(unique));
 		return false;
 	}
-
+	//debugger;
+	let precost=[];
+	let prequantity=[];
+	let preingredients = [];
 	localStorageToSendIngredients(unique);
 	// To store selected ingredients key and value in an array.
 	var objectiveEquation = [];
 	for (var i in tableOfContents) {
 		objectiveEquation.push(tableOfContents[i].value + tableOfContents[i].key.replace(/[ ,.%()]/g, ""));
+		preingredients.push(tableOfContents[i].key);
+		precost.push(tableOfContents[i].value);
+		prequantity.push(tableOfContents[i].quantity);
 	}
+	
+	sessionStorage.setItem('ingredients', JSON.stringify(preingredients));
+	sessionStorage.setItem('cost', JSON.stringify(precost));
+	sessionStorage.setItem('quantity', JSON.stringify(prequantity));
+
 	// To fetch index number of selected ingredient in json data
 	var dataId = [];
 	var selectednutrientvalue = [];
-	for (i = 0; i <= unique.length; i++) {
+	for (i = 0; i <= preingredients.length; i++) {
 		for (j = 0; j < 277; j++) {
-			if (ourData[j].name == unique[i]) {
+			if (ourData[j].name == preingredients[i]) {
 				dataId.push(j);
 			}
 		}
 	}
-	//alert(dataId)
+
+	//debugger;
 	cpFeedstuffValues = []
 	nEmFeedstuffValues = []
 	nEgFeedstuffValues = []
@@ -197,7 +292,7 @@ function calculateBTN() {
 		pFeedstuffValues.push(ourData[dataId[index]].P)
 		dryMatterValues.push(ourData[dataId[index]].DM)
 	}
-
+	//debugger;
 
 	//  To store crude protein value of selected ingredients
 	var cpArray = [];
@@ -218,7 +313,6 @@ function calculateBTN() {
 	var caArray = [];
 	for (i = 3; i < selectednutrientvalue.length; i += 5) {
 		caArray.push(selectednutrientvalue[i]);
-
 	}
 	//  To store phosphorous value of selected ingredients
 	var pArray = [];
@@ -230,19 +324,20 @@ function calculateBTN() {
 		aggregateArray.push(unique[i].replace(/[ ,.%()]/g, ""));
 	}
 
+	
 	var data = minMaxRange.split(',');
-
+// generating the simplex equation
 	var s = "Minimize P = " + objectiveEquation.join('+') + " subject to\n" + cpArray.join('+') + ">=" + data[0] + "\n"
     + cpArray.join('+') + "<=" + data[1] + "\n" + caArray.join('+') + ">=" + data[6] + "\n"
     + caArray.join('+') + "<=" + data[7] +"\n" + pArray.join('+') + ">=" + data[8] + "\n" + pArray.join('+') + "<=" +  data[9]+
     "\n" + nEGArray.join('+') + ">=" + data[4] + "\n" + nEGArray.join('+') + "<=" + data[5] +  "\n"+nEMArray.join('+') + ">=" + data[2] + "\n" + 
 	nEMArray.join('+') + "<=" + data[3] ;
 	console.log(s);
+	//alert("Equation"+ s);
 	var epsilon = .00000000000001 // 10^-14
 
 	var maxSigDig = 13; // max number of sig digits
 
-	// var exit = false; // get out of here
 
 	var okToRoll = true; // preliminary testing results
 
@@ -1707,7 +1802,7 @@ function calculateBTN() {
 		//   displayInplaceOfDocument = "No optimal solution exists for this problem."
 		// alert("No optimal solution exists for this problem");
 		// }
-
+	
 		// else
 
 		// {
@@ -1814,13 +1909,14 @@ function calculateBTN() {
 				// Optimal Solution: p = 115; x = 10, y = 10, z = 0,
 			}
 		} // j
+		//alert("This is outputvalue from solver "+ outputValues);
 		cpValueDry = 0; nEMValueDry = 0; nEGValueDry = 0; caValueDry = 0; pValueDry = 0;
 		// finaloutput value stored in an array
 		asFedoutputValue = [];
 		// dryMatteroutput value stored in an array
 		dryMatterOutputValue = [];
 		for (var i = 0; i < cpArray.length; i++) {
-			if (inputQuantity[i] == "") {
+			if (inputQuantity[i] == "" ||inputQuantity[i] == NaN) {
 				asFedoutputValue.push(outputValues[i])
 				dryMatterOutputValue.push((outputValues[i]*(dryMatterValues[i]))/100)
 			} else {
@@ -1878,7 +1974,6 @@ function calculateBTN() {
 		// console.log("This is the value of ca" + caValueDry)
 		// console.log("This is the value of p" + pValueDry)
 		// location.href = '/rationweights';
-
+	// }
 	} // end of presentation
-
 }

@@ -8,12 +8,11 @@
       
       <style>
             @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-
             html{
                 height: 100%;
             }
             body {
-                background: #151515;  /* fallback for old browsers */
+                background: #151515;  
                 margin: 0;
                 font-family: 'Open Sans', sans-serif;
                 background-color: #f8f8f8;
@@ -191,54 +190,56 @@
 
       </style>
       <script>
+          // clears the session storage 
          sessionStorage.clear();
       </script>
    </head>
    <body>
-      <!-- partial:index.partial.html -->
+      <!-- Login Form -->
       <div class="form">
-         <form  action="cattleweight" form-horizontal signin">
+         <form action="/cattleweight" class="form-horizontal signin" onsubmit="return onLogin();">
             <div class="form-wrap" style="position: relative;">
                <h2>Login</h2>
                <div class="form-group">
-                  <!-- <label for="email">Username:</label> -->
                   <div class="relative">
                      <input class="form-control" id="name" type="text" required="" autofocus="" title="" autocomplete="" placeholder="Username">
                      <i class="fa fa-user"></i>
                   </div>
                </div>
                <div class="form-group">
-                  <!-- <label for="email">Password:</label> -->
                   <div class="relative">
                      <input class="form-control" id="password" type="password" required="" placeholder="Password">
                      <i class="fa fa-key"></i>
                   </div>
-                 
                </div>
                <div class="login-btn">
-                  <a href="/cattleweight"><button class="movebtn movebtnsu" type="Submit" onclick="onLogin()">Login <i class="fa fa-fw fa-lock"></i></button></a>
+                  <button class="movebtn movebtnsu" type="Submit" >Login <i class="fa fa-fw fa-lock"></i></button>
                </div>
             </div>
 
          </form>
          
       </div>
-      <!-- partial -->
+    
       <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-      
-	  <script>
-	  	function onLogin() {
-			console.log("on the function");
-		 	username = document.getElementById('name').value;
-			console.log(username);
-		 	password = document.getElementById('password').value;
-			console.log(password);
-		 	if(username == "admin" && password == "rationbalancing") {
-            console.log("logged in")
-            window.location.href="/cattleWeight";
-		 	}
-      }
 
+	  <script>
+        // onLogin function for validations
+	  	function onLogin() {
+            username = document.getElementById('name').value;
+			console.log(username);
+            password = document.getElementById('password').value;
+			console.log(password);
+            if ( username == "admin" && password == "password123"){
+                window.location.href = "/cattleWeight";
+                console.log("Login succesfully")
+                return true;   
+            }else{
+                alert("Invalid credentials");
+                console.log("Invalid credentials")
+                return false;
+            }
+      }
 	  </script>
    </body>
 </html>

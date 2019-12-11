@@ -63,10 +63,6 @@ body {
     min-width: 800px;
 }
 
-.next-button {
-    margin-left: 85%;
-}
-
 .multiselect {
     width: 20em;
     height: 300px !important;
@@ -91,8 +87,11 @@ body {
     width: 20em;
     height: 300px !important;
     }
-    
+.cost-quantity {
+    margin-top: 20px;
+}
 .cost-quantity #table-style td .text-field-button{
+
     max-width: 100px;
     }
 
@@ -183,3 +182,9 @@ body {
 #myUL li a:hover:not(.header) {
     background-color: #eee;
 }
+.next {
+    margin-left: 70%;
+ }
+ .clearSessionStorage  {
+     margin-left: 5%;
+ }
